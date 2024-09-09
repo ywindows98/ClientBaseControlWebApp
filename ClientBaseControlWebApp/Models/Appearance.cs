@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Query.Internal;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ClientBaseControlWebApp.Models
 {
@@ -17,6 +18,8 @@ namespace ClientBaseControlWebApp.Models
         public string NeedleType { get; set; }
         public string Comment { get; set; }
 
+        public int ClientId { get; set; }
+        [ForeignKey(nameof(ClientId))]
         public Client Client { get; set; }
     }
 }

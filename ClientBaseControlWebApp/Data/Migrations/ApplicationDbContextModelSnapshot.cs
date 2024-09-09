@@ -34,6 +34,9 @@ namespace ClientBaseControlWebApp.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Comment")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -68,6 +71,9 @@ namespace ClientBaseControlWebApp.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClientId")
+                        .IsUnique();
+
                     b.ToTable("Appearances");
                 });
 
@@ -80,29 +86,21 @@ namespace ClientBaseControlWebApp.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("AllergiesComment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("AppearanceId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Birthday")
+                    b.Property<DateTime?>("Birthday")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("IndicationColor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InitialComment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MainComment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -113,7 +111,6 @@ namespace ClientBaseControlWebApp.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Surname")
@@ -121,9 +118,6 @@ namespace ClientBaseControlWebApp.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AppearanceId")
-                        .IsUnique();
 
                     b.ToTable("Clients");
                 });
@@ -359,15 +353,15 @@ namespace ClientBaseControlWebApp.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("ClientBaseControlWebApp.Models.Client", b =>
+            modelBuilder.Entity("ClientBaseControlWebApp.Models.Appearance", b =>
                 {
-                    b.HasOne("ClientBaseControlWebApp.Models.Appearance", "Appearance")
-                        .WithOne("Client")
-                        .HasForeignKey("ClientBaseControlWebApp.Models.Client", "AppearanceId")
+                    b.HasOne("ClientBaseControlWebApp.Models.Client", "Client")
+                        .WithOne("Appearance")
+                        .HasForeignKey("ClientBaseControlWebApp.Models.Appearance", "ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Appearance");
+                    b.Navigation("Client");
                 });
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.ProcedureRecord", b =>
@@ -432,14 +426,11 @@ namespace ClientBaseControlWebApp.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ClientBaseControlWebApp.Models.Appearance", b =>
-                {
-                    b.Navigation("Client")
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("ClientBaseControlWebApp.Models.Client", b =>
                 {
+                    b.Navigation("Appearance")
+                        .IsRequired();
+
                     b.Navigation("ProcedureRecords");
                 });
 #pragma warning restore 612, 618
