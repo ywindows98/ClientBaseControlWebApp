@@ -120,11 +120,56 @@
   <data name="AccountingNav" xml:space="preserve">
     <value>Accounting</value>
   </data>
+  <data name="AddNewClient" xml:space="preserve">
+    <value>Add a new client</value>
+  </data>
+  <data name="Allergy" xml:space="preserve">
+    <value>Allergy</value>
+  </data>
+  <data name="ClientAllergiesLabel" xml:space="preserve">
+    <value>Allergies</value>
+  </data>
+  <data name="ClientBirthdayLabel" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="ClientEmailLabel" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ClientIndicationColorLabel" xml:space="preserve">
+    <value>Indication color</value>
+  </data>
+  <data name="ClientInitialNoteLabel" xml:space="preserve">
+    <value>Initial note</value>
+  </data>
+  <data name="ClientMainNoteLabel" xml:space="preserve">
+    <value>Main note</value>
+  </data>
+  <data name="ClientNameLabel" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ClientNumberOfProceduresLabel" xml:space="preserve">
+    <value>Number of procedures</value>
+  </data>
+  <data name="ClientPhoneNumberLabel" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
   <data name="ClientsNav" xml:space="preserve">
     <value>Clients</value>
   </data>
+  <data name="ClientSurnameLabel" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="DeleteButton" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DetailsButton" xml:space="preserve">
+    <value>Details</value>
+  </data>
   <data name="DocumentsNav" xml:space="preserve">
     <value>Documents</value>
+  </data>
+  <data name="EditButton" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="EmployeesNav" xml:space="preserve">
     <value>Employees</value>
@@ -135,6 +180,9 @@
   <data name="LoginRequest" xml:space="preserve">
     <value>Please log in to continue</value>
   </data>
+  <data name="LogoutNav" xml:space="preserve">
+    <value>Logout</value>
+  </data>
   <data name="MaterialsNav" xml:space="preserve">
     <value>Materials</value>
   </data>
@@ -143,5 +191,17 @@
   </data>
   <data name="RegisterNav" xml:space="preserve">
     <value>Register</value>
+  </data>
+  <data name="ResetButton" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="SaveButton" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SearchBar" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="ShowAllButton" xml:space="preserve">
+    <value>Show all</value>
   </data>
 </root>

@@ -14,7 +14,9 @@ namespace ClientBaseControlWebApp.Models
         public int NumberOfProcedures { get; set; }
         public string? AllergiesComment { get; set; }
         public string? MainComment { get; set; }
+        [EmailAddress]
         public string? Email { get; set; }
+        [Phone]
         public string? PhoneNumber { get; set; }
         public string? IndicationColor { get; set; }
 

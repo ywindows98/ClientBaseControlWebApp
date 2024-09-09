@@ -18,5 +18,10 @@ namespace ClientBaseControlWebApp.Controllers
             var data = _context.Clients.ToList();
             return View(data);
         }
-    }
+
+		public IActionResult Create()
+		{
+			return View();
+		}
+	}
 }

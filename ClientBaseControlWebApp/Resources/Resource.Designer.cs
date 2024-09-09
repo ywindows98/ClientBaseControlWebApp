@@ -70,6 +70,105 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add a new client.
+        /// </summary>
+        public static string AddNewClient {
+            get {
+                return ResourceManager.GetString("AddNewClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allergy.
+        /// </summary>
+        public static string Allergy {
+            get {
+                return ResourceManager.GetString("Allergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allergies.
+        /// </summary>
+        public static string ClientAllergiesLabel {
+            get {
+                return ResourceManager.GetString("ClientAllergiesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Birthday.
+        /// </summary>
+        public static string ClientBirthdayLabel {
+            get {
+                return ResourceManager.GetString("ClientBirthdayLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string ClientEmailLabel {
+            get {
+                return ResourceManager.GetString("ClientEmailLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Indication color.
+        /// </summary>
+        public static string ClientIndicationColorLabel {
+            get {
+                return ResourceManager.GetString("ClientIndicationColorLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Initial note.
+        /// </summary>
+        public static string ClientInitialNoteLabel {
+            get {
+                return ResourceManager.GetString("ClientInitialNoteLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main note.
+        /// </summary>
+        public static string ClientMainNoteLabel {
+            get {
+                return ResourceManager.GetString("ClientMainNoteLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string ClientNameLabel {
+            get {
+                return ResourceManager.GetString("ClientNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of procedures.
+        /// </summary>
+        public static string ClientNumberOfProceduresLabel {
+            get {
+                return ResourceManager.GetString("ClientNumberOfProceduresLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number.
+        /// </summary>
+        public static string ClientPhoneNumberLabel {
+            get {
+                return ResourceManager.GetString("ClientPhoneNumberLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clients.
         /// </summary>
         public static string ClientsNav {
@@ -79,11 +178,47 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Surname.
+        /// </summary>
+        public static string ClientSurnameLabel {
+            get {
+                return ResourceManager.GetString("ClientSurnameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string DeleteButton {
+            get {
+                return ResourceManager.GetString("DeleteButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string DetailsButton {
+            get {
+                return ResourceManager.GetString("DetailsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Documents.
         /// </summary>
         public static string DocumentsNav {
             get {
                 return ResourceManager.GetString("DocumentsNav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string EditButton {
+            get {
+                return ResourceManager.GetString("EditButton", resourceCulture);
             }
         }
         
@@ -115,6 +250,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Logout.
+        /// </summary>
+        public static string LogoutNav {
+            get {
+                return ResourceManager.GetString("LogoutNav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Materials.
         /// </summary>
         public static string MaterialsNav {
@@ -138,6 +282,42 @@ namespace ClientBaseControlWebApp.Resources {
         public static string RegisterNav {
             get {
                 return ResourceManager.GetString("RegisterNav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset.
+        /// </summary>
+        public static string ResetButton {
+            get {
+                return ResourceManager.GetString("ResetButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string SaveButton {
+            get {
+                return ResourceManager.GetString("SaveButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string SearchBar {
+            get {
+                return ResourceManager.GetString("SearchBar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show all.
+        /// </summary>
+        public static string ShowAllButton {
+            get {
+                return ResourceManager.GetString("ShowAllButton", resourceCulture);
             }
         }
     }
