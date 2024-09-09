@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using ClientBaseControlWebApp.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ClientBaseControlWebApp.Data
@@ -9,5 +10,9 @@ namespace ClientBaseControlWebApp.Data
             : base(options)
         {
         }
+
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Appearance> Appearances { get; set; }
+        public DbSet<ProcedureRecord> ProcedureRecords { get; set; }
     }
 }
