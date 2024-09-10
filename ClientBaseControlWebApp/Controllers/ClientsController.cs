@@ -32,8 +32,20 @@ namespace ClientBaseControlWebApp.Controllers
             {
                 return View(client);
             }
-            _service.Add(client);
+            await _service.AddAsync(client);
             return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var client = await _service.GetByIdAsync(id);
+
+            if(client == null)
+            {
+                return View();
+            }
+
+            return View(client);
         }
     }
 }

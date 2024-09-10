@@ -47,9 +47,9 @@
             </div>
             <div class="col-lg-5 col-md-5 col-sm-6 d-flex">
                 <div class="m-auto">
-                    <a class="btn btn-outline-primary" asp-area="" asp-controller="" asp-action=""><i class="bi bi-card-text"></i> @ClientBaseControlWebApp.Resources.Resource.DetailsButton</a>
-                    <a class="btn btn-outline-primary" asp-area="" asp-controller="" asp-action=""><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
-                    <a class="btn btn-outline-danger" asp-area="" asp-controller="" asp-action=""><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
+                    <a class="btn btn-outline-primary" asp-area="" asp-controller="Clients" asp-action="Details" asp-route-id="@client.Id"><i class="bi bi-card-text"></i> @ClientBaseControlWebApp.Resources.Resource.DetailsButton</a>
+                    <a class="btn btn-outline-primary" asp-area="" asp-controller="Clients" asp-action="Edit" asp-route-id="@client.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
+                    <a class="btn btn-outline-danger" asp-area="" asp-controller="Clients" asp-action="Delete" asp-route-id="@client.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
                 </div>
             </div>
         

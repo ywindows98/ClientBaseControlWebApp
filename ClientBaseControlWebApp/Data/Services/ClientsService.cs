@@ -11,10 +11,10 @@ namespace ClientBaseControlWebApp.Data.Services
 		{
 			_context = context;
 		}
-		public void Add(Client client)
+		public async Task AddAsync(Client client)
 		{
-			_context.Clients.Add(client);
-			_context.SaveChanges();
+			await _context.Clients.AddAsync(client);
+			await _context.SaveChangesAsync();
 		}
 
 		public void Delete(int id)
@@ -28,9 +28,11 @@ namespace ClientBaseControlWebApp.Data.Services
 			return result;
 		}
 
-		public Client GetById(int id)
+		public async Task<Client> GetByIdAsync(int id)
 		{
-			throw new NotImplementedException();
+			var result = await _context.Clients.FirstOrDefaultAsync(x => x.Id == id);
+
+			return result;
 		}
 
 		public Client Update(int id, Client newClient)
