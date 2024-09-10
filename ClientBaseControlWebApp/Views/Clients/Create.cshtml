@@ -1,14 +1,14 @@
 ﻿@model Client
 
 @{
-	ViewData["Title"] = "Save the picture";
+	ViewData["Title"] = "Add new client";
 }
 
 
 <div class="row">
 	<div class="col-md-8 offset-2">
 		<p>
-			<h1>Add a new client</h1>
+			<h1>@ClientBaseControlWebApp.Resources.Resource.AddNewClient</h1>
 		</p>
 		<div class="row">
 			<div class="col-md-10 offset-1">
@@ -17,73 +17,73 @@
 					</div>
 				<div class="row mb-2">
 					<div class="form-group col-6">
-						<label asp-for="Name" class="control-label"></label>
+							<label asp-for="Name" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientNameLabel</label>
 						<input asp-for="Name" class="form-control" id="Name" />
 						<span asp-validation-for="Name" class="text-danger"></span>
 					</div>
 					<div class="form-group col-6">
-						<label asp-for="Surname" class="control-label"></label>
+							<label asp-for="Surname" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientSurnameLabel</label>
 						<input asp-for="Surname" class="form-control" id="Surname" />
 						<span asp-validation-for="Surname" class="text-danger"></span>
 					</div>
 				</div>
 				<div class="row mb-2">
 					<div class="form-group col-6">
-						<label asp-for="PhoneNumber" class="control-label">Phone number</label>
+							<label asp-for="PhoneNumber" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientPhoneNumberLabel</label>
 						<input asp-for="PhoneNumber" class="form-control" id="PhoneNumber" />
 						<span asp-validation-for="PhoneNumber" class="text-danger"></span>
 					</div>
 					<div class="form-group col-6">
-						<label asp-for="Email" class="control-label"></label>
+							<label asp-for="Email" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientEmailLabel</label>
 						<input asp-for="Email" class="form-control" id="Email" />
 						<span asp-validation-for="Email" class="text-danger"></span>
 					</div>
 				</div>
 				<div class="row mb-2">
 					<div class="form-group col-4">
-						<label asp-for="Birthday" class="control-label"></label>
+							<label asp-for="Birthday" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientBirthdayLabel</label>
 						<input asp-for="Birthday" class="form-control" id="Birthday" />
 						<span asp-validation-for="Birthday" class="text-danger"></span>
 					</div>
 					<div class="form-group col-4">
-						<label asp-for="NumberOfProcedures"  class="control-label">Number of procedures</label>
+							<label asp-for="NumberOfProcedures" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientNumberOfProceduresLabel</label>
 						<input asp-for="NumberOfProcedures" class="form-control" id="NumberOfProcedures" value="0"/>
 						<span asp-validation-for="NumberOfProcedures" class="text-danger"></span>
 					</div>
 					<div class="form-group col-4">
-						<label asp-for="IndicationColor" class="control-label">Indication color</label>
+							<label asp-for="IndicationColor" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientIndicationColorLabel</label>
 						<select asp-for="IndicationColor" class="form-control" id="IndicationColor">
-							<option selected>Choose </option>
-							<option value="Green">Green</option>
-							<option value="Yellow">Yellow</option>
-							<option value="Red">Red</option>
+								<option selected> @ClientBaseControlWebApp.Resources.Resource.ChooseSelection</option>
+								<option value="Green">@ClientBaseControlWebApp.Resources.Resource.GreenColor</option>
+								<option value="Yellow">@ClientBaseControlWebApp.Resources.Resource.YellowColor</option>
+								<option value="Red">@ClientBaseControlWebApp.Resources.Resource.RedColor</option>
 						  </select>
 						<span asp-validation-for="IndicationColor" class="text-danger"></span>
 					</div>
 				</div>
 				<div class="row mb-2">
 					<div class="form-group col-6">
-						<label asp-for="InitialComment" class="control-label">Initial note</label>
+							<label asp-for="InitialComment" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientInitialNoteLabel</label>
 						<textarea asp-for="InitialComment" class="form-control" id="InitialComment" rows="3"></textarea>
 						<span asp-validation-for="InitialComment" class="text-danger"></span>
 					</div>
 					<div class="form-group col-6">
-						<label asp-for="AllergiesComment" class="control-label">Allergies</label>
+							<label asp-for="AllergiesComment" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientAllergiesLabel</label>
 						<textarea asp-for="AllergiesComment" class="form-control" id="AllergiesComment" rows="3"></textarea>
 						<span asp-validation-for="AllergiesComment" class="text-danger"></span>
 					</div>
 				</div>
 				<div class="row mb-2">
 					<div class="form-group">
-						<label asp-for="MainComment" class="control-label">Main note</label>
+						<label asp-for="MainComment" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientMainNoteLabel</label>
 						<textarea asp-for="MainComment" class="form-control" id="MainComment" rows="2"></textarea>
-						<span asp-validation-for="MainComment" class="text-danger"></span>
+						<span asp-validation-for="MainComment" class="text-danger"></span> 
 					</div>
 				</div>
 				<div class="form-group mt-2">
-					<a class="btn btn-outline-secondary" asp-action="Index" asp-controller="Clients"><i class="bi bi-card-list"></i> Show all</a>
-					<button type="Reset" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i> Reset</button>
-					<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> Save</button>
+					<button class="btn btn-outline-secondary" type="submit"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</button>
+					<button type="Reset" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
+					<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
 				</div>
 				</form>
 			</div>

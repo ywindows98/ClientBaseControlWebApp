@@ -7,7 +7,9 @@ namespace ClientBaseControlWebApp.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "Surname is required")]
         public string Surname { get; set; }
         public DateTime? Birthday { get; set; }
         public string? InitialComment { get; set; }
@@ -21,9 +23,9 @@ namespace ClientBaseControlWebApp.Models
         public string? IndicationColor { get; set; }
 
         // Relationships
-        public List<ProcedureRecord> ProcedureRecords { get; set; }
+        public List<ProcedureRecord>? ProcedureRecords { get; set; }
 
-        public Appearance Appearance { get; set; }
+        public Appearance? Appearance { get; set; }
 
     }
 }

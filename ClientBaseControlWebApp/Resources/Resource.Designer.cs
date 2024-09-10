@@ -88,6 +88,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose.
+        /// </summary>
+        public static string ChooseSelection {
+            get {
+                return ResourceManager.GetString("ChooseSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allergies.
         /// </summary>
         public static string ClientAllergiesLabel {
@@ -232,6 +241,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Green.
+        /// </summary>
+        public static string GreenColor {
+            get {
+                return ResourceManager.GetString("GreenColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string LoginNav {
@@ -277,6 +295,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Red.
+        /// </summary>
+        public static string RedColor {
+            get {
+                return ResourceManager.GetString("RedColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string RegisterNav {
@@ -318,6 +345,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string ShowAllButton {
             get {
                 return ResourceManager.GetString("ShowAllButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yellow.
+        /// </summary>
+        public static string YellowColor {
+            get {
+                return ResourceManager.GetString("YellowColor", resourceCulture);
             }
         }
     }

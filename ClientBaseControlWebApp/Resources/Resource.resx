@@ -126,6 +126,9 @@
   <data name="Allergy" xml:space="preserve">
     <value>Allergy</value>
   </data>
+  <data name="ChooseSelection" xml:space="preserve">
+    <value>Choose</value>
+  </data>
   <data name="ClientAllergiesLabel" xml:space="preserve">
     <value>Allergies</value>
   </data>
@@ -174,6 +177,9 @@
   <data name="EmployeesNav" xml:space="preserve">
     <value>Employees</value>
   </data>
+  <data name="GreenColor" xml:space="preserve">
+    <value>Green</value>
+  </data>
   <data name="LoginNav" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -189,6 +195,9 @@
   <data name="ProceduresNav" xml:space="preserve">
     <value>Procedures</value>
   </data>
+  <data name="RedColor" xml:space="preserve">
+    <value>Red</value>
+  </data>
   <data name="RegisterNav" xml:space="preserve">
     <value>Register</value>
   </data>
@@ -203,5 +212,8 @@
   </data>
   <data name="ShowAllButton" xml:space="preserve">
     <value>Show all</value>
+  </data>
+  <data name="YellowColor" xml:space="preserve">
+    <value>Yellow</value>
   </data>
 </root>

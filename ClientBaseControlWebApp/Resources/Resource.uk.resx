@@ -126,6 +126,9 @@
   <data name="Allergy" xml:space="preserve">
     <value>Алергія</value>
   </data>
+  <data name="ChooseSelection" xml:space="preserve">
+    <value>Виберіть</value>
+  </data>
   <data name="ClientAllergiesLabel" xml:space="preserve">
     <value>Примітка про алергії</value>
   </data>
@@ -174,6 +177,9 @@
   <data name="EmployeesNav" xml:space="preserve">
     <value>Робітники</value>
   </data>
+  <data name="GreenColor" xml:space="preserve">
+    <value>Зелений</value>
+  </data>
   <data name="LoginNav" xml:space="preserve">
     <value>Вхід</value>
   </data>
@@ -189,6 +195,9 @@
   <data name="ProceduresNav" xml:space="preserve">
     <value>Процедури</value>
   </data>
+  <data name="RedColor" xml:space="preserve">
+    <value>Червоний</value>
+  </data>
   <data name="RegisterNav" xml:space="preserve">
     <value>Реєстрація</value>
   </data>
@@ -203,5 +212,8 @@
   </data>
   <data name="ShowAllButton" xml:space="preserve">
     <value>Показати всі</value>
+  </data>
+  <data name="YellowColor" xml:space="preserve">
+    <value>Жовтий</value>
   </data>
 </root>
