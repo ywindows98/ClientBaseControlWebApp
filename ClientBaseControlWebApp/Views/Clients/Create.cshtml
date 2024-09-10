@@ -42,7 +42,7 @@
 				<div class="row mb-2">
 					<div class="form-group col-4">
 							<label asp-for="Birthday" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientBirthdayLabel</label>
-						<input asp-for="Birthday" class="form-control" id="Birthday" />
+						<input type="date" asp-for="Birthday" class="form-control" id="Birthday" />
 						<span asp-validation-for="Birthday" class="text-danger"></span>
 					</div>
 					<div class="form-group col-4">
@@ -81,7 +81,7 @@
 					</div>
 				</div>
 				<div class="form-group mt-2">
-					<button class="btn btn-outline-secondary" type="submit"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</button>
+					<button class="btn btn-outline-secondary" asp-controller="Clients" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</button>
 					<button type="Reset" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
 					<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
 				</div>

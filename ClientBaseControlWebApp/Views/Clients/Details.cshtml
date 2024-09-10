@@ -6,5 +6,31 @@
 
 
 <div class="row">
-	<h1>Details for @Model.Name @Model.Surname</h1>
+	<div class="col-8 m-auto mt-3">
+		<div class="row">
+			<div class="h3">@Model.Name @Model.Surname @Model.IndicationColor</div><div class="h4">@Model.Birthday.Value.ToShortDateString()</div>
+		</div>
+		<div class="row">
+			<div class="h5"><i class="bi bi-envelope-fill"></i> @Model.Email</div>
+			<div class="h5"><i class="bi bi-telephone-fill"></i> @Model.PhoneNumber</div>
+		</div>
+		<div class="row mt-3">
+			<h4>@ClientBaseControlWebApp.Resources.Resource.ClientInitialNoteLabel:</h4>
+			<div class="h5">@Model.InitialComment</div>
+		</div>
+		<div class="row mt-4">
+			<h4>@ClientBaseControlWebApp.Resources.Resource.ClientAllergiesLabel:</h4>
+			<div class="h5">@Model.AllergiesComment</div>
+		</div>
+		<div class="row mt-4">
+			<h4>@ClientBaseControlWebApp.Resources.Resource.ClientMainNoteLabel:</h4>
+			<div class="h5">@Model.MainComment</div>
+		</div>
+		<div class="mt-4">
+			<a class="btn btn-outline-secondary" asp-controller="Clients" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</a>
+			<a class="btn btn-outline-primary" asp-area="" asp-controller="Clients" asp-action="Edit" asp-route-id="@Model.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
+			<a class="btn btn-outline-danger float-end" asp-area="" asp-controller="Clients" asp-action="Delete" asp-route-id="@Model.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
+			
+		</div>
+	</div>
 </div>
