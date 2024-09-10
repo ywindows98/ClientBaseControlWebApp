@@ -250,15 +250,6 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Has allergy?.
-        /// </summary>
-        public static string HasAllergyLabel {
-            get {
-                return ResourceManager.GetString("HasAllergyLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string LoginNav {
@@ -291,15 +282,6 @@ namespace ClientBaseControlWebApp.Resources {
         public static string MaterialsNav {
             get {
                 return ResourceManager.GetString("MaterialsNav", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No.
-        /// </summary>
-        public static string No {
-            get {
-                return ResourceManager.GetString("No", resourceCulture);
             }
         }
         
@@ -372,15 +354,6 @@ namespace ClientBaseControlWebApp.Resources {
         public static string YellowColor {
             get {
                 return ResourceManager.GetString("YellowColor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Yes.
-        /// </summary>
-        public static string Yes {
-            get {
-                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

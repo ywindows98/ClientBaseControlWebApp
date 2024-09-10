@@ -428,7 +428,8 @@ namespace ClientBaseControlWebApp.Data.Migrations
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.Client", b =>
                 {
-                    b.Navigation("Appearance");
+                    b.Navigation("Appearance")
+                        .IsRequired();
 
                     b.Navigation("ProcedureRecords");
                 });

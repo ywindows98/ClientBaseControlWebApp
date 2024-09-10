@@ -180,9 +180,6 @@
   <data name="GreenColor" xml:space="preserve">
     <value>Green</value>
   </data>
-  <data name="HasAllergyLabel" xml:space="preserve">
-    <value>Has allergy?</value>
-  </data>
   <data name="LoginNav" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -194,9 +191,6 @@
   </data>
   <data name="MaterialsNav" xml:space="preserve">
     <value>Materials</value>
-  </data>
-  <data name="No" xml:space="preserve">
-    <value>No</value>
   </data>
   <data name="ProceduresNav" xml:space="preserve">
     <value>Procedures</value>
@@ -221,8 +215,5 @@
   </data>
   <data name="YellowColor" xml:space="preserve">
     <value>Yellow</value>
-  </data>
-  <data name="Yes" xml:space="preserve">
-    <value>Yes</value>
   </data>
 </root>
