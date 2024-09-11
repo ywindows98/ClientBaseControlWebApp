@@ -21,10 +21,10 @@ namespace ClientBaseControlWebApp.Data.Services
 		{
 			var client = await GetByIdAsync(id);
 			_context.Clients.Remove(client);
-			await _context.SaveChangesAsync();
+			await _context.SaveChangesAsync(); 
 		}
 
-		public async Task<IEnumerable<Client>> GetAll()
+		public async Task<IEnumerable<Client>> GetAllAsync()
 		{
 			var result = await _context.Clients.ToListAsync();
 			return result;
@@ -34,6 +34,13 @@ namespace ClientBaseControlWebApp.Data.Services
 		{
 			var result = await _context.Clients.FirstOrDefaultAsync(x => x.Id == id);
 
+			return result;
+		}
+
+		// Name and surname
+		public async Task<IEnumerable<Client>> GetBySearchValue(string searchValue)
+		{
+			var result = await _context.Clients.Where(c => string.Concat(c.Name," ", c.Surname).ToLower().Contains(searchValue.ToLower())).ToListAsync();
 			return result;
 		}
 

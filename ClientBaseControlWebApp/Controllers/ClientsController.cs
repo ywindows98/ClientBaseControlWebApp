@@ -15,9 +15,19 @@ namespace ClientBaseControlWebApp.Controllers
         }
 
         //[Authorize]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchValue)
         {
-            var data = await _service.GetAll();
+            IEnumerable<Client> data;
+
+			if (string.IsNullOrEmpty(searchValue))
+            {
+                data = await _service.GetAllAsync();
+            }
+            else
+            {
+                data = await _service.GetBySearchValue(searchValue);
+            }
+            
             return View(data);
         }
 
