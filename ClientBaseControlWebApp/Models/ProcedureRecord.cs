@@ -14,5 +14,7 @@ namespace ClientBaseControlWebApp.Models
         public int ClientId { get; set; }
         [ForeignKey(nameof(ClientId))]
         public Client Client { get; set; }
+
+        public List<Record_Material> Records_Materials { get; set; }
     }
 }
