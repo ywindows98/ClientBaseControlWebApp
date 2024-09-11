@@ -17,9 +17,11 @@ namespace ClientBaseControlWebApp.Data.Services
 			await _context.SaveChangesAsync();
 		}
 
-		public void Delete(int id)
+		public async Task DeleteAsync(int id)
 		{
-			throw new NotImplementedException();
+			var client = await GetByIdAsync(id);
+			_context.Clients.Remove(client);
+			await _context.SaveChangesAsync();
 		}
 
 		public async Task<IEnumerable<Client>> GetAll()
@@ -35,9 +37,11 @@ namespace ClientBaseControlWebApp.Data.Services
 			return result;
 		}
 
-		public Client Update(int id, Client newClient)
+		public async Task<Client> UpdateAsync(int id, Client newClient)
 		{
-			throw new NotImplementedException();
+			_context.Clients.Update(newClient);
+			await _context.SaveChangesAsync();
+			return newClient;
 		}
 	}
 }

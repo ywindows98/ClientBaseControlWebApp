@@ -26,7 +26,7 @@ namespace ClientBaseControlWebApp.Controllers
 			return View();
 		}
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Name,Surname,Birthday,InitialComment,NumberOfProcedures,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client)
+        public async Task<IActionResult> Create([Bind("Name,Surname,Birthday,InitialComment,NumberOfProcedures,HasAllergy,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client)
         {
             if (!ModelState.IsValid)
             {
@@ -47,5 +47,40 @@ namespace ClientBaseControlWebApp.Controllers
 
             return View(client);
         }
-    }
+
+		public async Task<IActionResult> Edit(int id)
+		{
+            var client = await _service.GetByIdAsync(id);
+            if (client == null) return View("NotFound");
+			return View(client);
+		}
+		[HttpPost]
+		public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Surname,Birthday,InitialComment,NumberOfProcedures,HasAllergy,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client)
+		{
+			if (!ModelState.IsValid)
+			{
+				return View(client);
+			}
+			await _service.UpdateAsync(id, client);
+			return RedirectToAction(nameof(Index));
+		}
+
+       
+		public async Task<IActionResult> Delete(int id)
+		{
+            var client = await _service.GetByIdAsync(id);
+            if (client == null) return View("NotFound");
+            return View(client);
+		}
+
+		[HttpPost, ActionName("Delete")]
+		public async Task<IActionResult> DeleteConfirmed(int id)
+		{
+			var client = await _service.GetByIdAsync(id);
+			if (client == null) return View("NotFound");
+
+			await _service.DeleteAsync(id);
+			return RedirectToAction(nameof(Index));
+		}
+	}
 }

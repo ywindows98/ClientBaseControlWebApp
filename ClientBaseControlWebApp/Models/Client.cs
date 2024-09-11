@@ -16,13 +16,14 @@ namespace ClientBaseControlWebApp.Models
         public DateTime? Birthday { get; set; }
         public string? InitialComment { get; set; }
         public int NumberOfProcedures { get; set; }
-        public string? AllergiesComment { get; set; }
+		public int HasAllergy{ get; set; }
+		public string? AllergiesComment { get; set; }
         public string? MainComment { get; set; }
         [EmailAddress]
         public string? Email { get; set; }
         [Phone]
         public string? PhoneNumber { get; set; }
-        public string? IndicationColor { get; set; }
+        public int? IndicationColor { get; set; }
 
         // Relationships
         public List<ProcedureRecord>? ProcedureRecords { get; set; }

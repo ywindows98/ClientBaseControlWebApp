@@ -205,6 +205,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to delete this client?.
+        /// </summary>
+        public static string DeleteConfirmation {
+            get {
+                return ResourceManager.GetString("DeleteConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Details.
         /// </summary>
         public static string DetailsButton {
@@ -232,6 +241,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edit client data.
+        /// </summary>
+        public static string EditClient {
+            get {
+                return ResourceManager.GetString("EditClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Employees.
         /// </summary>
         public static string EmployeesNav {
@@ -246,6 +264,24 @@ namespace ClientBaseControlWebApp.Resources {
         public static string GreenColor {
             get {
                 return ResourceManager.GetString("GreenColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Has allergy?.
+        /// </summary>
+        public static string HasAllergyLabel {
+            get {
+                return ResourceManager.GetString("HasAllergyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client has allergy!.
+        /// </summary>
+        public static string HasAllergyWarning {
+            get {
+                return ResourceManager.GetString("HasAllergyWarning", resourceCulture);
             }
         }
         
@@ -282,6 +318,24 @@ namespace ClientBaseControlWebApp.Resources {
         public static string MaterialsNav {
             get {
                 return ResourceManager.GetString("MaterialsNav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allergies were not mentioned.
+        /// </summary>
+        public static string NoAllergy {
+            get {
+                return ResourceManager.GetString("NoAllergy", resourceCulture);
             }
         }
         
@@ -354,6 +408,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string YellowColor {
             get {
                 return ResourceManager.GetString("YellowColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

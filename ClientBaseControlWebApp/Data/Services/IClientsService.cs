@@ -7,7 +7,7 @@ namespace ClientBaseControlWebApp.Data.Services
 		public Task<IEnumerable<Client>> GetAll();
 		public Task<Client> GetByIdAsync(int id);
 		public Task AddAsync(Client client);
-		public Client Update(int id, Client newClient);
-		public void Delete(int id);
+		public Task<Client> UpdateAsync(int id, Client newClient);
+		public Task DeleteAsync(int id);
 	}
 }

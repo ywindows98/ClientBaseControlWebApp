@@ -38,7 +38,7 @@
                 </div>
                 <div class="d-flex">
                     @client.PhoneNumber
-                    @if(client.AllergiesComment != null && client.AllergiesComment.Length != 0)
+                    @if(client.HasAllergy == 1)
                     {
                         <div class="m-2 mt-0 mb-0 text-warning">@ClientBaseControlWebApp.Resources.Resource.Allergy</div>
                     }

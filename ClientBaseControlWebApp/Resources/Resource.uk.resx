@@ -165,6 +165,9 @@
   <data name="DeleteButton" xml:space="preserve">
     <value>Видалити</value>
   </data>
+  <data name="DeleteConfirmation" xml:space="preserve">
+    <value>Ви хочете видалити цього клієнта?</value>
+  </data>
   <data name="DetailsButton" xml:space="preserve">
     <value>Деталі</value>
   </data>
@@ -174,11 +177,20 @@
   <data name="EditButton" xml:space="preserve">
     <value>Редагувати</value>
   </data>
+  <data name="EditClient" xml:space="preserve">
+    <value>Редагувати дані клієнта</value>
+  </data>
   <data name="EmployeesNav" xml:space="preserve">
     <value>Робітники</value>
   </data>
   <data name="GreenColor" xml:space="preserve">
     <value>Зелений</value>
+  </data>
+  <data name="HasAllergyLabel" xml:space="preserve">
+    <value>Має алергію?</value>
+  </data>
+  <data name="HasAllergyWarning" xml:space="preserve">
+    <value>Клієнт має алергію!</value>
   </data>
   <data name="LoginNav" xml:space="preserve">
     <value>Вхід</value>
@@ -191,6 +203,12 @@
   </data>
   <data name="MaterialsNav" xml:space="preserve">
     <value>Матеріали</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Ні</value>
+  </data>
+  <data name="NoAllergy" xml:space="preserve">
+    <value>Про алергії не було зазначено</value>
   </data>
   <data name="ProceduresNav" xml:space="preserve">
     <value>Процедури</value>
@@ -215,5 +233,8 @@
   </data>
   <data name="YellowColor" xml:space="preserve">
     <value>Жовтий</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Так</value>
   </data>
 </root>

@@ -8,24 +8,56 @@
 <div class="row">
 	<div class="col-8 m-auto mt-3">
 		<div class="row">
-			<div class="h3">@Model.Name @Model.Surname @Model.IndicationColor</div><div class="h4">@Model.Birthday.Value.ToShortDateString()</div>
+			<div class="h3">@Model.Name @Model.Surname @Model.IndicationColor</div>
+			@if(Model.Birthday!=null){
+				<div class="h4">@Model.Birthday.Value.ToShortDateString()</div>
+			}
 		</div>
 		<div class="row">
-			<div class="h5"><i class="bi bi-envelope-fill"></i> @Model.Email</div>
-			<div class="h5"><i class="bi bi-telephone-fill"></i> @Model.PhoneNumber</div>
+			@if(Model.Email == null)
+			{
+				<div class="h5"><i class="bi bi-envelope-fill"></i> -</div>
+			}else
+			{
+				<div class="h5"><i class="bi bi-envelope-fill"></i> @Model.Email</div>
+			}
+
+			@if (Model.PhoneNumber == null)
+			{
+				<div class="h5"><i class="bi bi-telephone-fill"></i> -</div>
+			}
+			else
+			{
+				<div class="h5"><i class="bi bi-telephone-fill"></i> @Model.PhoneNumber</div>
+			}
 		</div>
+		<div class="row mt-3">
+			<h4>@ClientBaseControlWebApp.Resources.Resource.ClientNumberOfProceduresLabel: @Model.NumberOfProcedures</h4>
+		</div>
+		<hr />
 		<div class="row mt-3">
 			<h4>@ClientBaseControlWebApp.Resources.Resource.ClientInitialNoteLabel:</h4>
 			<div class="h5">@Model.InitialComment</div>
 		</div>
-		<div class="row mt-4">
-			<h4>@ClientBaseControlWebApp.Resources.Resource.ClientAllergiesLabel:</h4>
-			<div class="h5">@Model.AllergiesComment</div>
-		</div>
+		<hr />
+		@if (Model.HasAllergy == 1)
+		{
+			<div class="row mt-4">
+				<h4 class="text-danger">@ClientBaseControlWebApp.Resources.Resource.HasAllergyWarning</h4>
+				<h4>@ClientBaseControlWebApp.Resources.Resource.ClientAllergiesLabel:</h4>
+				<div class="h5">@Model.AllergiesComment</div>
+			</div>
+		}else{
+			<div class="row mt-4">
+				<h4>@ClientBaseControlWebApp.Resources.Resource.NoAllergy</h4>
+			</div>
+		}
+		<hr />
 		<div class="row mt-4">
 			<h4>@ClientBaseControlWebApp.Resources.Resource.ClientMainNoteLabel:</h4>
 			<div class="h5">@Model.MainComment</div>
 		</div>
+		<hr />
 		<div class="mt-4">
 			<a class="btn btn-outline-secondary" asp-controller="Clients" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</a>
 			<a class="btn btn-outline-primary" asp-area="" asp-controller="Clients" asp-action="Edit" asp-route-id="@Model.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>

@@ -40,25 +40,32 @@
 					</div>
 				</div>
 				<div class="row mb-2">
-					<div class="form-group col-4">
+					<div class="form-group col-3">
 							<label asp-for="Birthday" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientBirthdayLabel</label>
 						<input type="date" asp-for="Birthday" class="form-control" id="Birthday" />
 						<span asp-validation-for="Birthday" class="text-danger"></span>
 					</div>
-					<div class="form-group col-4">
-							<label asp-for="NumberOfProcedures" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientNumberOfProceduresLabel</label>
+					<div class="form-group col-3">
+						<label asp-for="NumberOfProcedures" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientNumberOfProceduresLabel</label>
 						<input asp-for="NumberOfProcedures" class="form-control" id="NumberOfProcedures" value="0"/>
 						<span asp-validation-for="NumberOfProcedures" class="text-danger"></span>
 					</div>
-					<div class="form-group col-4">
-							<label asp-for="IndicationColor" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientIndicationColorLabel</label>
+					<div class="form-group col-3">
+						<label asp-for="IndicationColor" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ClientIndicationColorLabel</label>
 						<select asp-for="IndicationColor" class="form-control" id="IndicationColor">
-								<option selected> @ClientBaseControlWebApp.Resources.Resource.ChooseSelection</option>
-								<option value="Green">@ClientBaseControlWebApp.Resources.Resource.GreenColor</option>
-								<option value="Yellow">@ClientBaseControlWebApp.Resources.Resource.YellowColor</option>
-								<option value="Red">@ClientBaseControlWebApp.Resources.Resource.RedColor</option>
+								<option selected value="0">@ClientBaseControlWebApp.Resources.Resource.GreenColor</option>
+								<option value="1">@ClientBaseControlWebApp.Resources.Resource.YellowColor</option>
+								<option value="2">@ClientBaseControlWebApp.Resources.Resource.RedColor</option>
 						  </select>
 						<span asp-validation-for="IndicationColor" class="text-danger"></span>
+					</div>
+					<div class="form-group col-3">
+						<label asp-for="HasAllergy" class="control-label text-warning">@ClientBaseControlWebApp.Resources.Resource.HasAllergyLabel</label>
+						<select asp-for="HasAllergy" class="form-control" id="HasAllergy">
+							<option selected value="0">@ClientBaseControlWebApp.Resources.Resource.No</option>
+							<option value="1">@ClientBaseControlWebApp.Resources.Resource.Yes</option>
+						</select>
+						<span asp-validation-for="HasAllergy" class="text-danger"></span>
 					</div>
 				</div>
 				<div class="row mb-2">
