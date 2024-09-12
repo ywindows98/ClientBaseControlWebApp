@@ -7,7 +7,7 @@ namespace ClientBaseControlWebApp.Models
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }    
-        public string Description { get; set; }
+        public string? Description { get; set; }
         public float Amount { get; set; }
         public int UnitsOfMeasurement { get; set; }
         public int MaterialType { get; set; }
