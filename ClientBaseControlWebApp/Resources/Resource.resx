@@ -123,6 +123,9 @@
   <data name="AddNewClient" xml:space="preserve">
     <value>Add a new client</value>
   </data>
+  <data name="AddNewMaterial" xml:space="preserve">
+    <value>Add new material</value>
+  </data>
   <data name="Allergy" xml:space="preserve">
     <value>Allergy</value>
   </data>

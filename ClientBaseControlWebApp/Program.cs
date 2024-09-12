@@ -11,7 +11,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddScoped<IClientsService, ClientsService>();
+builder.Services.AddScoped<ClientsService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

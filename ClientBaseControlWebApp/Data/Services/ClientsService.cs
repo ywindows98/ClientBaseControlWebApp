@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ClientBaseControlWebApp.Data.Services
 {
-	public class ClientsService : IClientsService
+	public class ClientsService : IGenericCrudService<Client>, IGenericSearchableService<Client>
 	{
 		private readonly ApplicationDbContext _context;
 

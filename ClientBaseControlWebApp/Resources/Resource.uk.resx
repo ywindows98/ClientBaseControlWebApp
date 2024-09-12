@@ -123,6 +123,9 @@
   <data name="AddNewClient" xml:space="preserve">
     <value>Додати нового клієнта</value>
   </data>
+  <data name="AddNewMaterial" xml:space="preserve">
+    <value>Додати новий матеріал</value>
+  </data>
   <data name="Allergy" xml:space="preserve">
     <value>Алергія</value>
   </data>

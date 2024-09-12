@@ -8,8 +8,8 @@ namespace ClientBaseControlWebApp.Controllers
 {
     public class ClientsController : Controller
     {
-        private readonly IClientsService _service;
-        public ClientsController(IClientsService service)
+        private readonly ClientsService _service;
+        public ClientsController(ClientsService service)
         {
             _service = service;
         }

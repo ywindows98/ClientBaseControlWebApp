@@ -79,6 +79,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new material.
+        /// </summary>
+        public static string AddNewMaterial {
+            get {
+                return ResourceManager.GetString("AddNewMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allergy.
         /// </summary>
         public static string Allergy {
