@@ -34,7 +34,7 @@ namespace ClientBaseControlWebApp.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Material([Bind("Name,Description,Amount,UnitsOfMeasurement,MaterialType")] Material material)
+        public async Task<IActionResult> Create([Bind("Name,Description,Amount,UnitsOfMeasurement,MaterialType")] Material material)
         {
             if (!ModelState.IsValid)
             {

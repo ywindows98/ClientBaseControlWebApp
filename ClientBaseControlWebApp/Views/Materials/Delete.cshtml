@@ -1,0 +1,42 @@
+﻿@model Material
+
+@{
+	ViewData["Title"] = "Delete a material";
+	string materialIcon;
+}
+
+
+<div class="row">
+		<div class="col-8 m-auto mt-3">
+			<p>
+				<h1>@ClientBaseControlWebApp.Resources.Resource.MaterialDeleteConfirmation</h1>
+			</p>
+			<hr />
+			<div class="row">
+				<div class="h3">
+					@if (Model.MaterialType == 0)
+					{
+						materialIcon = "bi bi-droplet-half";
+					}
+					else if (Model.MaterialType == 1)
+					{
+						materialIcon = "bi bi-pen-fill";
+					}
+					else
+					{
+						materialIcon = "bi bi-shuffle";
+					}
+					<i class="@materialIcon"></i>
+					@Model.Name
+				</div>
+			</div>
+			<hr />
+			<div class="mt-4">
+				<form asp-action="Delete">
+					<a class="btn btn-outline-secondary" asp-controller="Materials" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</a>
+					<input type="hidden" asp-for="Id"/>
+					<button class="btn btn-outline-danger float-end" type="submit" ><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</button>
+				</form>
+		</div>
+	</div>
+</div>

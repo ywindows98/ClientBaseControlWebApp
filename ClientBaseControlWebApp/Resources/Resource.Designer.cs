@@ -97,6 +97,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string AmountLabel {
+            get {
+                return ResourceManager.GetString("AmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose.
         /// </summary>
         public static string ChooseSelection {
@@ -120,6 +129,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string ClientBirthdayLabel {
             get {
                 return ResourceManager.GetString("ClientBirthdayLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want to delete this client?.
+        /// </summary>
+        public static string ClientDeleteConfirmation {
+            get {
+                return ResourceManager.GetString("ClientDeleteConfirmation", resourceCulture);
             }
         }
         
@@ -214,11 +232,11 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to delete this client?.
+        ///   Looks up a localized string similar to Description.
         /// </summary>
-        public static string DeleteConfirmation {
+        public static string DescriptionLabel {
             get {
-                return ResourceManager.GetString("DeleteConfirmation", resourceCulture);
+                return ResourceManager.GetString("DescriptionLabel", resourceCulture);
             }
         }
         
@@ -255,6 +273,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string EditClient {
             get {
                 return ResourceManager.GetString("EditClient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit the material.
+        /// </summary>
+        public static string EditMaterial {
+            get {
+                return ResourceManager.GetString("EditMaterial", resourceCulture);
             }
         }
         
@@ -322,11 +349,83 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to delete this material?.
+        /// </summary>
+        public static string MaterialDeleteConfirmation {
+            get {
+                return ResourceManager.GetString("MaterialDeleteConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Needle.
+        /// </summary>
+        public static string MaterialNeedle {
+            get {
+                return ResourceManager.GetString("MaterialNeedle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        public static string MaterialOther {
+            get {
+                return ResourceManager.GetString("MaterialOther", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pigment.
+        /// </summary>
+        public static string MaterialPigment {
+            get {
+                return ResourceManager.GetString("MaterialPigment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Materials.
         /// </summary>
         public static string MaterialsNav {
             get {
                 return ResourceManager.GetString("MaterialsNav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Material type.
+        /// </summary>
+        public static string MaterialTypeLabel {
+            get {
+                return ResourceManager.GetString("MaterialTypeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to mg.
+        /// </summary>
+        public static string MgUnit {
+            get {
+                return ResourceManager.GetString("MgUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ml.
+        /// </summary>
+        public static string MlUnit {
+            get {
+                return ResourceManager.GetString("MlUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string NameLabel {
+            get {
+                return ResourceManager.GetString("NameLabel", resourceCulture);
             }
         }
         
@@ -345,6 +444,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string NoAllergy {
             get {
                 return ResourceManager.GetString("NoAllergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to pcs.
+        /// </summary>
+        public static string PiecesUnit {
+            get {
+                return ResourceManager.GetString("PiecesUnit", resourceCulture);
             }
         }
         
@@ -408,6 +516,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string ShowAllButton {
             get {
                 return ResourceManager.GetString("ShowAllButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unit of measurement.
+        /// </summary>
+        public static string UnitsOfMeasurementLabel {
+            get {
+                return ResourceManager.GetString("UnitsOfMeasurementLabel", resourceCulture);
             }
         }
         

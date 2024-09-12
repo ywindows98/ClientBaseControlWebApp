@@ -11,6 +11,6 @@ namespace ClientBaseControlWebApp.Models
         public float Amount { get; set; }
         public int UnitsOfMeasurement { get; set; }
         public int MaterialType { get; set; }
-        public List<Record_Material> Records_Materials { get; set; }
+        public List<Record_Material>? Records_Materials { get; set; }
     }
 }

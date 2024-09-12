@@ -1,0 +1,57 @@
+﻿@model Material
+
+@{
+	ViewData["Title"] = "Delete a client";
+	string materialIcon;
+}
+
+
+<div class="row">
+	<div class="col-8 m-auto mt-3">
+		<div class="row">
+			<div class="h3 col-6">
+				@if (Model.MaterialType == 0)
+				{
+					materialIcon = "bi bi-droplet-half";
+				}
+				else if (Model.MaterialType == 1)
+				{
+					materialIcon = "bi bi-pen-fill";
+				}
+				else
+				{
+					materialIcon = "bi bi-shuffle";
+				}
+				<i class="@materialIcon"></i>
+				@Model.Name
+			</div>
+			<div class="h4 col-6">
+				@ClientBaseControlWebApp.Resources.Resource.AmountLabel:
+				@Model.Amount
+				@if (Model.UnitsOfMeasurement == 0)
+				{
+					@ClientBaseControlWebApp.Resources.Resource.PiecesUnit
+				}
+				else if (Model.UnitsOfMeasurement == 1)
+				{
+					@ClientBaseControlWebApp.Resources.Resource.MgUnit
+				}
+				else
+				{
+					@ClientBaseControlWebApp.Resources.Resource.MlUnit
+				}
+			</div>
+		</div>
+		<div class="row h5">
+			@Model.Description
+		</div>
+		
+		<hr />
+		<div class="mt-4">
+			<a class="btn btn-outline-secondary" asp-controller="Materials" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</a>
+			<a class="btn btn-outline-primary" asp-area="" asp-controller="Materials" asp-action="Edit" asp-route-id="@Model.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
+			<a class="btn btn-outline-danger float-end" asp-area="" asp-controller="Materials" asp-action="Delete" asp-route-id="@Model.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
+			
+		</div>
+	</div>
+</div>

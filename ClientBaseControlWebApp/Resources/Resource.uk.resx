@@ -129,6 +129,9 @@
   <data name="Allergy" xml:space="preserve">
     <value>Алергія</value>
   </data>
+  <data name="AmountLabel" xml:space="preserve">
+    <value>Кількість</value>
+  </data>
   <data name="ChooseSelection" xml:space="preserve">
     <value>Виберіть</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="ClientBirthdayLabel" xml:space="preserve">
     <value>День народження</value>
+  </data>
+  <data name="ClientDeleteConfirmation" xml:space="preserve">
+    <value>Ви хочете видалити цього клієнта?</value>
   </data>
   <data name="ClientEmailLabel" xml:space="preserve">
     <value>Email</value>
@@ -168,8 +174,8 @@
   <data name="DeleteButton" xml:space="preserve">
     <value>Видалити</value>
   </data>
-  <data name="DeleteConfirmation" xml:space="preserve">
-    <value>Ви хочете видалити цього клієнта?</value>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>Опис</value>
   </data>
   <data name="DetailsButton" xml:space="preserve">
     <value>Деталі</value>
@@ -182,6 +188,9 @@
   </data>
   <data name="EditClient" xml:space="preserve">
     <value>Редагувати дані клієнта</value>
+  </data>
+  <data name="EditMaterial" xml:space="preserve">
+    <value>Редагувати матеріал</value>
   </data>
   <data name="EmployeesNav" xml:space="preserve">
     <value>Робітники</value>
@@ -204,14 +213,41 @@
   <data name="LogoutNav" xml:space="preserve">
     <value>Вийти</value>
   </data>
+  <data name="MaterialDeleteConfirmation" xml:space="preserve">
+    <value>Ви хочете видалити цей матеріал?</value>
+  </data>
+  <data name="MaterialNeedle" xml:space="preserve">
+    <value>Голка</value>
+  </data>
+  <data name="MaterialOther" xml:space="preserve">
+    <value>Інше</value>
+  </data>
+  <data name="MaterialPigment" xml:space="preserve">
+    <value>Пігмент</value>
+  </data>
   <data name="MaterialsNav" xml:space="preserve">
     <value>Матеріали</value>
+  </data>
+  <data name="MaterialTypeLabel" xml:space="preserve">
+    <value>Тип матеріалу</value>
+  </data>
+  <data name="MgUnit" xml:space="preserve">
+    <value>мг</value>
+  </data>
+  <data name="MlUnit" xml:space="preserve">
+    <value>мл</value>
+  </data>
+  <data name="NameLabel" xml:space="preserve">
+    <value>Назвва</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>Ні</value>
   </data>
   <data name="NoAllergy" xml:space="preserve">
     <value>Про алергії не було зазначено</value>
+  </data>
+  <data name="PiecesUnit" xml:space="preserve">
+    <value>шт</value>
   </data>
   <data name="ProceduresNav" xml:space="preserve">
     <value>Процедури</value>
@@ -233,6 +269,9 @@
   </data>
   <data name="ShowAllButton" xml:space="preserve">
     <value>Показати всі</value>
+  </data>
+  <data name="UnitsOfMeasurementLabel" xml:space="preserve">
+    <value>Одиниця вимірювання</value>
   </data>
   <data name="YellowColor" xml:space="preserve">
     <value>Жовтий</value>
