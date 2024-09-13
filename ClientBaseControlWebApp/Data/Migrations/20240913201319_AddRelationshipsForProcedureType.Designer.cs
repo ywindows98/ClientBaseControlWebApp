@@ -4,6 +4,7 @@ using ClientBaseControlWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClientBaseControlWebApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240913201319_AddRelationshipsForProcedureType")]
+    partial class AddRelationshipsForProcedureType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -198,7 +200,7 @@ namespace ClientBaseControlWebApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProcedureTypes");
+                    b.ToTable("ProcedureType");
                 });
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.Record_Material", b =>

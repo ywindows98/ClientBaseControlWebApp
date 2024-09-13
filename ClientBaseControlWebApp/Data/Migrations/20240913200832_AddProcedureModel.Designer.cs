@@ -4,6 +4,7 @@ using ClientBaseControlWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClientBaseControlWebApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240913200832_AddProcedureModel")]
+    partial class AddProcedureModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -172,33 +174,15 @@ namespace ClientBaseControlWebApp.Data.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ProcedureTypeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
-
-                    b.HasIndex("ProcedureTypeId");
-
-                    b.ToTable("ProcedureRecords");
-                });
-
-            modelBuilder.Entity("ClientBaseControlWebApp.Models.ProcedureType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
+                    b.Property<string>("ProcedureType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProcedureTypes");
+                    b.HasIndex("ClientId");
+
+                    b.ToTable("ProcedureRecords");
                 });
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.Record_Material", b =>
@@ -437,15 +421,7 @@ namespace ClientBaseControlWebApp.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ClientBaseControlWebApp.Models.ProcedureType", "ProcedureType")
-                        .WithMany("procedureRecords")
-                        .HasForeignKey("ProcedureTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Client");
-
-                    b.Navigation("ProcedureType");
                 });
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.Record_Material", b =>
@@ -533,11 +509,6 @@ namespace ClientBaseControlWebApp.Data.Migrations
             modelBuilder.Entity("ClientBaseControlWebApp.Models.ProcedureRecord", b =>
                 {
                     b.Navigation("Records_Materials");
-                });
-
-            modelBuilder.Entity("ClientBaseControlWebApp.Models.ProcedureType", b =>
-                {
-                    b.Navigation("procedureRecords");
                 });
 #pragma warning restore 612, 618
         }

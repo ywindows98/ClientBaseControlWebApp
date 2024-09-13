@@ -31,8 +31,10 @@ namespace ClientBaseControlWebApp.Data
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<Appearance> Appearances { get; set; }
+        public DbSet<ProcedureType> ProcedureTypes { get; set; }
         public DbSet<ProcedureRecord> ProcedureRecords { get; set; }
         public DbSet<Material> Materials { get; set; }
         public DbSet<Record_Material> Records_Materials { get; set; }
+        
     }
 }
