@@ -88,6 +88,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new procedure type.
+        /// </summary>
+        public static string AddProcedureType {
+            get {
+                return ResourceManager.GetString("AddProcedureType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Allergy.
         /// </summary>
         public static string Allergy {
@@ -219,6 +228,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string ClientSurnameLabel {
             get {
                 return ResourceManager.GetString("ClientSurnameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configuration.
+        /// </summary>
+        public static string ConfigurationNav {
+            get {
+                return ResourceManager.GetString("ConfigurationNav", resourceCulture);
             }
         }
         
@@ -462,6 +480,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string ProceduresNav {
             get {
                 return ResourceManager.GetString("ProceduresNav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Procedure types.
+        /// </summary>
+        public static string ProcedureTypesNav {
+            get {
+                return ResourceManager.GetString("ProcedureTypesNav", resourceCulture);
             }
         }
         

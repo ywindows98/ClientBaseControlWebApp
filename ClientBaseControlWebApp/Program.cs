@@ -29,7 +29,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<ProcedureTypesService>();
-builder.Services.AddScoped<ClientsService>();
+builder.Services.AddScoped<MaterialsService>();
 builder.Services.AddScoped<ClientsService>();
 
 

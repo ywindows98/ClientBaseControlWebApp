@@ -126,6 +126,9 @@
   <data name="AddNewMaterial" xml:space="preserve">
     <value>Add new material</value>
   </data>
+  <data name="AddProcedureType" xml:space="preserve">
+    <value>Add new procedure type</value>
+  </data>
   <data name="Allergy" xml:space="preserve">
     <value>Allergy</value>
   </data>
@@ -170,6 +173,9 @@
   </data>
   <data name="ClientSurnameLabel" xml:space="preserve">
     <value>Surname</value>
+  </data>
+  <data name="ConfigurationNav" xml:space="preserve">
+    <value>Configuration</value>
   </data>
   <data name="DeleteButton" xml:space="preserve">
     <value>Delete</value>
@@ -251,6 +257,9 @@
   </data>
   <data name="ProceduresNav" xml:space="preserve">
     <value>Procedures</value>
+  </data>
+  <data name="ProcedureTypesNav" xml:space="preserve">
+    <value>Procedure types</value>
   </data>
   <data name="RedColor" xml:space="preserve">
     <value>Red</value>

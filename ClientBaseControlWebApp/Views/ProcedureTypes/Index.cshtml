@@ -1,0 +1,44 @@
+﻿@model List<ProcedureType>
+
+@{
+    ViewData["Title"] = "Procedure types";
+    string materialIcon;
+}
+
+
+<div class="col-md-8 m-auto">
+    <div class="bg-primary bg-opacity-75 d-flex p-1">
+        <div class="col-7">
+            <form class="form-inline d-flex" asp-action="Index">
+                <input class="form-control" type="search" placeholder="@ClientBaseControlWebApp.Resources.Resource.SearchBar" aria-label="@ClientBaseControlWebApp.Resources.Resource.SearchBar" name="searchValue">
+                <button class="btn btn-primary d-flex" type="submit"><i class="bi bi-search m-1 mt-0 mb-0"></i> @ClientBaseControlWebApp.Resources.Resource.SearchBar</button>
+            </form>
+        </div>
+        <div class="col-5 d-flex">
+            <div class="m-auto">
+                <a class="btn btn-primary" asp-area="" asp-controller="ProcedureTypes" asp-action="Create"><i class="bi bi-plus-circle"></i> @ClientBaseControlWebApp.Resources.Resource.AddProcedureType</a>
+            </div>
+        </div>
+    </div>
+    @foreach (ProcedureType procedureType in Model)
+    {
+        
+        <div class="w-100 text-dark d-flex p-2 border-top">
+
+            <div class="col-lg-7 col-md-7 col-sm-6">
+                <div class="d-flex">
+                    <div class="h4">
+                        @procedureType.Name
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-6 d-flex">
+                <div class="m-auto">
+                    <a class="btn btn-outline-primary" asp-area="" asp-controller="ProcedureTypes" asp-action="Edit" asp-route-id="@procedureType.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
+                    <a class="btn btn-outline-danger" asp-area="" asp-controller="ProcedureTypes" asp-action="Delete" asp-route-id="@procedureType.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
+                </div>
+            </div>
+
+        </div>
+    }
+</div>

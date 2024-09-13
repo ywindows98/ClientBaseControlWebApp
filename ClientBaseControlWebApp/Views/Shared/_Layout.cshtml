@@ -27,23 +27,30 @@
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">@ClientBaseControlWebApp.Resources.Resource.ProceduresNav</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Materials" asp-action="Index">@ClientBaseControlWebApp.Resources.Resource.MaterialsNav</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">@ClientBaseControlWebApp.Resources.Resource.AccountingNav</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">@ClientBaseControlWebApp.Resources.Resource.EmployeesNav</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">@ClientBaseControlWebApp.Resources.Resource.DocumentsNav</a>
                         </li>
-                        
-   
-                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span>@ClientBaseControlWebApp.Resources.Resource.ConfigurationNav</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item p-2" asp-controller="Materials" asp-action="Index">@ClientBaseControlWebApp.Resources.Resource.MaterialsNav</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item p-2" asp-controller="ProcedureTypes" asp-action="Index">@ClientBaseControlWebApp.Resources.Resource.ProcedureTypesNav</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item p-2" asp-controller="Home" asp-action="Privacy">@ClientBaseControlWebApp.Resources.Resource.AccountingNav</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                     <ul class="navbar-nav text-end">
-                        <li class="nva-item dropdown">
+                        <li class="nav-item dropdown">
                             <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 @if (Thread.CurrentThread.CurrentCulture.ToString() == "en")
                                 {

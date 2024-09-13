@@ -126,6 +126,9 @@
   <data name="AddNewMaterial" xml:space="preserve">
     <value>Додати новий матеріал</value>
   </data>
+  <data name="AddProcedureType" xml:space="preserve">
+    <value>Додати новий тип процедури</value>
+  </data>
   <data name="Allergy" xml:space="preserve">
     <value>Алергія</value>
   </data>
@@ -170,6 +173,9 @@
   </data>
   <data name="ClientSurnameLabel" xml:space="preserve">
     <value>Фамілія</value>
+  </data>
+  <data name="ConfigurationNav" xml:space="preserve">
+    <value>Конфігурація</value>
   </data>
   <data name="DeleteButton" xml:space="preserve">
     <value>Видалити</value>
@@ -251,6 +257,9 @@
   </data>
   <data name="ProceduresNav" xml:space="preserve">
     <value>Процедури</value>
+  </data>
+  <data name="ProcedureTypesNav" xml:space="preserve">
+    <value>Типи процедур</value>
   </data>
   <data name="RedColor" xml:space="preserve">
     <value>Червоний</value>
