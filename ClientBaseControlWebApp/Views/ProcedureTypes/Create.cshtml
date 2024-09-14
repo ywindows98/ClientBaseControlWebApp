@@ -1,9 +1,8 @@
 ﻿@using ClientBaseControlWebApp.Data.Services;
-@model List<ProcedureType>
-
-
+@model ProcedureType
+@inject ProcedureTypesService ptService
 @{
-    ViewData["Title"] = "Create a new type";
+    ViewData["Title"] = "Procedure types";
 }
 
 
@@ -24,7 +23,23 @@
             </div>
         </div>
     </div>
-    @foreach (ProcedureType procedureType in Model)
+    
+    <form asp-action="Create" class="w-100 text-dark d-flex p-2 border-top">
+            <div asp-validation-summary="ModelOnly" class="text-danger">
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-6">       
+                <input asp-for="Name" class="form-control" id="Name" placeholder="@ClientBaseControlWebApp.Resources.Resource.NameLabel" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-6 d-flex">
+                <div class="m-auto">
+                <button class="btn btn-outline-danger" asp-controller="ProcedureTypes" asp-action="Index"><i class="bi bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.CancelButton</button>
+					<button type="reset" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
+					<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
+                </div>
+            </div>
+    </form>
+    @foreach (ProcedureType procedureType in await ptService.GetAllAsync())
     {
         
         <div class="w-100 text-dark d-flex p-2 border-top">

@@ -135,6 +135,9 @@
   <data name="AmountLabel" xml:space="preserve">
     <value>Amount</value>
   </data>
+  <data name="CancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="ChooseSelection" xml:space="preserve">
     <value>Choose</value>
   </data>
