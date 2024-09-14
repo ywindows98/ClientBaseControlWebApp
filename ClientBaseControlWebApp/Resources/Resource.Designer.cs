@@ -493,6 +493,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to delete this procedure type?.
+        /// </summary>
+        public static string ProcedureTypeDeleteConfirmation {
+            get {
+                return ResourceManager.GetString("ProcedureTypeDeleteConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Procedure types.
         /// </summary>
         public static string ProcedureTypesNav {

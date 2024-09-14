@@ -24,7 +24,7 @@
         </div>
     </div>
     
-    <form asp-action="Create" class="w-100 text-dark d-flex p-2 border-top">
+    <form asp-action="Create" class="w-100 text-dark d-flex p-2 border-top mb-4">
             <div asp-validation-summary="ModelOnly" class="text-danger">
             </div>
             <div class="col-lg-7 col-md-7 col-sm-6">       
@@ -33,7 +33,7 @@
             </div>
             <div class="col-lg-5 col-md-5 col-sm-6 d-flex">
                 <div class="m-auto">
-                <button class="btn btn-outline-danger" asp-controller="ProcedureTypes" asp-action="Index"><i class="bi bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.CancelButton</button>
+                <button class="btn btn-outline-danger" asp-controller="ProcedureTypes" asp-action="Index"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.CancelButton</button>
 					<button type="reset" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
 					<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
                 </div>

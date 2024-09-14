@@ -247,7 +247,7 @@
     <value>мл</value>
   </data>
   <data name="NameLabel" xml:space="preserve">
-    <value>Назвва</value>
+    <value>Назва</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>Ні</value>
@@ -260,6 +260,9 @@
   </data>
   <data name="ProceduresNav" xml:space="preserve">
     <value>Процедури</value>
+  </data>
+  <data name="ProcedureTypeDeleteConfirmation" xml:space="preserve">
+    <value>Ви хочете видалити цей тип процедури?</value>
   </data>
   <data name="ProcedureTypesNav" xml:space="preserve">
     <value>Типи процедур</value>
