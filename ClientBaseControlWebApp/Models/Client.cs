@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using ClientBaseControlWebApp.Resources;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -9,13 +10,15 @@ namespace ClientBaseControlWebApp.Models
 
         [Key]
         public int Id { get; set; }
-        [Required(ErrorMessage = "Name is required")]
+        [Required(ErrorMessage = "This field if required")]
 		public string Name { get; set; }
-        [Required(ErrorMessage = "Surname is required")]
+        [Required(ErrorMessage = "This field if required")]
         public string Surname { get; set; }
         public DateTime? Birthday { get; set; }
         public string? InitialComment { get; set; }
+        [Required(ErrorMessage = "This field if required")]
         public int NumberOfProcedures { get; set; }
+        [Required(ErrorMessage = "This field if required")]
 		public int HasAllergy{ get; set; }
 		public string? AllergiesComment { get; set; }
         public string? MainComment { get; set; }
@@ -28,6 +31,8 @@ namespace ClientBaseControlWebApp.Models
         // Relationships
         public List<ProcedureRecord>? ProcedureRecords { get; set; }
 
+        
+        
         public Appearance? Appearance { get; set; }
 
     }

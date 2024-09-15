@@ -213,6 +213,9 @@
   <data name="EmployeesNav" xml:space="preserve">
     <value>Робітники</value>
   </data>
+  <data name="FieldIsRequired" xml:space="preserve">
+    <value>Поле є обов'язковим</value>
+  </data>
   <data name="For" xml:space="preserve">
     <value>для</value>
   </data>

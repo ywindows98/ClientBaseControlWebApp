@@ -213,6 +213,9 @@
   <data name="EmployeesNav" xml:space="preserve">
     <value>Employees</value>
   </data>
+  <data name="FieldIsRequired" xml:space="preserve">
+    <value>This field is required</value>
+  </data>
   <data name="For" xml:space="preserve">
     <value>for</value>
   </data>
