@@ -79,7 +79,7 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new material.
+        ///   Looks up a localized string similar to Add a new material.
         /// </summary>
         public static string AddNewMaterial {
             get {
@@ -88,7 +88,16 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add new procedure type.
+        ///   Looks up a localized string similar to Add a new procedure record.
+        /// </summary>
+        public static string AddProcedureRecord {
+            get {
+                return ResourceManager.GetString("AddProcedureRecord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add a new procedure type.
         /// </summary>
         public static string AddProcedureType {
             get {
@@ -120,6 +129,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string CancelButton {
             get {
                 return ResourceManager.GetString("CancelButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client.
+        /// </summary>
+        public static string ChooseClientLabel {
+            get {
+                return ResourceManager.GetString("ChooseClientLabel", resourceCulture);
             }
         }
         
@@ -250,6 +268,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string DateLabel {
+            get {
+                return ResourceManager.GetString("DateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string DeleteButton {
@@ -318,6 +345,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string EmployeesNav {
             get {
                 return ResourceManager.GetString("EmployeesNav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to for.
+        /// </summary>
+        public static string For {
+            get {
+                return ResourceManager.GetString("For", resourceCulture);
             }
         }
         
@@ -475,6 +511,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Note.
+        /// </summary>
+        public static string NoteLabel {
+            get {
+                return ResourceManager.GetString("NoteLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to pcs.
         /// </summary>
         public static string PiecesUnit {
@@ -507,6 +552,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string ProcedureTypeDeleteConfirmation {
             get {
                 return ResourceManager.GetString("ProcedureTypeDeleteConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ProcedureType.
+        /// </summary>
+        public static string ProcedureTypeLabel {
+            get {
+                return ResourceManager.GetString("ProcedureTypeLabel", resourceCulture);
             }
         }
         

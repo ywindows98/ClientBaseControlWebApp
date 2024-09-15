@@ -124,10 +124,13 @@
     <value>Add a new client</value>
   </data>
   <data name="AddNewMaterial" xml:space="preserve">
-    <value>Add new material</value>
+    <value>Add a new material</value>
+  </data>
+  <data name="AddProcedureRecord" xml:space="preserve">
+    <value>Add a new procedure record</value>
   </data>
   <data name="AddProcedureType" xml:space="preserve">
-    <value>Add new procedure type</value>
+    <value>Add a new procedure type</value>
   </data>
   <data name="Allergy" xml:space="preserve">
     <value>Allergy</value>
@@ -137,6 +140,9 @@
   </data>
   <data name="CancelButton" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="ChooseClientLabel" xml:space="preserve">
+    <value>Client</value>
   </data>
   <data name="ChooseSelection" xml:space="preserve">
     <value>Choose</value>
@@ -180,6 +186,9 @@
   <data name="ConfigurationNav" xml:space="preserve">
     <value>Configuration</value>
   </data>
+  <data name="DateLabel" xml:space="preserve">
+    <value>Date</value>
+  </data>
   <data name="DeleteButton" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -203,6 +212,9 @@
   </data>
   <data name="EmployeesNav" xml:space="preserve">
     <value>Employees</value>
+  </data>
+  <data name="For" xml:space="preserve">
+    <value>for</value>
   </data>
   <data name="GreenColor" xml:space="preserve">
     <value>Green</value>
@@ -255,6 +267,9 @@
   <data name="NoAllergy" xml:space="preserve">
     <value>Allergies were not mentioned</value>
   </data>
+  <data name="NoteLabel" xml:space="preserve">
+    <value>Note</value>
+  </data>
   <data name="PiecesUnit" xml:space="preserve">
     <value>pcs</value>
   </data>
@@ -266,6 +281,9 @@
   </data>
   <data name="ProcedureTypeDeleteConfirmation" xml:space="preserve">
     <value>Do you want to delete this procedure type?</value>
+  </data>
+  <data name="ProcedureTypeLabel" xml:space="preserve">
+    <value>ProcedureType</value>
   </data>
   <data name="ProcedureTypesNav" xml:space="preserve">
     <value>Procedure types</value>

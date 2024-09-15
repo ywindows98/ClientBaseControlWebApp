@@ -126,6 +126,9 @@
   <data name="AddNewMaterial" xml:space="preserve">
     <value>Додати новий матеріал</value>
   </data>
+  <data name="AddProcedureRecord" xml:space="preserve">
+    <value>Додати нову процедуру</value>
+  </data>
   <data name="AddProcedureType" xml:space="preserve">
     <value>Додати новий тип процедури</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="CancelButton" xml:space="preserve">
     <value>Скасувати</value>
+  </data>
+  <data name="ChooseClientLabel" xml:space="preserve">
+    <value>Клієнт</value>
   </data>
   <data name="ChooseSelection" xml:space="preserve">
     <value>Виберіть</value>
@@ -180,6 +186,9 @@
   <data name="ConfigurationNav" xml:space="preserve">
     <value>Конфігурація</value>
   </data>
+  <data name="DateLabel" xml:space="preserve">
+    <value>Дата</value>
+  </data>
   <data name="DeleteButton" xml:space="preserve">
     <value>Видалити</value>
   </data>
@@ -203,6 +212,9 @@
   </data>
   <data name="EmployeesNav" xml:space="preserve">
     <value>Робітники</value>
+  </data>
+  <data name="For" xml:space="preserve">
+    <value>для</value>
   </data>
   <data name="GreenColor" xml:space="preserve">
     <value>Зелений</value>
@@ -255,6 +267,9 @@
   <data name="NoAllergy" xml:space="preserve">
     <value>Про алергії не було зазначено</value>
   </data>
+  <data name="NoteLabel" xml:space="preserve">
+    <value>Примітка</value>
+  </data>
   <data name="PiecesUnit" xml:space="preserve">
     <value>шт</value>
   </data>
@@ -266,6 +281,9 @@
   </data>
   <data name="ProcedureTypeDeleteConfirmation" xml:space="preserve">
     <value>Ви хочете видалити цей тип процедури?</value>
+  </data>
+  <data name="ProcedureTypeLabel" xml:space="preserve">
+    <value>Тип процедури</value>
   </data>
   <data name="ProcedureTypesNav" xml:space="preserve">
     <value>Типи процедур</value>
