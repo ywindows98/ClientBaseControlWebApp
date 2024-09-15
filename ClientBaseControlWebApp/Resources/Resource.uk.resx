@@ -258,6 +258,9 @@
   <data name="PiecesUnit" xml:space="preserve">
     <value>шт</value>
   </data>
+  <data name="ProcedureRecordsNav" xml:space="preserve">
+    <value>Процедури</value>
+  </data>
   <data name="ProceduresNav" xml:space="preserve">
     <value>Процедури</value>
   </data>

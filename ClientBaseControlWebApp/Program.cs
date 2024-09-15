@@ -30,6 +30,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<ProcedureTypesService>();
 builder.Services.AddScoped<MaterialsService>();
+builder.Services.AddScoped<ProcedureRecordsService>();
 builder.Services.AddScoped<ClientsService>();
 
 

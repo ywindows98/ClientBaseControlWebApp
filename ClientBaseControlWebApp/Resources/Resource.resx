@@ -258,6 +258,9 @@
   <data name="PiecesUnit" xml:space="preserve">
     <value>pcs</value>
   </data>
+  <data name="ProcedureRecordsNav" xml:space="preserve">
+    <value>Procedure records</value>
+  </data>
   <data name="ProceduresNav" xml:space="preserve">
     <value>Procedures</value>
   </data>

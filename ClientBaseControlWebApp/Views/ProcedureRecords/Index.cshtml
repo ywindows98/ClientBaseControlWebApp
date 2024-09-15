@@ -1,14 +1,15 @@
 ﻿@using ClientBaseControlWebApp.Data.Services;
-@model ProcedureType
-@inject ProcedureTypesService ptService
+@model List<ProcedureRecord>
+
+
 @{
-    ViewData["Title"] = "Create a new type";
+    ViewData["Title"] = "Create new procedure record";
 }
 
 
 <div class="col-md-8 m-auto">
     <p>
-        <h1>@ClientBaseControlWebApp.Resources.Resource.ProcedureTypesNav</h1>
+        <h1>@ClientBaseControlWebApp.Resources.Resource.ProcedureRecordsNav</h1>
     </p>
     <div class="bg-primary bg-opacity-75 d-flex p-1">
         <div class="col-7">
@@ -23,23 +24,7 @@
             </div>
         </div>
     </div>
-    
-    <form asp-action="Create" class="w-100 text-dark d-flex p-2 border-top mb-4">
-            <div asp-validation-summary="ModelOnly" class="text-danger">
-            </div>
-            <div class="col-lg-7 col-md-7 col-sm-6">       
-                <input asp-for="Name" class="form-control" id="Name" placeholder="@ClientBaseControlWebApp.Resources.Resource.NameLabel" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-6 d-flex">
-                <div class="m-auto">
-                <button class="btn btn-outline-danger" asp-controller="ProcedureTypes" asp-action="Index"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.CancelButton</button>
-					<button type="reset" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
-					<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
-                </div>
-            </div>
-    </form>
-    @foreach (ProcedureType procedureType in await ptService.GetAllAsync())
+    @foreach (ProcedureType procedureType in Model)
     {
         
         <div class="w-100 text-dark d-flex p-2 border-top">

@@ -484,6 +484,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Procedure records.
+        /// </summary>
+        public static string ProcedureRecordsNav {
+            get {
+                return ResourceManager.GetString("ProcedureRecordsNav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Procedures.
         /// </summary>
         public static string ProceduresNav {
