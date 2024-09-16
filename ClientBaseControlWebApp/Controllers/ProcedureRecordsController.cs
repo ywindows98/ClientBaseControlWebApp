@@ -1,16 +1,19 @@
 ﻿using ClientBaseControlWebApp.Data.Services;
 using ClientBaseControlWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ClientBaseControlWebApp.Controllers
 {
 	public class ProcedureRecordsController : Controller
 	{
 		private readonly ProcedureRecordsService _service;
+		private readonly MaterialsService _mService;
 
-		public ProcedureRecordsController(ProcedureRecordsService service)
+		public ProcedureRecordsController(ProcedureRecordsService service, MaterialsService mService)
 		{
 			_service = service;
+			_mService = mService;
 		}
 		public async Task<IActionResult> Index(string searchValue)
 		{
@@ -28,15 +31,29 @@ namespace ClientBaseControlWebApp.Controllers
 			return View(data);
 		}
 
-		public IActionResult Create()
+		public async Task<IActionResult> Create()
 		{
+			ViewBag.Materials = await _mService.GetAllAsync();
 			return View();
 		}
 		[HttpPost]
-		public async Task<IActionResult> Create([Bind("Date,Comment,ClientId,ProcedureTypeId")] ProcedureRecord procedureRecord)
+		public async Task<IActionResult> Create([Bind("Date,Comment,ClientId,ProcedureTypeId")] ProcedureRecord procedureRecord, int[] selectedMaterials)
 		{
+			Material material;
+			if(selectedMaterials != null)
+			{
+				foreach(int materialId in selectedMaterials)
+				{
+					material = await _mService.GetByIdAsync(materialId);
+					if (material != null)
+					{
+						procedureRecord.Records_Materials.Add(new Record_Material(procedureRecord.Id, material.Id));
+					}
+				}
+			}
 			if (!ModelState.IsValid)
 			{
+				ViewBag.Materials = await _mService.GetAllAsync();
 				return View(procedureRecord);
 			}
 			await _service.AddAsync(procedureRecord);

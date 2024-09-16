@@ -3,9 +3,11 @@
 @model ProcedureRecord
 @inject ProcedureTypesService procedureTypeService
 @inject ClientsService clientService
+@inject MaterialsService materialsService
 
 @{
 	ViewData["Title"] = "Add new procedure";
+	string materialIcon;
 }
 
 
@@ -54,6 +56,35 @@
 							<label asp-for="Date" class="control-label">@ClientBaseControlWebApp.Resources.Resource.DateLabel</label>
 							<input type="date" asp-for="Date" class="form-control" id="Date" />
 							<span asp-validation-for="Date" class="text-danger"></span>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="form-group col-12">
+							<label for="selectedMaterials" class="control-label">@ClientBaseControlWebApp.Resources.Resource.MaterialsNav</label><br />
+							<select class="w-100" name="selectedMaterials" id="selectedMaterials" multiple>
+								@foreach (Material material in ViewBag.Materials)
+								{
+									<option value="@material.Id">
+										@if (material.MaterialType == 0)
+										{
+											materialIcon = "bi bi-droplet-half";
+										}
+										else if (material.MaterialType == 1)
+										{
+											materialIcon = "bi bi-pen-fill";
+										}
+										else
+										{
+											materialIcon = "bi bi-shuffle";
+										}
+										<i class="@materialIcon"></i>
+										@material.Name
+									</option>
+								}
+								
+							</select>
+							@*@Html.ListBox("selectedMaterials", (SelectList)ViewBag.Materials, new { @class = "form-control", multiple = "multiple" })*@
+							@Html.ValidationMessage("selectedMaterials", new { @class = "text-danger" })
 						</div>
 					</div>
 					<div class="row mb-2">

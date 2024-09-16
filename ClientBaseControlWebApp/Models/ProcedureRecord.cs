@@ -22,5 +22,10 @@ namespace ClientBaseControlWebApp.Models
         public int ProcedureTypeId { get; set; }
         [ForeignKey(nameof(ProcedureTypeId))]
         public ProcedureType? ProcedureType { get; set; }
+
+        public ProcedureRecord()
+        {
+            Records_Materials = new List<Record_Material>();
+        }
     }
 }

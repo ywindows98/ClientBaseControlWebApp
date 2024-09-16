@@ -26,7 +26,7 @@ namespace ClientBaseControlWebApp.Data.Services
 
         public async Task<IEnumerable<ProcedureRecord>> GetAllAsync()
         {
-            var result = await _context.ProcedureRecords.Include(pr => pr.ProcedureType).Include(pr => pr.Client).ToListAsync();
+            var result = await _context.ProcedureRecords.Include(pr => pr.ProcedureType).Include(pr => pr.Client).Include(pr => pr.Records_Materials).ToListAsync();
             return result;
         }
 

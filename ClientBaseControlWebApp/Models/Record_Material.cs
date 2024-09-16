@@ -6,10 +6,16 @@ namespace ClientBaseControlWebApp.Models
     {
         public int RecordId { get; set; }
         [ForeignKey("RecordId")]
-        public ProcedureRecord Record { get; set; }
+        public ProcedureRecord? Record { get; set; }
 
         public int MaterialId { get; set; }
         [ForeignKey("MaterialId")]
-        public Material Material { get; set; }
+        public Material? Material { get; set; }
+
+        public Record_Material(int recordId, int materialId)
+        {
+            RecordId = recordId;
+            MaterialId = materialId;
+        }
     }
 }
