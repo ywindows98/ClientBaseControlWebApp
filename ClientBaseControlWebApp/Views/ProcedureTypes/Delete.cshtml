@@ -1,6 +1,6 @@
 ﻿@using ClientBaseControlWebApp.Data.Services;
 @model ProcedureType
-@inject ProcedureTypesService ptService
+
 
 @{
     ViewData["Title"] = "Delete";
@@ -39,13 +39,13 @@
                 <div class="col-lg-5 col-md-5 col-sm-6 d-flex">
                     <div class="m-auto">
                     <button class="btn btn-outline-primary" asp-controller="ProcedureTypes" asp-action="Index"><i class="bi bi-arrow-left-circle"></i> @ClientBaseControlWebApp.Resources.Resource.CancelButton</button>
-                        <button type="submit" class="btn btn-outline-danger float-end"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</button>
+                        <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</button>
                     </div>
                 </div>
             </div>
             
     </form>
-    @foreach (ProcedureType procedureType in await ptService.GetAllAsync())
+    @foreach (ProcedureType procedureType in ViewBag.ProcedureTypes)
     {
         @if (procedureType.Id != Model.Id)
         {

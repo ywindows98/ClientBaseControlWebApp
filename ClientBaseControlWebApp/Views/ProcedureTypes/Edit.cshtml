@@ -1,6 +1,6 @@
 ﻿@using ClientBaseControlWebApp.Data.Services;
 @model ProcedureType
-@inject ProcedureTypesService ptService
+
 
 @{
     ViewData["Title"] = "Edit";
@@ -34,13 +34,12 @@
             </div>
             <div class="col-lg-5 col-md-5 col-sm-6 d-flex">
                 <div class="m-auto">
-                <button class="btn btn-outline-danger" asp-controller="ProcedureTypes" asp-action="Index"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.CancelButton</button>
-					<button type="reset" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
-					<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
+                    <button class="btn btn-outline-danger" asp-controller="ProcedureTypes" asp-action="Index"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.CancelButton</button>
+				    <button type="submit" class="btn btn-outline-success"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
                 </div>
             </div>
     </form>
-    @foreach (ProcedureType procedureType in await ptService.GetAllAsync())
+    @foreach (ProcedureType procedureType in ViewBag.ProcedureTypes)
     {
         @if (procedureType.Id != Model.Id)
         {

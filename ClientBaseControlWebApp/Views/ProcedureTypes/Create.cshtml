@@ -1,6 +1,6 @@
 ﻿@using ClientBaseControlWebApp.Data.Services;
 @model ProcedureType
-@inject ProcedureTypesService ptService
+
 @{
     ViewData["Title"] = "Create a new type";
 }
@@ -35,11 +35,11 @@
                 <div class="m-auto">
                 <button class="btn btn-outline-danger" asp-controller="ProcedureTypes" asp-action="Index"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.CancelButton</button>
 					<button type="reset" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
-					<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
+					<button type="submit" class="btn btn-outline-success"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
                 </div>
             </div>
     </form>
-    @foreach (ProcedureType procedureType in await ptService.GetAllAsync())
+    @foreach (ProcedureType procedureType in ViewBag.ProcedureTypes)
     {
         
         <div class="w-100 text-dark d-flex p-2 border-top">

@@ -29,24 +29,28 @@ namespace ClientBaseControlWebApp.Controllers
             return View(data);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View();
+            ViewBag.ProcedureTypes = await _service.GetAllAsync();
+			return View();
         }
         [HttpPost]
         public async Task<IActionResult> Create([Bind("Name")] ProcedureType procedureType)
         {
             if (!ModelState.IsValid)
             {
-                return View(procedureType);
+				ViewBag.ProcedureTypes = await _service.GetAllAsync();
+				return View(procedureType);
             }
+
             await _service.AddAsync(procedureType);
             return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Edit(int id)
         {
-            var procedureType = await _service.GetByIdAsync(id);
+			ViewBag.ProcedureTypes = await _service.GetAllAsync();
+			var procedureType = await _service.GetByIdAsync(id);
             if (procedureType == null) return View("NotFound");
             return View(procedureType);
         }
@@ -55,7 +59,8 @@ namespace ClientBaseControlWebApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(procedureType);
+				ViewBag.ProcedureTypes = await _service.GetAllAsync();
+				return View(procedureType);
             }
             await _service.UpdateAsync(id, procedureType);
             return RedirectToAction(nameof(Index));
@@ -64,7 +69,8 @@ namespace ClientBaseControlWebApp.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            var procedureType = await _service.GetByIdAsync(id);
+			ViewBag.ProcedureTypes = await _service.GetAllAsync();
+			var procedureType = await _service.GetByIdAsync(id);
             if (procedureType == null) return View("NotFound");
             return View(procedureType);
         }

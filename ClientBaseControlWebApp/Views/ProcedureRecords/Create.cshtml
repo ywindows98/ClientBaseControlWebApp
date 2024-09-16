@@ -1,9 +1,7 @@
 ﻿@using ClientBaseControlWebApp.Data.Enums;
 @using ClientBaseControlWebApp.Data.Services;
 @model ProcedureRecord
-@inject ProcedureTypesService procedureTypeService
-@inject ClientsService clientService
-@inject MaterialsService materialsService
+
 
 @{
 	ViewData["Title"] = "Add new procedure";
@@ -26,7 +24,7 @@
 							<label asp-for="ProcedureTypeId" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ProcedureTypeLabel</label>
 							<select asp-for="ProcedureTypeId" class="form-control" id="ProcedureTypeId" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
 								
-								@foreach (ProcedureType procedureType in await procedureTypeService.GetAllAsync())
+								@foreach (ProcedureType procedureType in ViewBag.ProcedureTypes)
 								{
 									<option value="@procedureType.Id">@procedureType.Name</option>
 								}
@@ -37,7 +35,7 @@
 							<label asp-for="ClientId" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ChooseClientLabel</label>
 							<select asp-for="ClientId" class="form-control" id="ClientId" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
 
-								@foreach (Client client in await clientService.GetAllAsync())
+								@foreach (Client client in ViewBag.Clients)
 								{
 									<option value="@client.Id">
 										<b>@client.Name @client.Surname</b> 
