@@ -70,6 +70,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add this material to a procedure.
+        /// </summary>
+        public static string AddMaterialToProcedure {
+            get {
+                return ResourceManager.GetString("AddMaterialToProcedure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add a new client.
         /// </summary>
         public static string AddNewClient {
@@ -138,6 +147,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string ChooseClientLabel {
             get {
                 return ResourceManager.GetString("ChooseClientLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose a material.
+        /// </summary>
+        public static string ChooseMaterial {
+            get {
+                return ResourceManager.GetString("ChooseMaterial", resourceCulture);
             }
         }
         
@@ -624,6 +642,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string SearchBar {
             get {
                 return ResourceManager.GetString("SearchBar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selected materials.
+        /// </summary>
+        public static string SelectedMaterials {
+            get {
+                return ResourceManager.GetString("SelectedMaterials", resourceCulture);
             }
         }
         

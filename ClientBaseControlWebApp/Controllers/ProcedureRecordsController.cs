@@ -37,36 +37,67 @@ namespace ClientBaseControlWebApp.Controllers
 
 		public async Task<IActionResult> Create()
 		{
-            ViewBag.Clients = await _clientsService.GetAllAsync();
-            ViewBag.ProcedureTypes = await _procedureTypesService.GetAllAsync();
-            ViewBag.Materials = await _materialsService.GetAllAsync();
-			return View();
-		}
-		[HttpPost]
-		public async Task<IActionResult> Create([Bind("Date,Comment,ClientId,ProcedureTypeId")] ProcedureRecord procedureRecord, int[] selectedMaterials)
-		{
-			Material material;
-			if(selectedMaterials != null)
+			var viewModel = new ProcedureRecordViewModel
 			{
-				foreach(int materialId in selectedMaterials)
-				{
-					material = await _materialsService.GetByIdAsync(materialId);
-					if (material != null)
-					{
-						procedureRecord.Records_Materials.Add(new Record_Material(procedureRecord.Id, material.Id));
-					}
-				}
+				Date = DateTime.Now,
+				AvailableMaterials = await _materialsService.GetAllAsync(),
+				AvailableProcedureTypes = await _procedureTypesService.GetAllAsync(),
+				AvailableClients = await _clientsService.GetAllAsync(),
+				SelectedMaterialIds = new List<int>()
+
+			};
+			return View(viewModel);
+		}
+
+
+		[HttpPost]
+		public async Task<IActionResult> Create(ProcedureRecordViewModel model)
+		{
+			//Material material;
+			//if (selectedMaterialIds != null)
+			//{
+			//	foreach (int materialId in selectedMaterialIds)
+			//	{
+			//		material = await _materialsService.GetByIdAsync(materialId);
+			//		if (material != null)
+			//		{
+			//			procedureRecord.Records_Materials.Add(new Record_Material(procedureRecord.Id, material.Id));
+			//		}
+			//	}
+			//}
+
+			var procedureRecord = new ProcedureRecord
+			{
+				Date = model.Date,
+				Comment = model.Comment,
+				ClientId = model.ClientId,
+				ProcedureTypeId = model.ProcedureTypeId,
+				
+			};
+
+			foreach (int materialId in model.SelectedMaterialIds)
+			{
+				procedureRecord.Records_Materials.Add(new Record_Material(procedureRecord.Id, materialId));
 			}
+
 			if (!ModelState.IsValid)
 			{
-                ViewBag.Clients = await _clientsService.GetAllAsync();
-                ViewBag.ProcedureTypes = await _procedureTypesService.GetAllAsync();
-                ViewBag.Materials = await _materialsService.GetAllAsync();
-                return View(procedureRecord);
+				var viewModel = new ProcedureRecordViewModel
+				{
+					AvailableMaterials = await _materialsService.GetAllAsync(),
+					AvailableProcedureTypes = await _procedureTypesService.GetAllAsync(),
+					AvailableClients = await _clientsService.GetAllAsync(),
+					SelectedMaterialIds = new List<int>()
+
+				};
+				return View(viewModel);
 			}
+
 			await _procedureRecordsService.AddAsync(procedureRecord);
 			return RedirectToAction(nameof(Index));
 		}
+
+
 
 		public async Task<IActionResult> Details(int id)
 		{

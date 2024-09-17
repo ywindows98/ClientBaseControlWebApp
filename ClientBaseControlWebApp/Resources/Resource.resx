@@ -120,6 +120,9 @@
   <data name="AccountingNav" xml:space="preserve">
     <value>Accounting</value>
   </data>
+  <data name="AddMaterialToProcedure" xml:space="preserve">
+    <value>Add this material to a procedure</value>
+  </data>
   <data name="AddNewClient" xml:space="preserve">
     <value>Add a new client</value>
   </data>
@@ -143,6 +146,9 @@
   </data>
   <data name="ChooseClientLabel" xml:space="preserve">
     <value>Client</value>
+  </data>
+  <data name="ChooseMaterial" xml:space="preserve">
+    <value>Choose a material</value>
   </data>
   <data name="ChooseSelection" xml:space="preserve">
     <value>Choose</value>
@@ -305,6 +311,9 @@
   </data>
   <data name="SearchBar" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="SelectedMaterials" xml:space="preserve">
+    <value>Selected materials</value>
   </data>
   <data name="ShowAllButton" xml:space="preserve">
     <value>Show all</value>

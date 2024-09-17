@@ -120,6 +120,9 @@
   <data name="AccountingNav" xml:space="preserve">
     <value>Облік</value>
   </data>
+  <data name="AddMaterialToProcedure" xml:space="preserve">
+    <value>Додати цей матеріал до процедури</value>
+  </data>
   <data name="AddNewClient" xml:space="preserve">
     <value>Додати нового клієнта</value>
   </data>
@@ -143,6 +146,9 @@
   </data>
   <data name="ChooseClientLabel" xml:space="preserve">
     <value>Клієнт</value>
+  </data>
+  <data name="ChooseMaterial" xml:space="preserve">
+    <value>Виберіть матеріал</value>
   </data>
   <data name="ChooseSelection" xml:space="preserve">
     <value>Виберіть</value>
@@ -305,6 +311,9 @@
   </data>
   <data name="SearchBar" xml:space="preserve">
     <value>Пошук</value>
+  </data>
+  <data name="SelectedMaterials" xml:space="preserve">
+    <value>Додані матеріали</value>
   </data>
   <data name="ShowAllButton" xml:space="preserve">
     <value>Показати всі</value>

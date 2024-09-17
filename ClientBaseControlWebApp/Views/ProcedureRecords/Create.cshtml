@@ -1,11 +1,10 @@
 ﻿@using ClientBaseControlWebApp.Data.Enums;
 @using ClientBaseControlWebApp.Data.Services;
-@model ProcedureRecord
+@model ProcedureRecordViewModel
 
 
 @{
 	ViewData["Title"] = "Add new procedure";
-	string materialIcon;
 }
 
 
@@ -24,7 +23,7 @@
 							<label asp-for="ProcedureTypeId" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ProcedureTypeLabel</label>
 							<select asp-for="ProcedureTypeId" class="form-control" id="ProcedureTypeId" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
 								
-								@foreach (ProcedureType procedureType in ViewBag.ProcedureTypes)
+								@foreach (ProcedureType procedureType in Model.AvailableProcedureTypes)
 								{
 									<option value="@procedureType.Id">@procedureType.Name</option>
 								}
@@ -35,7 +34,7 @@
 							<label asp-for="ClientId" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ChooseClientLabel</label>
 							<select asp-for="ClientId" class="form-control" id="ClientId" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
 
-								@foreach (Client client in ViewBag.Clients)
+								@foreach (Client client in Model.AvailableClients)
 								{
 									<option value="@client.Id">
 										<b>@client.Name @client.Surname</b> 
@@ -57,6 +56,35 @@
 						</div>
 					</div>
 					<div class="row mb-2">
+						<div class="form-group col-12">
+							<label for="materialSelect" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ChooseMaterial</label>
+							<div class="col-12 d-flex">
+								<div class="col-6">
+									<select class="form-control" id="materialSelect">
+										@foreach (Material material in Model.AvailableMaterials)
+										{
+											<option value="@material.Id">
+											@material.Name
+											</option>
+										}
+									</select>
+								</div>
+								<div class="col-6">
+									<button type="button" id="AddMaterialButton" class="btn btn-outline-primary"><i class="bi bi-journal-plus"></i> @ClientBaseControlWebApp.Resources.Resource.AddMaterialToProcedure</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mb-2">
+						<div class="form-group col-12">
+							<label>@ClientBaseControlWebApp.Resources.Resource.SelectedMaterials</label>
+							<ul id="selectedMaterials"></ul>
+						</div>
+					</div>
+
+					@Html.HiddenFor(m => m.SelectedMaterialIds)
+
+					@*<div class="row mb-2">
 						<div class="form-group col-12">
 							<label for="selectedMaterials" class="control-label">@ClientBaseControlWebApp.Resources.Resource.MaterialsNav</label><br />
 							<select class="w-100" name="selectedMaterials" id="selectedMaterials" multiple>
@@ -81,10 +109,10 @@
 								}
 								
 							</select>
-							@*@Html.ListBox("selectedMaterials", (SelectList)ViewBag.Materials, new { @class = "form-control", multiple = "multiple" })*@
+							@Html.ListBox("selectedMaterials", (SelectList)ViewBag.Materials, new { @class = "form-control", multiple = "multiple" })
 							@Html.ValidationMessage("selectedMaterials", new { @class = "text-danger" })
 						</div>
-					</div>
+					</div>*@
 					<div class="row mb-2">
 						<div class="form-group">
 							<label asp-for="Comment" class="control-label">@ClientBaseControlWebApp.Resources.Resource.NoteLabel</label>
