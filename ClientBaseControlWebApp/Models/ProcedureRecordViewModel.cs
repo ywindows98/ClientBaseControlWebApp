@@ -17,9 +17,9 @@ namespace ClientBaseControlWebApp.Models
 		[Required(ErrorMessage = "This field if required")]
 		public int ProcedureTypeId { get; set; }
 
-		public List<int> SelectedMaterialIds { get; set; }
-		public IEnumerable<Material> AvailableMaterials { get; set; }
-		public IEnumerable<ProcedureType> AvailableProcedureTypes { get; set; }
-		public IEnumerable<Client> AvailableClients { get; set; }
+		public string? SelectedMaterialIds { get; set; }
+		public IEnumerable<Material>? AvailableMaterials { get; set; }
+		public IEnumerable<ProcedureType>? AvailableProcedureTypes { get; set; }
+		public IEnumerable<Client>? AvailableClients { get; set; }
 	}
 }

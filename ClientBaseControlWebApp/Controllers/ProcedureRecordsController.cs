@@ -2,6 +2,7 @@
 using ClientBaseControlWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ClientBaseControlWebApp.Controllers
 {
@@ -42,8 +43,7 @@ namespace ClientBaseControlWebApp.Controllers
 				Date = DateTime.Now,
 				AvailableMaterials = await _materialsService.GetAllAsync(),
 				AvailableProcedureTypes = await _procedureTypesService.GetAllAsync(),
-				AvailableClients = await _clientsService.GetAllAsync(),
-				SelectedMaterialIds = new List<int>()
+				AvailableClients = await _clientsService.GetAllAsync()
 
 			};
 			return View(viewModel);
@@ -61,14 +61,22 @@ namespace ClientBaseControlWebApp.Controllers
 				Date = model.Date,
 				Comment = model.Comment,
 				ClientId = model.ClientId,
-				ProcedureTypeId = model.ProcedureTypeId,
+				ProcedureTypeId = model.ProcedureTypeId
 				
 			};
 
-			foreach (int materialId in model.SelectedMaterialIds)
+			if (model.SelectedMaterialIds != null)
 			{
-				procedureRecord.Records_Materials.Add(new Record_Material(procedureRecord.Id, materialId));
+				List<int> materialIds = model.SelectedMaterialIds.Split(',')
+							 .Select(int.Parse)
+							 .ToList();
+
+				foreach (int materialId in materialIds)
+				{
+					procedureRecord.Records_Materials.Add(new Record_Material(procedureRecord.Id, materialId));
+				}
 			}
+			
 
 			if (!ModelState.IsValid)
 			{
@@ -76,8 +84,8 @@ namespace ClientBaseControlWebApp.Controllers
 				{
 					AvailableMaterials = await _materialsService.GetAllAsync(),
 					AvailableProcedureTypes = await _procedureTypesService.GetAllAsync(),
-					AvailableClients = await _clientsService.GetAllAsync(),
-					SelectedMaterialIds = new List<int>()
+					AvailableClients = await _clientsService.GetAllAsync()
+					
 
 				};
 				return View(viewModel);
