@@ -73,6 +73,7 @@
 									<button type="button" id="addMaterialButton" class="btn btn-outline-primary"><i class="bi bi-journal-plus"></i> @ClientBaseControlWebApp.Resources.Resource.AddMaterialToProcedure</button>
 								</div>
 							</div>
+							<span id="alreadyAddedWarning" class="text-danger" style="display:none;">@ClientBaseControlWebApp.Resources.Resource.MaterialAlreadyAdded</span>
 						</div>
 					</div>
 					<div class="row mb-2">
@@ -93,7 +94,7 @@
 					</div>
 					<div class="form-group mt-2">
 						<button class="btn btn-outline-secondary" asp-controller="ProcedureRecords" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</button>
-						<button type="reset" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
+						<button type="reset" class="btn btn-outline-warning roun"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
 						<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
 					</div>
 				</form>
@@ -109,19 +110,28 @@
 		   var selectedMaterials = [];
 
            $('#addMaterialButton').click(function () {
+				$('#alreadyAddedWarning').css('display', 'none');
                 var selectedMaterialId = $('#materialSelect').val();
                 var selectedMaterialName = $('#materialSelect option:selected').text();
 
                 if (selectedMaterialId && !selectedMaterials.includes(selectedMaterialId)) {
+					
                     selectedMaterials.push(selectedMaterialId);
                     $('input[name="SelectedMaterialIds"]').val(selectedMaterials.join(','));
-                    $('#selectedMaterials').append('<div class="p-1 d-flex"><li class="bg-primary p-2 pe-1 h6 text-light lh-base">' 
+				$('#selectedMaterials').append('<div id="material' + selectedMaterialId + '" class="p-1 d-flex"><li class="bg-primary rounded-start-2 bg-opacity-75 p-2 pe-1 h6 text-light lh-base">'
 					+ selectedMaterialName +
-					'</li><button class="btn bg-primary pe-2 text-danger p-0 h6 lh-base"><i class="bi bi-x-circle h6 lh-base"></i></button></div>');
+					'</li><button type="button" value="' + selectedMaterialId + '" class="bg-primary rounded-end-2 bg-opacity-75 btn pe-2 text-danger p-0 h6 lh-base" onclick="removeMaterial(this.value)"><i class="bi bi-x-circle h6 lh-base"></i></button></div>');
                 } else {
-                    alert("Please select a valid material or material already added.");
+                    $('#alreadyAddedWarning').css('display', 'block');
                 }
             });
+
+			function removeMaterial(value){
+			$('#alreadyAddedWarning').css('display', 'block');
+				selectedMaterials = selectedMaterials.filter(m => m != value);
+				$('input[name="SelectedMaterialIds"]').val(selectedMaterials.join(','));
+				$('#material'+value).remove();
+			}
 
     </script>
 }

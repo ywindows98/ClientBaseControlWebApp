@@ -439,6 +439,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This material has already been added to the procudeure.
+        /// </summary>
+        public static string MaterialAlreadyAdded {
+            get {
+                return ResourceManager.GetString("MaterialAlreadyAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to delete this material?.
         /// </summary>
         public static string MaterialDeleteConfirmation {

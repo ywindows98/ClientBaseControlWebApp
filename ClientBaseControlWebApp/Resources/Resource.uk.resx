@@ -243,6 +243,9 @@
   <data name="LogoutNav" xml:space="preserve">
     <value>Вийти</value>
   </data>
+  <data name="MaterialAlreadyAdded" xml:space="preserve">
+    <value>Цей матеріал вже доданий до процедури</value>
+  </data>
   <data name="MaterialDeleteConfirmation" xml:space="preserve">
     <value>Ви хочете видалити цей матеріал?</value>
   </data>
