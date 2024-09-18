@@ -70,7 +70,7 @@
 									</select>
 								</div>
 								<div class="col-6">
-									<button type="button" id="AddMaterialButton" class="btn btn-outline-primary"><i class="bi bi-journal-plus"></i> @ClientBaseControlWebApp.Resources.Resource.AddMaterialToProcedure</button>
+									<button type="button" id="addMaterialButton" class="btn btn-outline-primary"><i class="bi bi-journal-plus"></i> @ClientBaseControlWebApp.Resources.Resource.AddMaterialToProcedure</button>
 								</div>
 							</div>
 						</div>
@@ -78,7 +78,7 @@
 					<div class="row mb-2">
 						<div class="form-group col-12">
 							<label>@ClientBaseControlWebApp.Resources.Resource.SelectedMaterials</label>
-							<ul id="selectedMaterials"></ul>
+							<ul id="selectedMaterials" class="d-flex"></ul>
 						</div>
 					</div>
 
@@ -130,3 +130,25 @@
 		</div>
 	</div>
 </div>
+<script>
+</script>
+
+@section Scripts {
+    <script>
+		   var selectedMaterials = [];
+
+           $('#addMaterialButton').click(function () {
+                var selectedMaterialId = $('#materialSelect').val();
+                var selectedMaterialName = $('#materialSelect option:selected').text();
+
+                if (selectedMaterialId && !selectedMaterials.includes(selectedMaterialId)) {
+                    selectedMaterials.push(selectedMaterialId);
+                    $('input[name="SelectedMaterialIds"]').val(selectedMaterials.join(','));
+                    $('#selectedMaterials').append('<li>' + selectedMaterialName + '</li>');
+                } else {
+                    alert("Please select a valid material or material already added.");
+                }
+            });
+
+    </script>
+}

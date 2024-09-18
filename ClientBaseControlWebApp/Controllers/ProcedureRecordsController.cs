@@ -51,20 +51,10 @@ namespace ClientBaseControlWebApp.Controllers
 
 
 		[HttpPost]
+		
 		public async Task<IActionResult> Create(ProcedureRecordViewModel model)
 		{
-			//Material material;
-			//if (selectedMaterialIds != null)
-			//{
-			//	foreach (int materialId in selectedMaterialIds)
-			//	{
-			//		material = await _materialsService.GetByIdAsync(materialId);
-			//		if (material != null)
-			//		{
-			//			procedureRecord.Records_Materials.Add(new Record_Material(procedureRecord.Id, material.Id));
-			//		}
-			//	}
-			//}
+		
 
 			var procedureRecord = new ProcedureRecord
 			{
