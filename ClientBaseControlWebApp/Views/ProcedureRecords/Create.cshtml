@@ -77,42 +77,13 @@
 					</div>
 					<div class="row mb-2">
 						<div class="form-group col-12">
-							<label>@ClientBaseControlWebApp.Resources.Resource.SelectedMaterials</label>
-							<ul id="selectedMaterials" class="d-flex"></ul>
+							<label class="">@ClientBaseControlWebApp.Resources.Resource.SelectedMaterials</label>
+							<ul id="selectedMaterials" class="d-flex justify-content-start col-12 flex-wrap" style="list-style-type:none; padding:0;"></ul>
 						</div>
 					</div>
 
 					@Html.HiddenFor(m => m.SelectedMaterialIds)
 
-					@*<div class="row mb-2">
-						<div class="form-group col-12">
-							<label for="selectedMaterials" class="control-label">@ClientBaseControlWebApp.Resources.Resource.MaterialsNav</label><br />
-							<select class="w-100" name="selectedMaterials" id="selectedMaterials" multiple>
-								@foreach (Material material in ViewBag.Materials)
-								{
-									<option value="@material.Id">
-										@if (material.MaterialType == 0)
-										{
-											materialIcon = "bi bi-droplet-half";
-										}
-										else if (material.MaterialType == 1)
-										{
-											materialIcon = "bi bi-pen-fill";
-										}
-										else
-										{
-											materialIcon = "bi bi-shuffle";
-										}
-										<i class="@materialIcon"></i>
-										@material.Name
-									</option>
-								}
-								
-							</select>
-							@Html.ListBox("selectedMaterials", (SelectList)ViewBag.Materials, new { @class = "form-control", multiple = "multiple" })
-							@Html.ValidationMessage("selectedMaterials", new { @class = "text-danger" })
-						</div>
-					</div>*@
 					<div class="row mb-2">
 						<div class="form-group">
 							<label asp-for="Comment" class="control-label">@ClientBaseControlWebApp.Resources.Resource.NoteLabel</label>
@@ -144,7 +115,9 @@
                 if (selectedMaterialId && !selectedMaterials.includes(selectedMaterialId)) {
                     selectedMaterials.push(selectedMaterialId);
                     $('input[name="SelectedMaterialIds"]').val(selectedMaterials.join(','));
-                    $('#selectedMaterials').append('<li>' + selectedMaterialName + '</li>');
+                    $('#selectedMaterials').append('<div class="p-1 d-flex"><li class="bg-primary p-2 pe-1 h6 text-light lh-base">' 
+					+ selectedMaterialName +
+					'</li><button class="btn bg-primary pe-2 text-danger p-0 h6 lh-base"><i class="bi bi-x-circle h6 lh-base"></i></button></div>');
                 } else {
                     alert("Please select a valid material or material already added.");
                 }
