@@ -144,10 +144,19 @@
   <data name="Appearance" xml:space="preserve">
     <value>Appearance</value>
   </data>
+  <data name="BlackHairColor" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="BlondeHairColor" xml:space="preserve">
+    <value>Blonde</value>
+  </data>
   <data name="BlueColor" xml:space="preserve">
     <value>Blue</value>
   </data>
   <data name="BrownColor" xml:space="preserve">
+    <value>Brown</value>
+  </data>
+  <data name="BrownHairColor" xml:space="preserve">
     <value>Brown</value>
   </data>
   <data name="CancelButton" xml:space="preserve">
@@ -165,7 +174,7 @@
   <data name="ChooseSelection" xml:space="preserve">
     <value>Choose</value>
   </data>
-  <data name="CirclesUnderTheEyesColor" xml:space="preserve">
+  <data name="CirclesUnderEyesColor" xml:space="preserve">
     <value>Circles under the eyes color</value>
   </data>
   <data name="ClientAllergiesLabel" xml:space="preserve">
@@ -204,6 +213,12 @@
   <data name="ClientSurnameLabel" xml:space="preserve">
     <value>Surname</value>
   </data>
+  <data name="ColdPinkShade" xml:space="preserve">
+    <value>Cold pink</value>
+  </data>
+  <data name="CommentLabel" xml:space="preserve">
+    <value>Note</value>
+  </data>
   <data name="ConfigurationNav" xml:space="preserve">
     <value>Configuration</value>
   </data>
@@ -221,6 +236,9 @@
   </data>
   <data name="DocumentsNav" xml:space="preserve">
     <value>Documents</value>
+  </data>
+  <data name="DoesNotHave" xml:space="preserve">
+    <value>Does`t have</value>
   </data>
   <data name="DrySkin" xml:space="preserve">
     <value>Dry skin</value>
@@ -249,7 +267,13 @@
   <data name="For" xml:space="preserve">
     <value>for</value>
   </data>
+  <data name="GingerHairColor" xml:space="preserve">
+    <value>Ginger</value>
+  </data>
   <data name="GrayColor" xml:space="preserve">
+    <value>Gray</value>
+  </data>
+  <data name="GrayHairColor" xml:space="preserve">
     <value>Gray</value>
   </data>
   <data name="GreenColor" xml:space="preserve">
@@ -258,14 +282,26 @@
   <data name="HairColor" xml:space="preserve">
     <value>Hair color</value>
   </data>
+  <data name="Has" xml:space="preserve">
+    <value>Has</value>
+  </data>
   <data name="HasAllergyLabel" xml:space="preserve">
     <value>Has allergy?</value>
   </data>
   <data name="HasAllergyWarning" xml:space="preserve">
     <value>Client has allergy!</value>
   </data>
+  <data name="HasCapillaries" xml:space="preserve">
+    <value>Capillaries</value>
+  </data>
+  <data name="HasTan" xml:space="preserve">
+    <value>Tan</value>
+  </data>
   <data name="LightBlueColor" xml:space="preserve">
     <value>Light blue</value>
+  </data>
+  <data name="LightBrownHairColor" xml:space="preserve">
+    <value>Light brown</value>
   </data>
   <data name="LightGreenColor" xml:space="preserve">
     <value>Light green</value>
@@ -374,6 +410,9 @@
   </data>
   <data name="UnitsOfMeasurementLabel" xml:space="preserve">
     <value>Unit of measurement</value>
+  </data>
+  <data name="WarmPinkShade" xml:space="preserve">
+    <value>Warm pink</value>
   </data>
   <data name="YellowColor" xml:space="preserve">
     <value>Yellow</value>

@@ -144,11 +144,20 @@
   <data name="Appearance" xml:space="preserve">
     <value>Вигляд</value>
   </data>
+  <data name="BlackHairColor" xml:space="preserve">
+    <value>Чорне</value>
+  </data>
+  <data name="BlondeHairColor" xml:space="preserve">
+    <value>Біляве</value>
+  </data>
   <data name="BlueColor" xml:space="preserve">
     <value>Блакитний</value>
   </data>
   <data name="BrownColor" xml:space="preserve">
     <value>Коричневий</value>
+  </data>
+  <data name="BrownHairColor" xml:space="preserve">
+    <value>Каштанове</value>
   </data>
   <data name="CancelButton" xml:space="preserve">
     <value>Скасувати</value>
@@ -165,7 +174,7 @@
   <data name="ChooseSelection" xml:space="preserve">
     <value>Виберіть</value>
   </data>
-  <data name="CirclesUnderTheEyesColor" xml:space="preserve">
+  <data name="CirclesUnderEyesColor" xml:space="preserve">
     <value>Колір кругів під очима</value>
   </data>
   <data name="ClientAllergiesLabel" xml:space="preserve">
@@ -204,6 +213,12 @@
   <data name="ClientSurnameLabel" xml:space="preserve">
     <value>Фамілія</value>
   </data>
+  <data name="ColdPinkShade" xml:space="preserve">
+    <value>Холодно-рожевий</value>
+  </data>
+  <data name="CommentLabel" xml:space="preserve">
+    <value>Примітка</value>
+  </data>
   <data name="ConfigurationNav" xml:space="preserve">
     <value>Конфігурація</value>
   </data>
@@ -221,6 +236,9 @@
   </data>
   <data name="DocumentsNav" xml:space="preserve">
     <value>Документи</value>
+  </data>
+  <data name="DoesNotHave" xml:space="preserve">
+    <value>Немає</value>
   </data>
   <data name="DrySkin" xml:space="preserve">
     <value>Суха шкіра</value>
@@ -249,8 +267,14 @@
   <data name="For" xml:space="preserve">
     <value>для</value>
   </data>
+  <data name="GingerHairColor" xml:space="preserve">
+    <value>Руде</value>
+  </data>
   <data name="GrayColor" xml:space="preserve">
     <value>Сірий</value>
+  </data>
+  <data name="GrayHairColor" xml:space="preserve">
+    <value>Сиве</value>
   </data>
   <data name="GreenColor" xml:space="preserve">
     <value>Зелений</value>
@@ -258,14 +282,26 @@
   <data name="HairColor" xml:space="preserve">
     <value>Колір волосся</value>
   </data>
+  <data name="Has" xml:space="preserve">
+    <value>Має</value>
+  </data>
   <data name="HasAllergyLabel" xml:space="preserve">
     <value>Має алергію?</value>
   </data>
   <data name="HasAllergyWarning" xml:space="preserve">
     <value>Клієнт має алергію!</value>
   </data>
+  <data name="HasCapillaries" xml:space="preserve">
+    <value>Капіляри</value>
+  </data>
+  <data name="HasTan" xml:space="preserve">
+    <value>Засмага</value>
+  </data>
   <data name="LightBlueColor" xml:space="preserve">
     <value>Світло-блакитний</value>
+  </data>
+  <data name="LightBrownHairColor" xml:space="preserve">
+    <value>Русяве</value>
   </data>
   <data name="LightGreenColor" xml:space="preserve">
     <value>Світло-зелений</value>
@@ -374,6 +410,9 @@
   </data>
   <data name="UnitsOfMeasurementLabel" xml:space="preserve">
     <value>Одиниця вимірювання</value>
+  </data>
+  <data name="WarmPinkShade" xml:space="preserve">
+    <value>Тепло-рожевий</value>
   </data>
   <data name="YellowColor" xml:space="preserve">
     <value>Жовтий</value>

@@ -142,6 +142,24 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Black.
+        /// </summary>
+        public static string BlackHairColor {
+            get {
+                return ResourceManager.GetString("BlackHairColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blonde.
+        /// </summary>
+        public static string BlondeHairColor {
+            get {
+                return ResourceManager.GetString("BlondeHairColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blue.
         /// </summary>
         public static string BlueColor {
@@ -156,6 +174,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string BrownColor {
             get {
                 return ResourceManager.GetString("BrownColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brown.
+        /// </summary>
+        public static string BrownHairColor {
+            get {
+                return ResourceManager.GetString("BrownHairColor", resourceCulture);
             }
         }
         
@@ -207,9 +234,9 @@ namespace ClientBaseControlWebApp.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Circles under the eyes color.
         /// </summary>
-        public static string CirclesUnderTheEyesColor {
+        public static string CirclesUnderEyesColor {
             get {
-                return ResourceManager.GetString("CirclesUnderTheEyesColor", resourceCulture);
+                return ResourceManager.GetString("CirclesUnderEyesColor", resourceCulture);
             }
         }
         
@@ -322,6 +349,24 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cold pink.
+        /// </summary>
+        public static string ColdPinkShade {
+            get {
+                return ResourceManager.GetString("ColdPinkShade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note.
+        /// </summary>
+        public static string CommentLabel {
+            get {
+                return ResourceManager.GetString("CommentLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Configuration.
         /// </summary>
         public static string ConfigurationNav {
@@ -372,6 +417,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string DocumentsNav {
             get {
                 return ResourceManager.GetString("DocumentsNav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Does`t have.
+        /// </summary>
+        public static string DoesNotHave {
+            get {
+                return ResourceManager.GetString("DoesNotHave", resourceCulture);
             }
         }
         
@@ -457,11 +511,29 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ginger.
+        /// </summary>
+        public static string GingerHairColor {
+            get {
+                return ResourceManager.GetString("GingerHairColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Gray.
         /// </summary>
         public static string GrayColor {
             get {
                 return ResourceManager.GetString("GrayColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gray.
+        /// </summary>
+        public static string GrayHairColor {
+            get {
+                return ResourceManager.GetString("GrayHairColor", resourceCulture);
             }
         }
         
@@ -484,6 +556,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Has.
+        /// </summary>
+        public static string Has {
+            get {
+                return ResourceManager.GetString("Has", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Has allergy?.
         /// </summary>
         public static string HasAllergyLabel {
@@ -502,11 +583,38 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Capillaries.
+        /// </summary>
+        public static string HasCapillaries {
+            get {
+                return ResourceManager.GetString("HasCapillaries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tan.
+        /// </summary>
+        public static string HasTan {
+            get {
+                return ResourceManager.GetString("HasTan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Light blue.
         /// </summary>
         public static string LightBlueColor {
             get {
                 return ResourceManager.GetString("LightBlueColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light brown.
+        /// </summary>
+        public static string LightBrownHairColor {
+            get {
+                return ResourceManager.GetString("LightBrownHairColor", resourceCulture);
             }
         }
         
@@ -831,6 +939,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string UnitsOfMeasurementLabel {
             get {
                 return ResourceManager.GetString("UnitsOfMeasurementLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warm pink.
+        /// </summary>
+        public static string WarmPinkShade {
+            get {
+                return ResourceManager.GetString("WarmPinkShade", resourceCulture);
             }
         }
         
