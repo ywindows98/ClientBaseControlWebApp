@@ -1,67 +1,104 @@
-﻿@model Client
+﻿@model ClientViewModel
 
 @{
-	ViewData["Title"] = string.Concat(Model.Name, " ", Model.Surname);
+	ViewData["Title"] = string.Concat(Model.Client.Name, " ", Model.Client.Surname);
 }
 
 
 <div class="row">
 	<div class="col-8 m-auto mt-3">
 		<div class="row">
-			<div class="h3">@Model.Name @Model.Surname @Model.IndicationColor</div>
-			@if(Model.Birthday!=null){
-				<div class="h4">@Model.Birthday.Value.ToShortDateString()</div>
+			<div class="h3"><b>@Model.Client.Name @Model.Client.Surname</b> @Model.Client.IndicationColor</div>
+			@if(Model.Client.Birthday!=null){
+				<div class="h4">@Model.Client.Birthday.Value.ToShortDateString()</div>
 			}
 		</div>
 		<div class="row">
-			@if(Model.Email == null)
+			@if(Model.Client.Email == null)
 			{
 				<div class="h5"><i class="bi bi-envelope-fill"></i> -</div>
 			}else
 			{
-				<div class="h5"><i class="bi bi-envelope-fill"></i> @Model.Email</div>
+				<div class="h5"><i class="bi bi-envelope-fill"></i> @Model.Client.Email</div>
 			}
 
-			@if (Model.PhoneNumber == null)
+			@if (Model.Client.PhoneNumber == null)
 			{
 				<div class="h5"><i class="bi bi-telephone-fill"></i> -</div>
 			}
 			else
 			{
-				<div class="h5"><i class="bi bi-telephone-fill"></i> @Model.PhoneNumber</div>
+				<div class="h5"><i class="bi bi-telephone-fill"></i> @Model.Client.PhoneNumber</div>
 			}
 		</div>
 		<div class="row mt-3">
-			<h4>@ClientBaseControlWebApp.Resources.Resource.ClientNumberOfProceduresLabel: @Model.NumberOfProcedures</h4>
+			<h4><b>@ClientBaseControlWebApp.Resources.Resource.ClientNumberOfProceduresLabel:</b> @Model.Client.NumberOfProcedures</h4>
 		</div>
 		<hr />
 		<div class="row mt-3">
-			<h4>@ClientBaseControlWebApp.Resources.Resource.ClientInitialNoteLabel:</h4>
-			<div class="h5">@Model.InitialComment</div>
+			<h4><b>@ClientBaseControlWebApp.Resources.Resource.ClientInitialNoteLabel:</b></h4>
+			<div class="h5">@Model.Client.InitialComment</div>
 		</div>
 		<hr />
-		@if (Model.HasAllergy == 1)
+		@if (Model.Client.HasAllergy == 1)
 		{
 			<div class="row mt-4">
 				<h4 class="text-danger">@ClientBaseControlWebApp.Resources.Resource.HasAllergyWarning</h4>
-				<h4>@ClientBaseControlWebApp.Resources.Resource.ClientAllergiesLabel:</h4>
-				<div class="h5">@Model.AllergiesComment</div>
+				<h4><b>@ClientBaseControlWebApp.Resources.Resource.ClientAllergiesLabel:</b</h4>
+				<div class="h5">@Model.Client.AllergiesComment</div>
 			</div>
 		}else{
 			<div class="row mt-4">
-				<h4>@ClientBaseControlWebApp.Resources.Resource.NoAllergy</h4>
+				<h4><b>@ClientBaseControlWebApp.Resources.Resource.NoAllergy</b></h4>
 			</div>
 		}
 		<hr />
 		<div class="row mt-4">
-			<h4>@ClientBaseControlWebApp.Resources.Resource.ClientMainNoteLabel:</h4>
-			<div class="h5">@Model.MainComment</div>
+			<h4 class=""><b>@ClientBaseControlWebApp.Resources.Resource.ClientMainNoteLabel:</b</h4>
+			<div class="h5">@Model.Client.MainComment</div>
 		</div>
 		<hr />
+		<div class="row mt-4">
+			<div class="bg-primary bg-opacity-25 h3 p-2 ps-3"><b>@ClientBaseControlWebApp.Resources.Resource.Appearance</b></div>
+			<form asp-action="Create" class="form-inline p-0">
+					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+					<div class="form-group p-1 ps-4 d-flex align-items-center bg-light mb-1">
+						<label asp-for="Appearance.SkinType" class="control-label h5 col-2">@ClientBaseControlWebApp.Resources.Resource.SkinType:</label>
+						<div class="col-4 col-sm-6 col-md-6 col-lg-4"><select asp-for="Appearance.SkinType" disabled class="form-control h5" id="Appearance.SkinType" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
+								<option value="NormalSkin">@ClientBaseControlWebApp.Resources.Resource.NormalSkin</option>
+								<option value="DrySkin">@ClientBaseControlWebApp.Resources.Resource.DrySkin</option>
+								<option value="FatSkin">@ClientBaseControlWebApp.Resources.Resource.FatSkin</option>
+						</select></div>
+						<span asp-validation-for="Appearance.SkinType" class="text-danger"></span>
+					</div>
+					<div class="form-group p-1 ps-4 d-flex align-items-center bg-light mb-1">
+						<label asp-for="Appearance.NeedleType" class="control-label h5 col-2">@ClientBaseControlWebApp.Resources.Resource.NeedleType:</label>
+						<div class="col-4 col-sm-6 col-md-6 col-lg-4"><select asp-for="Appearance.NeedleType" disabled class="form-control h5" id="Appearance.NeedleType" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
+								<option value="NormalSkin">@ClientBaseControlWebApp.Resources.Resource.NormalSkin</option>
+								<option value="DrySkin">@ClientBaseControlWebApp.Resources.Resource.DrySkin</option>
+								<option value="FatSkin">@ClientBaseControlWebApp.Resources.Resource.FatSkin</option>
+						</select></div>
+						<span asp-validation-for="Appearance.NeedleType" class="text-danger"></span>
+					</div>
+					<div class="form-group p-1 ps-4 d-flex align-items-center bg-light mb-1">
+						<label asp-for="Appearance.EyeColor" class="control-label h5 col-2">@ClientBaseControlWebApp.Resources.Resource.EyeColor:</label>
+						<div class="col-4 col-sm-6 col-md-6 col-lg-4"><select asp-for="Appearance.EyeColor" disabled class="form-control h5" id="Appearance.EyeColor" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
+								<option value="BrownEyes">@ClientBaseControlWebApp.Resources.Resource.BrownColor</option>
+								<option value="GrayEyes">@ClientBaseControlWebApp.Resources.Resource.GrayColor</option>
+								<option value="GreenEyes">@ClientBaseControlWebApp.Resources.Resource.GreenColor</option>
+								<option value="LightGreenEyes">@ClientBaseControlWebApp.Resources.Resource.LightGreenColor</option>
+								<option value="BlueEyes">@ClientBaseControlWebApp.Resources.Resource.BlueColor</option>
+								<option value="LightBlueEyes">@ClientBaseControlWebApp.Resources.Resource.LightBlueColor</option>
+								<option value="RedEyes">@ClientBaseControlWebApp.Resources.Resource.RedColor</option>
+						</select></div>
+						<span asp-validation-for="Appearance.EyeColor" class="text-danger"></span>
+					</div>
+			</form>
+		</div>
 		<div class="mt-4">
 			<a class="btn btn-outline-secondary" asp-controller="Clients" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</a>
-			<a class="btn btn-outline-primary" asp-area="" asp-controller="Clients" asp-action="Edit" asp-route-id="@Model.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
-			<a class="btn btn-outline-danger float-end" asp-area="" asp-controller="Clients" asp-action="Delete" asp-route-id="@Model.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
+			<a class="btn btn-outline-primary" asp-area="" asp-controller="Clients" asp-action="Edit" asp-route-id="@Model.Client.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
+			<a class="btn btn-outline-danger float-end" asp-area="" asp-controller="Clients" asp-action="Delete" asp-route-id="@Model.Client.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
 			
 		</div>
 	</div>

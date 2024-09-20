@@ -26,13 +26,13 @@ namespace ClientBaseControlWebApp.Data.Services
 
 		public async Task<IEnumerable<Client>> GetAllAsync()
 		{
-			var result = await _context.Clients.ToListAsync();
+			var result = await _context.Clients.Include(c => c.Appearance).ToListAsync();
 			return result;
 		}
 
 		public async Task<Client> GetByIdAsync(int id)
 		{
-			var result = await _context.Clients.FirstOrDefaultAsync(x => x.Id == id);
+			var result = await _context.Clients.Include(c => c.Appearance).FirstOrDefaultAsync(x => x.Id == id);
 
 			return result;
 		}

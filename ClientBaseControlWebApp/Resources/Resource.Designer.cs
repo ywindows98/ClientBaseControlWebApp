@@ -133,11 +133,47 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Appearance.
+        /// </summary>
+        public static string Appearance {
+            get {
+                return ResourceManager.GetString("Appearance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blue.
+        /// </summary>
+        public static string BlueColor {
+            get {
+                return ResourceManager.GetString("BlueColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brown.
+        /// </summary>
+        public static string BrownColor {
+            get {
+                return ResourceManager.GetString("BrownColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string CancelButton {
             get {
                 return ResourceManager.GetString("CancelButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capillaries.
+        /// </summary>
+        public static string Capillaries {
+            get {
+                return ResourceManager.GetString("Capillaries", resourceCulture);
             }
         }
         
@@ -165,6 +201,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string ChooseSelection {
             get {
                 return ResourceManager.GetString("ChooseSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Circles under the eyes color.
+        /// </summary>
+        public static string CirclesUnderTheEyesColor {
+            get {
+                return ResourceManager.GetString("CirclesUnderTheEyesColor", resourceCulture);
             }
         }
         
@@ -331,6 +376,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dry skin.
+        /// </summary>
+        public static string DrySkin {
+            get {
+                return ResourceManager.GetString("DrySkin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string EditButton {
@@ -367,6 +421,24 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Eye color.
+        /// </summary>
+        public static string EyeColor {
+            get {
+                return ResourceManager.GetString("EyeColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fat skin.
+        /// </summary>
+        public static string FatSkin {
+            get {
+                return ResourceManager.GetString("FatSkin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This field is required.
         /// </summary>
         public static string FieldIsRequired {
@@ -385,11 +457,29 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gray.
+        /// </summary>
+        public static string GrayColor {
+            get {
+                return ResourceManager.GetString("GrayColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Green.
         /// </summary>
         public static string GreenColor {
             get {
                 return ResourceManager.GetString("GreenColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hair color.
+        /// </summary>
+        public static string HairColor {
+            get {
+                return ResourceManager.GetString("HairColor", resourceCulture);
             }
         }
         
@@ -408,6 +498,24 @@ namespace ClientBaseControlWebApp.Resources {
         public static string HasAllergyWarning {
             get {
                 return ResourceManager.GetString("HasAllergyWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light blue.
+        /// </summary>
+        public static string LightBlueColor {
+            get {
+                return ResourceManager.GetString("LightBlueColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light green.
+        /// </summary>
+        public static string LightGreenColor {
+            get {
+                return ResourceManager.GetString("LightGreenColor", resourceCulture);
             }
         }
         
@@ -502,6 +610,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Membrane color.
+        /// </summary>
+        public static string MembraneColor {
+            get {
+                return ResourceManager.GetString("MembraneColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to mg.
         /// </summary>
         public static string MgUnit {
@@ -529,6 +646,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Needle type.
+        /// </summary>
+        public static string NeedleType {
+            get {
+                return ResourceManager.GetString("NeedleType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string No {
@@ -543,6 +669,15 @@ namespace ClientBaseControlWebApp.Resources {
         public static string NoAllergy {
             get {
                 return ResourceManager.GetString("NoAllergy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal skin.
+        /// </summary>
+        public static string NormalSkin {
+            get {
+                return ResourceManager.GetString("NormalSkin", resourceCulture);
             }
         }
         
@@ -669,6 +804,24 @@ namespace ClientBaseControlWebApp.Resources {
         public static string ShowAllButton {
             get {
                 return ResourceManager.GetString("ShowAllButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skin type.
+        /// </summary>
+        public static string SkinType {
+            get {
+                return ResourceManager.GetString("SkinType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tan.
+        /// </summary>
+        public static string Tan {
+            get {
+                return ResourceManager.GetString("Tan", resourceCulture);
             }
         }
         

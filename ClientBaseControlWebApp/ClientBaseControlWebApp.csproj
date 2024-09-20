@@ -40,4 +40,8 @@
     <None Include="wwwroot\images\country_flags\uk_flag.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Appearances\" />
+  </ItemGroup>
+
 </Project>

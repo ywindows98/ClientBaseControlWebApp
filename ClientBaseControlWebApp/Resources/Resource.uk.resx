@@ -141,8 +141,20 @@
   <data name="AmountLabel" xml:space="preserve">
     <value>Кількість</value>
   </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Вигляд</value>
+  </data>
+  <data name="BlueColor" xml:space="preserve">
+    <value>Блакитний</value>
+  </data>
+  <data name="BrownColor" xml:space="preserve">
+    <value>Коричневий</value>
+  </data>
   <data name="CancelButton" xml:space="preserve">
     <value>Скасувати</value>
+  </data>
+  <data name="Capillaries" xml:space="preserve">
+    <value>Капіляри</value>
   </data>
   <data name="ChooseClientLabel" xml:space="preserve">
     <value>Клієнт</value>
@@ -152,6 +164,9 @@
   </data>
   <data name="ChooseSelection" xml:space="preserve">
     <value>Виберіть</value>
+  </data>
+  <data name="CirclesUnderTheEyesColor" xml:space="preserve">
+    <value>Колір кругів під очима</value>
   </data>
   <data name="ClientAllergiesLabel" xml:space="preserve">
     <value>Примітка про алергії</value>
@@ -207,6 +222,9 @@
   <data name="DocumentsNav" xml:space="preserve">
     <value>Документи</value>
   </data>
+  <data name="DrySkin" xml:space="preserve">
+    <value>Суха шкіра</value>
+  </data>
   <data name="EditButton" xml:space="preserve">
     <value>Редагувати</value>
   </data>
@@ -219,20 +237,38 @@
   <data name="EmployeesNav" xml:space="preserve">
     <value>Робітники</value>
   </data>
+  <data name="EyeColor" xml:space="preserve">
+    <value>Колір очей</value>
+  </data>
+  <data name="FatSkin" xml:space="preserve">
+    <value>Жирна шкіра</value>
+  </data>
   <data name="FieldIsRequired" xml:space="preserve">
     <value>Поле є обов'язковим</value>
   </data>
   <data name="For" xml:space="preserve">
     <value>для</value>
   </data>
+  <data name="GrayColor" xml:space="preserve">
+    <value>Сірий</value>
+  </data>
   <data name="GreenColor" xml:space="preserve">
     <value>Зелений</value>
+  </data>
+  <data name="HairColor" xml:space="preserve">
+    <value>Колір волосся</value>
   </data>
   <data name="HasAllergyLabel" xml:space="preserve">
     <value>Має алергію?</value>
   </data>
   <data name="HasAllergyWarning" xml:space="preserve">
     <value>Клієнт має алергію!</value>
+  </data>
+  <data name="LightBlueColor" xml:space="preserve">
+    <value>Світло-блакитний</value>
+  </data>
+  <data name="LightGreenColor" xml:space="preserve">
+    <value>Світло-зелений</value>
   </data>
   <data name="LoginNav" xml:space="preserve">
     <value>Вхід</value>
@@ -264,6 +300,9 @@
   <data name="MaterialTypeLabel" xml:space="preserve">
     <value>Тип матеріалу</value>
   </data>
+  <data name="MembraneColor" xml:space="preserve">
+    <value>Колір слизової оболонки</value>
+  </data>
   <data name="MgUnit" xml:space="preserve">
     <value>мг</value>
   </data>
@@ -273,11 +312,17 @@
   <data name="NameLabel" xml:space="preserve">
     <value>Назва</value>
   </data>
+  <data name="NeedleType" xml:space="preserve">
+    <value>Тип голки</value>
+  </data>
   <data name="No" xml:space="preserve">
     <value>Ні</value>
   </data>
   <data name="NoAllergy" xml:space="preserve">
     <value>Про алергії не було зазначено</value>
+  </data>
+  <data name="NormalSkin" xml:space="preserve">
+    <value>Нормальна шкіра</value>
   </data>
   <data name="NoteLabel" xml:space="preserve">
     <value>Примітка</value>
@@ -320,6 +365,12 @@
   </data>
   <data name="ShowAllButton" xml:space="preserve">
     <value>Показати всі</value>
+  </data>
+  <data name="SkinType" xml:space="preserve">
+    <value>Тип шкіри</value>
+  </data>
+  <data name="Tan" xml:space="preserve">
+    <value>Засмага</value>
   </data>
   <data name="UnitsOfMeasurementLabel" xml:space="preserve">
     <value>Одиниця вимірювання</value>

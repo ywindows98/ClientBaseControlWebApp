@@ -141,8 +141,20 @@
   <data name="AmountLabel" xml:space="preserve">
     <value>Amount</value>
   </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="BlueColor" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="BrownColor" xml:space="preserve">
+    <value>Brown</value>
+  </data>
   <data name="CancelButton" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="Capillaries" xml:space="preserve">
+    <value>Capillaries</value>
   </data>
   <data name="ChooseClientLabel" xml:space="preserve">
     <value>Client</value>
@@ -152,6 +164,9 @@
   </data>
   <data name="ChooseSelection" xml:space="preserve">
     <value>Choose</value>
+  </data>
+  <data name="CirclesUnderTheEyesColor" xml:space="preserve">
+    <value>Circles under the eyes color</value>
   </data>
   <data name="ClientAllergiesLabel" xml:space="preserve">
     <value>Allergies</value>
@@ -207,6 +222,9 @@
   <data name="DocumentsNav" xml:space="preserve">
     <value>Documents</value>
   </data>
+  <data name="DrySkin" xml:space="preserve">
+    <value>Dry skin</value>
+  </data>
   <data name="EditButton" xml:space="preserve">
     <value>Edit</value>
   </data>
@@ -219,20 +237,38 @@
   <data name="EmployeesNav" xml:space="preserve">
     <value>Employees</value>
   </data>
+  <data name="EyeColor" xml:space="preserve">
+    <value>Eye color</value>
+  </data>
+  <data name="FatSkin" xml:space="preserve">
+    <value>Fat skin</value>
+  </data>
   <data name="FieldIsRequired" xml:space="preserve">
     <value>This field is required</value>
   </data>
   <data name="For" xml:space="preserve">
     <value>for</value>
   </data>
+  <data name="GrayColor" xml:space="preserve">
+    <value>Gray</value>
+  </data>
   <data name="GreenColor" xml:space="preserve">
     <value>Green</value>
+  </data>
+  <data name="HairColor" xml:space="preserve">
+    <value>Hair color</value>
   </data>
   <data name="HasAllergyLabel" xml:space="preserve">
     <value>Has allergy?</value>
   </data>
   <data name="HasAllergyWarning" xml:space="preserve">
     <value>Client has allergy!</value>
+  </data>
+  <data name="LightBlueColor" xml:space="preserve">
+    <value>Light blue</value>
+  </data>
+  <data name="LightGreenColor" xml:space="preserve">
+    <value>Light green</value>
   </data>
   <data name="LoginNav" xml:space="preserve">
     <value>Login</value>
@@ -264,6 +300,9 @@
   <data name="MaterialTypeLabel" xml:space="preserve">
     <value>Material type</value>
   </data>
+  <data name="MembraneColor" xml:space="preserve">
+    <value>Membrane color</value>
+  </data>
   <data name="MgUnit" xml:space="preserve">
     <value>mg</value>
   </data>
@@ -273,11 +312,17 @@
   <data name="NameLabel" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="NeedleType" xml:space="preserve">
+    <value>Needle type</value>
+  </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
   <data name="NoAllergy" xml:space="preserve">
     <value>Allergies were not mentioned</value>
+  </data>
+  <data name="NormalSkin" xml:space="preserve">
+    <value>Normal skin</value>
   </data>
   <data name="NoteLabel" xml:space="preserve">
     <value>Note</value>
@@ -320,6 +365,12 @@
   </data>
   <data name="ShowAllButton" xml:space="preserve">
     <value>Show all</value>
+  </data>
+  <data name="SkinType" xml:space="preserve">
+    <value>Skin type</value>
+  </data>
+  <data name="Tan" xml:space="preserve">
+    <value>Tan</value>
   </data>
   <data name="UnitsOfMeasurementLabel" xml:space="preserve">
     <value>Unit of measurement</value>

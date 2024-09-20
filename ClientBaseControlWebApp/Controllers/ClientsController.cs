@@ -8,10 +8,12 @@ namespace ClientBaseControlWebApp.Controllers
 {
     public class ClientsController : Controller
     {
-        private readonly ClientsService _service;
-        public ClientsController(ClientsService service)
+        private readonly ClientsService _clientsService;
+		private readonly AppearancesService _appearancesService;
+		public ClientsController(ClientsService clientsService, AppearancesService appearancesService)
         {
-            _service = service;
+            _clientsService = clientsService;
+            _appearancesService = appearancesService;
         }
 
         //[Authorize]
@@ -21,11 +23,11 @@ namespace ClientBaseControlWebApp.Controllers
 
 			if (string.IsNullOrEmpty(searchValue))
             {
-                data = await _service.GetAllAsync();
+                data = await _clientsService.GetAllAsync();
             }
             else
             {
-                data = await _service.GetBySearchValue(searchValue);
+                data = await _clientsService.GetBySearchValue(searchValue);
             }
             
             return View(data);
@@ -42,25 +44,59 @@ namespace ClientBaseControlWebApp.Controllers
             {
                 return View(client);
             }
-            await _service.AddAsync(client);
-            return RedirectToAction(nameof(Index));
+            Appearance appearance = new Appearance
+            {
+                ClientId = client.Id
+            };
+
+            client.AppearanceId = appearance.Id;
+
+            await _clientsService.AddAsync(client);
+			await _appearancesService.AddAsync(appearance);
+			return RedirectToAction(nameof(Index));
         }
 
         public async Task<IActionResult> Details(int id)
         {
-            var client = await _service.GetByIdAsync(id);
+            var client = await _clientsService.GetByIdAsync(id);
 
             if(client == null)
             {
-                return View();
+                return NotFound();
             }
 
-            return View(client);
+            ClientViewModel viewModel = new ClientViewModel
+            {
+                Client = client,
+                Appearance = client.Appearance
+            };
+
+            return View(viewModel);
         }
+
+
+		[HttpPost]
+		public async Task<IActionResult> EditAppearance(int id, [Bind("Id,SkinType,EyeColor,HairColor,MembraneColor,NeedleType,Comment,ClientId,CirclesUnderEyesColor,HasCapillaries,HasTan")] Appearance appearance)
+		{
+			if (!ModelState.IsValid)
+			{
+                Client client = await _clientsService.GetByIdAsync(appearance.ClientId);
+
+				ClientViewModel viewModel = new ClientViewModel
+				{
+					Client = client,
+					Appearance = appearance
+				};
+
+				return View("Details", viewModel);
+			}
+			await _appearancesService.AddAsync(appearance);
+			return RedirectToAction("Details", new { id = appearance.ClientId });
+		}
 
 		public async Task<IActionResult> Edit(int id)
 		{
-            var client = await _service.GetByIdAsync(id);
+            var client = await _clientsService.GetByIdAsync(id);
             if (client == null) return View("NotFound");
 			return View(client);
 		}
@@ -71,14 +107,16 @@ namespace ClientBaseControlWebApp.Controllers
 			{
 				return View(client);
 			}
-			await _service.UpdateAsync(id, client);
-			return RedirectToAction(nameof(Index));
+			await _clientsService.UpdateAsync(id, client);
+
+
+			return RedirectToAction("Details", new { id });
 		}
 
        
 		public async Task<IActionResult> Delete(int id)
 		{
-            var client = await _service.GetByIdAsync(id);
+            var client = await _clientsService.GetByIdAsync(id);
             if (client == null) return View("NotFound");
             return View(client);
 		}
@@ -86,10 +124,10 @@ namespace ClientBaseControlWebApp.Controllers
 		[HttpPost, ActionName("Delete")]
 		public async Task<IActionResult> DeleteConfirmed(int id)
 		{
-			var client = await _service.GetByIdAsync(id);
+			var client = await _clientsService.GetByIdAsync(id);
 			if (client == null) return View("NotFound");
 
-			await _service.DeleteAsync(id);
+			await _clientsService.DeleteAsync(id);
 			return RedirectToAction(nameof(Index));
 		}
 	}

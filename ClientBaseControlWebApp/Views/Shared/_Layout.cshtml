@@ -53,19 +53,19 @@
                     <ul class="navbar-nav text-end">
                         <li class="nav-item dropdown">
                             <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                               @* @if (Thread.CurrentThread.CurrentCulture.ToString() == "en")
+                                @if (Thread.CurrentThread.CurrentCulture.ToString() == "en")
                                 {
                                     <span><img src="images/country_flags/uk_flag.png" class="small-flag"> English</span>
                                 }else{
                                     <span><img src="images/country_flags/ua_flag.png" class="small-flag"> Українська</span>
-                                }*@
+                                }
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="en">@*<img src="images/country_flags/uk_flag.png" class="small-flag">*@ English</a>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="en"><img src="images/country_flags/uk_flag.png" class="small-flag"> English</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="uk">@*<img src="images/country_flags/ua_flag.png" class="small-flag">*@ Українська</a>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="uk"><img src="images/country_flags/ua_flag.png" class="small-flag"> Українська</a>
                                 </li>
                             </ul>
                         </li>

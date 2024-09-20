@@ -32,7 +32,7 @@ namespace ClientBaseControlWebApp.Data.Services
 
         public async Task<ProcedureRecord> GetByIdAsync(int id)
         {
-            var result = await _context.ProcedureRecords.FirstOrDefaultAsync(x => x.Id == id);
+            var result = await _context.ProcedureRecords.Include(pr => pr.ProcedureType).Include(pr => pr.Client).Include(pr => pr.Records_Materials).FirstOrDefaultAsync(x => x.Id == id);
 
             return result;
         }

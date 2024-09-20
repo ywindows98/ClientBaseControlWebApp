@@ -31,8 +31,8 @@ namespace ClientBaseControlWebApp.Models
         // Relationships
         public List<ProcedureRecord>? ProcedureRecords { get; set; }
 
-        
-        
+        public int? AppearanceId { get; set; }
+        [ForeignKey("AppearanceId")]
         public Appearance? Appearance { get; set; }
 
     }
