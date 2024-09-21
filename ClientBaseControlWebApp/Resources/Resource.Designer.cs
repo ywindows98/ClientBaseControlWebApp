@@ -790,6 +790,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not chosen.
+        /// </summary>
+        public static string NotChosen {
+            get {
+                return ResourceManager.GetString("NotChosen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Note.
         /// </summary>
         public static string NoteLabel {

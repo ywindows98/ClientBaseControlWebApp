@@ -17,9 +17,6 @@ namespace ClientBaseControlWebApp.Models
         public string? MembraneColor { get; set; }
         public string? NeedleType { get; set; }
         public string? Comment { get; set; }
-
-        public int ClientId { get; set; }
-        [ForeignKey("ClientId")]
         public Client? Client { get; set; }
     }
 }

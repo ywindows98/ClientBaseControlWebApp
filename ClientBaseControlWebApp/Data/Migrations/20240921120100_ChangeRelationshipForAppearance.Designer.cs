@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClientBaseControlWebApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240920145138_ChangeAppearanceModel")]
-    partial class ChangeAppearanceModel
+    [Migration("20240921120100_ChangeRelationshipForAppearance")]
+    partial class ChangeRelationshipForAppearance
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,9 +34,6 @@ namespace ClientBaseControlWebApp.Data.Migrations
 
                     b.Property<string>("CirclesUnderEyesColor")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
@@ -63,8 +60,6 @@ namespace ClientBaseControlWebApp.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
 
                     b.ToTable("Appearances");
                 });
@@ -412,17 +407,6 @@ namespace ClientBaseControlWebApp.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("ClientBaseControlWebApp.Models.Appearance", b =>
-                {
-                    b.HasOne("ClientBaseControlWebApp.Models.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Client");
                 });
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.Client", b =>

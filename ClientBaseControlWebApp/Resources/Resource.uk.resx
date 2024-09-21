@@ -360,6 +360,9 @@
   <data name="NormalSkin" xml:space="preserve">
     <value>Нормальна шкіра</value>
   </data>
+  <data name="NotChosen" xml:space="preserve">
+    <value>Не обрано</value>
+  </data>
   <data name="NoteLabel" xml:space="preserve">
     <value>Примітка</value>
   </data>

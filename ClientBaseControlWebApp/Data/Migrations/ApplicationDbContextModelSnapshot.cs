@@ -33,9 +33,6 @@ namespace ClientBaseControlWebApp.Data.Migrations
                     b.Property<string>("CirclesUnderEyesColor")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
@@ -61,8 +58,6 @@ namespace ClientBaseControlWebApp.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
 
                     b.ToTable("Appearances");
                 });
@@ -410,17 +405,6 @@ namespace ClientBaseControlWebApp.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("ClientBaseControlWebApp.Models.Appearance", b =>
-                {
-                    b.HasOne("ClientBaseControlWebApp.Models.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Client");
                 });
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.Client", b =>

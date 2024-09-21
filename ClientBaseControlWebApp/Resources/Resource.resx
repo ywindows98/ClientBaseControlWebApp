@@ -360,6 +360,9 @@
   <data name="NormalSkin" xml:space="preserve">
     <value>Normal skin</value>
   </data>
+  <data name="NotChosen" xml:space="preserve">
+    <value>Not chosen</value>
+  </data>
   <data name="NoteLabel" xml:space="preserve">
     <value>Note</value>
   </data>

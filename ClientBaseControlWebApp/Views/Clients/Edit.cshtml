@@ -2,6 +2,7 @@
 
 @{
 	ViewData["Title"] = "Edit a client";
+	ViewData["ImagesDirectoryDepth"] = "../../images";
 }
 
 
@@ -14,6 +15,9 @@
 			<div class="col-md-10 offset-1">
 				<form asp-action="Edit">
 					<div asp-validation-summary="ModelOnly" class="text-danger">
+					</div>
+					<div>
+						<input hidden asp-for="AppearanceId" class="form-control" id="AppearanceId" />
 					</div>
 					<div class="row mb-2">
 						<div class="form-group col-6">

@@ -44,15 +44,11 @@ namespace ClientBaseControlWebApp.Controllers
             {
                 return View(client);
             }
-            Appearance appearance = new Appearance
-            {
-                ClientId = client.Id
-            };
+            Appearance appearance = new Appearance();
+			client.Appearance = appearance;
+			appearance.Client = client;
 
-            client.AppearanceId = appearance.Id;
-
-            await _clientsService.AddAsync(client);
-			await _appearancesService.AddAsync(appearance);
+			await _clientsService.AddAsync(client);
 			return RedirectToAction(nameof(Index));
         }
 
@@ -76,11 +72,13 @@ namespace ClientBaseControlWebApp.Controllers
 
 
 		[HttpPost]
-		public async Task<IActionResult> EditAppearance(int id, [Bind("Id,SkinType,EyeColor,HairColor,MembraneColor,NeedleType,Comment,ClientId,CirclesUnderEyesColor,HasCapillaries,HasTan")] Appearance appearance)
+		[ActionName("Details")]
+		//[Bind("Id,SkinType,EyeColor,HairColor,MembraneColor,NeedleType,Comment,CirclesUnderEyesColor,HasCapillaries,HasTan")]
+		public async Task<IActionResult> EditAppearance(int id, Appearance appearance)
 		{
 			if (!ModelState.IsValid)
 			{
-                Client client = await _clientsService.GetByIdAsync(appearance.ClientId);
+				Client client = await _clientsService.GetByIdAsync(id);
 
 				ClientViewModel viewModel = new ClientViewModel
 				{
@@ -90,8 +88,8 @@ namespace ClientBaseControlWebApp.Controllers
 
 				return View("Details", viewModel);
 			}
-			await _appearancesService.AddAsync(appearance);
-			return RedirectToAction("Details", new { id = appearance.ClientId });
+			await _appearancesService.UpdateAsync(appearance.Id, appearance);
+			return RedirectToAction("Details", new { id });
 		}
 
 		public async Task<IActionResult> Edit(int id)
@@ -101,7 +99,7 @@ namespace ClientBaseControlWebApp.Controllers
 			return View(client);
 		}
 		[HttpPost]
-		public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Surname,Birthday,InitialComment,NumberOfProcedures,HasAllergy,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client)
+		public async Task<IActionResult> Edit(int id, [Bind("Id,AppearanceId,Name,Surname,Birthday,InitialComment,NumberOfProcedures,HasAllergy,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client)
 		{
 			if (!ModelState.IsValid)
 			{
@@ -127,7 +125,13 @@ namespace ClientBaseControlWebApp.Controllers
 			var client = await _clientsService.GetByIdAsync(id);
 			if (client == null) return View("NotFound");
 
+			if (client.AppearanceId!=null)
+			{
+				await _appearancesService.DeleteAsync((int)client.AppearanceId);
+			}
+			
 			await _clientsService.DeleteAsync(id);
+
 			return RedirectToAction(nameof(Index));
 		}
 	}
