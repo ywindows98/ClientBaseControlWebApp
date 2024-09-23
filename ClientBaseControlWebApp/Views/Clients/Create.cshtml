@@ -1,4 +1,5 @@
-﻿@model ClientViewModel
+﻿@using ClientBaseControlWebApp.Resources
+@model ClientViewModel
 
 @{
 	ViewData["Title"] = "Add new client";
@@ -13,36 +14,89 @@
 		</p>
 		<form asp-controller="Clients" asp-action="Create" method="post" class="form-inline row mt-4">
 			<div class="row align-items-center d-flex mb-0 bg-primary bg-opacity-50">
-				<div class="h2 p-2 ps-3 mb-0 col-5"><b></b> </div>
-				<div class="col-7">
+				<div class="h2 p-2 ps-3 mb-0 col-7 d-flex">
+					<div class="d-flex col-12">
+						<div class="col-5">
+							<input asp-for="Client.Name" type="text" class="form-control" id="Client.Name" placeholder="@Resource.ClientNameLabel"/>
+							<span asp-validation-for="Client.Name" class="text-danger"></span>
+						</div>
+						<div class="col-5 ms-1">
+							<input asp-for="Client.Surname" type="text" class="form-control" id="Client.Surname" placeholder="@Resource.ClientSurnameLabel" />
+							<span asp-validation-for="Client.Surname" class="text-danger"></span>
+						</div>
+					</div>
+				</div>
+				<div class="h2 p-2 ps-3 mb-0 col-5 d-flex">
+					<div class="d-flex col-12">
+						<select asp-for="Client.IndicationColor" class="form-select h5" id="Client.IndicationColor">
+							<option selected value="@null">@Resource.NotChosen</option>
+							<option value="Green">@Resource.GreenColor</option>
+							<option value="Yellow">@Resource.YellowColor</option>
+							<option value="Red">@Resource.RedColor</option>
+						</select>
+						<span asp-validation-for="Client.IndicationColor" class="text-danger"></span>
+					</div>
+				</div>
+				
 					@*<a class="btn btn-secondary" asp-controller="Clients" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</a>
 					<a class="btn btn-primary" asp-area="" asp-controller="Clients" asp-action="Edit" asp-route-id="@Model.Client.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
 					<a class="btn btn-danger float-end" asp-area="" asp-controller="Clients" asp-action="Delete" asp-route-id="@Model.Client.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
 				*@
-				</div>
 			</div>
-			<div class="row bg-lightBlue ps-4 p-1 mt-0">
-					<div class="h5"><i class="bi bi-calendar-event-fill"></i> -</div>
-
-					<div class="h5"><i class="bi bi-envelope-fill"></i> -</div>
-
-					<div class="h5"><i class="bi bi-telephone-fill"></i> -</div>
-				<div class="h5"><b>@ClientBaseControlWebApp.Resources.Resource.ClientNumberOfProceduresLabel:</b></div>
-			</div>
-			<div class="row mt-4">
-				<div class="h4 bg-primary bg-opacity-25 p-2 ps-3 mb-0"><b>@ClientBaseControlWebApp.Resources.Resource.ClientInitialNoteLabel:</b></div>
-				<div class="h5 bg-lightBlue ps-4 p-3 mt-0"></div>
-			</div>
-
-				<div class="row mt-4">
-					<div class="h4 text-danger"><b>@ClientBaseControlWebApp.Resources.Resource.HasAllergyWarning</b></div>
-					<div class="h4 bg-primary bg-opacity-25 p-2 ps-3 mb-0"><b>@ClientBaseControlWebApp.Resources.Resource.ClientAllergiesLabel:</b></div>
-					<div class="h5 h5 bg-lightBlue ps-4 p-3 mt-0"></div>
+			<div class="bg-lightBlue ps-4 p-1 mt-0">
+				<div class="h5 col-4">
+					<label asp-for="Client.Birthday"><i class="bi bi-calendar-event-fill"></i> @Resource.ClientBirthdayLabel</label>
+					<input asp-for="Client.Birthday" type="date" class="form-control" id="Client.Birthday" />
+					<span asp-validation-for="Client.Birthday" class="text-danger"></span>
 				</div>
 
+				<div class="h5 col-4">
+					<label asp-for="Client.Email"><i class="bi bi-envelope-fill"></i> @Resource.ClientEmailLabel</label>
+					<input asp-for="Client.Email" type="email" class="form-control" id="Client.Email" />
+					<span asp-validation-for="Client.Email" class=" text-danger"></span>
+				</div>
+
+				<div class="h5 col-4">
+					<label asp-for="Client.PhoneNumber"><i class="bi bi-telephone-fill"></i> @Resource.ClientPhoneNumberLabel</label>
+					<input asp-for="Client.PhoneNumber" type="text" class="form-control" id="Client.PhoneNumber" />
+					<span asp-validation-for="Client.PhoneNumber" class=" text-danger"></span>
+				</div>
+				<div class="h5 col-4">
+					<label asp-for="Client.NumberOfProcedures"><i class="bi bi-telephone-fill"></i> <b>@Resource.ClientNumberOfProceduresLabel</b></label>
+					<input asp-for="Client.NumberOfProcedures" type="number" class="form-control" id="Client.NumberOfProcedures" />
+					<span asp-validation-for="Client.NumberOfProcedures" class=" text-danger"></span>
+				</div>
+			</div>
 			<div class="row mt-4">
-				<div class="h4 bg-primary bg-opacity-25 p-2 ps-3 mb-0"><b>@ClientBaseControlWebApp.Resources.Resource.ClientMainNoteLabel:</b></div>
-				<div class="h5 h5 bg-lightBlue ps-4 p-3 mt-0"></div>
+				
+				<div class="h4 bg-primary bg-opacity-25 p-2 ps-3 mb-0">
+					<label asp-for="Client.InitialComment" class="control-label"><b>@Resource.ClientInitialNoteLabel:</b></label>
+				</div>
+				<div class="h5 bg-lightBlue ps-4 p-3 mt-0">
+					<textarea asp-for="Client.InitialComment" class="form-control" id="Client.InitialComment" rows="2"></textarea>
+					<span asp-validation-for="Client.InitialComment" class="text-danger"></span>
+				</div>
+			</div>
+
+			<input hidden asp-for="Client.HasAllergy" id="ClientAllergyInput" value="0"/>
+			<div class="row mt-4">
+				<div class="h4 bg-primary bg-opacity-25 p-2 ps-3 mb-0 d-flex">
+					<label asp-for="Client.HasAllergy" class="control-label"><b>@Resource.HasAllergyLabel:</b></label>
+					<input  type="checkbox" class="form-check-input form-check" id="Client.HasAllergy_checkbox" name="IsActive"/>
+					
+				</div>
+				<div class="h5 h5 bg-lightBlue ps-4 p-3 mt-0">
+					<textarea asp-for="Client.AllergiesComment" disabled class="form-control" id="Client.Allergies_textarea" rows="2"></textarea>
+					<span asp-validation-for="Client.AllergiesComment" class="text-danger"></span>
+				</div>
+			</div>
+
+			<div class="row mt-4">
+				<div class="h4 bg-primary bg-opacity-25 p-2 ps-3 mb-0"><label asp-for="Client.MainComment" class="control-label"><b>@Resource.ClientMainNoteLabel:</b></label></div>
+				<div class="h5 h5 bg-lightBlue ps-4 p-3 mt-0">
+					<textarea asp-for="Client.MainComment" class="form-control" id="Client.MainComment" rows="2"></textarea>
+					<span asp-validation-for="Client.MainComment" class="text-danger"></span>
+				</div>
 			</div>
 		
 				<div class="align-items-center d-flex mb-0 bg-primary bg-opacity-25 mb-1">
@@ -53,7 +107,6 @@
 				<label asp-for="Appearance.SkinType" class="control-label h5 col-3">@ClientBaseControlWebApp.Resources.Resource.SkinType:</label>
 				<div class="col-4 col-sm-6 col-md-6 col-lg-4">
 					<select asp-for="Appearance.SkinType" class="form-select h5" id="Appearance.SkinType" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
-
 						<option selected value="@null">@ClientBaseControlWebApp.Resources.Resource.NotChosen</option>
 						<option value="NormalSkin">@ClientBaseControlWebApp.Resources.Resource.NormalSkin</option>
 						<option value="DrySkin">@ClientBaseControlWebApp.Resources.Resource.DrySkin</option>
@@ -147,3 +200,20 @@
 	</div>
 </div>
 
+@section Scripts {
+	<script>
+		$(document).ready(function () {
+		$('#Client.HasAllergy_checkbox').change(function () {
+			if($(this).is(':checked')){
+				console.log("checked");
+				$('#Client.Allergies_textarea').removeAttr('disabled');
+				$('#ClientAllergyInput').val('1');
+			}else{
+				console.log("unchecked");
+				$('#Client.Allergies_textarea').attr('disabled', 'disabled');
+				$('#ClientAllergyInput').val('0');
+			}
+		});
+		});
+	</script>
+}

@@ -4,6 +4,7 @@ using ClientBaseControlWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClientBaseControlWebApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240923172141_changeClientsProps")]
+    partial class changeClientsProps
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +61,7 @@ namespace ClientBaseControlWebApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Appearances", (string)null);
+                    b.ToTable("Appearances");
                 });
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.Client", b =>
@@ -114,7 +116,7 @@ namespace ClientBaseControlWebApp.Data.Migrations
                         .IsUnique()
                         .HasFilter("[AppearanceId] IS NOT NULL");
 
-                    b.ToTable("Clients", (string)null);
+                    b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.Material", b =>
@@ -143,7 +145,7 @@ namespace ClientBaseControlWebApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Materials", (string)null);
+                    b.ToTable("Materials");
                 });
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.ProcedureRecord", b =>
@@ -172,7 +174,7 @@ namespace ClientBaseControlWebApp.Data.Migrations
 
                     b.HasIndex("ProcedureTypeId");
 
-                    b.ToTable("ProcedureRecords", (string)null);
+                    b.ToTable("ProcedureRecords");
                 });
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.ProcedureType", b =>
@@ -189,7 +191,7 @@ namespace ClientBaseControlWebApp.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProcedureTypes", (string)null);
+                    b.ToTable("ProcedureTypes");
                 });
 
             modelBuilder.Entity("ClientBaseControlWebApp.Models.Record_Material", b =>
@@ -204,7 +206,7 @@ namespace ClientBaseControlWebApp.Data.Migrations
 
                     b.HasIndex("MaterialId");
 
-                    b.ToTable("Records_Materials", (string)null);
+                    b.ToTable("Records_Materials");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
