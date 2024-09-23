@@ -26,7 +26,7 @@ namespace ClientBaseControlWebApp.Models
         public string? Email { get; set; }
         [Phone]
         public string? PhoneNumber { get; set; }
-        public int? IndicationColor { get; set; }
+        public string? IndicationColor { get; set; }
 
         // Relationships
         public List<ProcedureRecord>? ProcedureRecords { get; set; }
