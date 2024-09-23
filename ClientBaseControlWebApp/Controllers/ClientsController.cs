@@ -38,13 +38,13 @@ namespace ClientBaseControlWebApp.Controllers
 			return View();
 		}
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Name,Surname,Birthday,InitialComment,NumberOfProcedures,HasAllergy,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client)
+        public async Task<IActionResult> Create([Bind("Name,Surname,Birthday,InitialComment,NumberOfProcedures,HasAllergy,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client, [Bind("SkinType,EyeColor,HairColor,HasCapillaries,CirclesUnderEyesColor,HasTan,MembraneColor,NeedleType,Comment")] Appearance appearance)
         {
             if (!ModelState.IsValid)
             {
                 return View(client);
             }
-            Appearance appearance = new Appearance();
+
 			client.Appearance = appearance;
 			appearance.Client = client;
 
