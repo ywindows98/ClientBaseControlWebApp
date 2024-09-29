@@ -187,7 +187,7 @@
     <value>День народження</value>
   </data>
   <data name="ClientDeleteConfirmation" xml:space="preserve">
-    <value>Ви точно хочете видалити цього клієнта?</value>
+    <value>Ви дійсно хочете видалити цього клієнта?</value>
   </data>
   <data name="ClientEmailLabel" xml:space="preserve">
     <value>Email</value>
@@ -322,7 +322,7 @@
     <value>Цей матеріал вже доданий до процедури</value>
   </data>
   <data name="MaterialDeleteConfirmation" xml:space="preserve">
-    <value>Ви хочете видалити цей матеріал?</value>
+    <value>Ви дійсно хочете видалити цей матеріал?</value>
   </data>
   <data name="MaterialNeedle" xml:space="preserve">
     <value>Голка</value>

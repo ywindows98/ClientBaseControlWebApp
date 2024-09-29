@@ -673,7 +673,7 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to delete this material?.
+        ///   Looks up a localized string similar to Do you really want to delete this material?.
         /// </summary>
         public static string MaterialDeleteConfirmation {
             get {
