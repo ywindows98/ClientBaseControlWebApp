@@ -393,6 +393,9 @@
   <data name="ResetButton" xml:space="preserve">
     <value>Reset</value>
   </data>
+  <data name="ReturnBack" xml:space="preserve">
+    <value>Return</value>
+  </data>
   <data name="SaveButton" xml:space="preserve">
     <value>Save</value>
   </data>

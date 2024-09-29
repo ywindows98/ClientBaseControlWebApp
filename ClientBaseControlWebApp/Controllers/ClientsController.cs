@@ -37,12 +37,19 @@ namespace ClientBaseControlWebApp.Controllers
 		{
 			return View();
 		}
-        [HttpPost]
-        public async Task<IActionResult> Create([Bind("Name,Surname,Birthday,InitialComment,NumberOfProcedures,HasAllergy,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client, [Bind("SkinType,EyeColor,HairColor,HasCapillaries,CirclesUnderEyesColor,HasTan,MembraneColor,NeedleType,Comment")] Appearance appearance)
+
+		[HttpPost]
+		//[Bind("Name,Surname,Birthday,InitialComment,NumberOfProcedures,HasAllergy,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client, [Bind("SkinType,EyeColor,HairColor,HasCapillaries,CirclesUnderEyesColor,HasTan,MembraneColor,NeedleType,Comment")] Appearance appearance
+		public async Task<IActionResult> Create([Bind("Name,Surname,Birthday,InitialComment,NumberOfProcedures,HasAllergy,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client, [Bind("SkinType,EyeColor,HairColor,HasCapillaries,CirclesUnderEyesColor,HasTan,MembraneColor,NeedleType,Comment")] Appearance appearance)
         {
             if (!ModelState.IsValid)
             {
-                return View(client);
+				ClientViewModel viewModel = new ClientViewModel
+				{
+					Client = client,
+					Appearance = appearance
+				};
+				return View(viewModel);
             }
 
 			client.Appearance = appearance;

@@ -12,7 +12,7 @@
 		<p>
 			<h1>@ClientBaseControlWebApp.Resources.Resource.AddNewClient</h1>
 		</p>
-		<form asp-controller="Clients" asp-action="Create" method="post" class="form-inline row mt-4">
+		<form asp-controller="Clients" asp-action="Create" method="post" class="form-inline mt-4">
 			<div class="row align-items-center d-flex mb-0 bg-primary bg-opacity-50">
 				<div class="h2 p-2 ps-3 mb-0 col-7 d-flex">
 					<div class="d-flex col-12">
@@ -43,7 +43,7 @@
 					<a class="btn btn-danger float-end" asp-area="" asp-controller="Clients" asp-action="Delete" asp-route-id="@Model.Client.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
 				*@
 			</div>
-			<div class="bg-lightBlue ps-4 p-1 mt-0">
+			<div class="row bg-lightBlue ps-4 p-1 mt-0 d-block">
 				<div class="h5 col-4">
 					<label asp-for="Client.Birthday"><i class="bi bi-calendar-event-fill"></i> @Resource.ClientBirthdayLabel</label>
 					<input asp-for="Client.Birthday" type="date" class="form-control" id="Client.Birthday" />
@@ -62,8 +62,8 @@
 					<span asp-validation-for="Client.PhoneNumber" class=" text-danger"></span>
 				</div>
 				<div class="h5 col-4">
-					<label asp-for="Client.NumberOfProcedures"><i class="bi bi-telephone-fill"></i> <b>@Resource.ClientNumberOfProceduresLabel</b></label>
-					<input asp-for="Client.NumberOfProcedures" type="number" class="form-control" id="Client.NumberOfProcedures" />
+					<label asp-for="Client.NumberOfProcedures"><b>@Resource.ClientNumberOfProceduresLabel</b></label>
+					<input asp-for="Client.NumberOfProcedures" type="number" class="form-control" id="Client.NumberOfProcedures" value="0" />
 					<span asp-validation-for="Client.NumberOfProcedures" class=" text-danger"></span>
 				</div>
 			</div>
@@ -78,15 +78,15 @@
 				</div>
 			</div>
 
-			<input hidden asp-for="Client.HasAllergy" id="ClientAllergyInput" value="0"/>
+			<input hidden asp-for="Client.HasAllergy" id="ClientAllergyInput" value="1"/>
 			<div class="row mt-4">
 				<div class="h4 bg-primary bg-opacity-25 p-2 ps-3 mb-0 d-flex">
 					<label asp-for="Client.HasAllergy" class="control-label"><b>@Resource.HasAllergyLabel:</b></label>
-					<input  type="checkbox" class="form-check-input form-check" id="Client.HasAllergy_checkbox" name="IsActive"/>
+					<input  type="checkbox" class="form-check-input form-check" id="Client_HasAllergy_checkbox" name="IsActive" checked/>
 					
 				</div>
 				<div class="h5 h5 bg-lightBlue ps-4 p-3 mt-0">
-					<textarea asp-for="Client.AllergiesComment" disabled class="form-control" id="Client.Allergies_textarea" rows="2"></textarea>
+					<textarea asp-for="Client.AllergiesComment" class="form-control" id="Client_Allergies_textarea" rows="2"></textarea>
 					<span asp-validation-for="Client.AllergiesComment" class="text-danger"></span>
 				</div>
 			</div>
@@ -99,11 +99,14 @@
 				</div>
 			</div>
 		
-				<div class="align-items-center d-flex mb-0 bg-primary bg-opacity-25 mb-1">
-					<div class="h3 p-2 ps-1 mb-0 col-5"><b>@ClientBaseControlWebApp.Resources.Resource.Appearance</b></div>
-				</div>
-			<div asp-validation-summary="ModelOnly" class="text-danger"></div> 
-			<div class="form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
+			
+
+
+			<div class="row align-items-center d-flex mb-0 bg-primary bg-opacity-25 mb-1 mt-4">
+				<div class="h3 p-2 ps-3 mb-0 col-5"><b>@ClientBaseControlWebApp.Resources.Resource.Appearance</b></div>
+			</div>
+			
+			<div class="row form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
 				<label asp-for="Appearance.SkinType" class="control-label h5 col-3">@ClientBaseControlWebApp.Resources.Resource.SkinType:</label>
 				<div class="col-4 col-sm-6 col-md-6 col-lg-4">
 					<select asp-for="Appearance.SkinType" class="form-select h5" id="Appearance.SkinType" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
@@ -115,7 +118,7 @@
 				</div>
 				<span asp-validation-for="Appearance.SkinType" class="text-danger"></span>
 			</div>
-			<div class="form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
+			<div class="row form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
 				<label asp-for="Appearance.NeedleType" class="control-label h5 col-3">@ClientBaseControlWebApp.Resources.Resource.NeedleType:</label>
 				<div class="col-4 col-sm-6 col-md-6 col-lg-4">
 					<select asp-for="Appearance.NeedleType" class="form-select h5" id="Appearance.NeedleType" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
@@ -127,7 +130,7 @@
 				</div>
 				<span asp-validation-for="Appearance.NeedleType" class="text-danger"></span>
 			</div>
-			<div class="form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
+			<div class="row form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
 				<label asp-for="Appearance.EyeColor" class="control-label h5 col-3">@ClientBaseControlWebApp.Resources.Resource.EyeColor:</label>
 				<div class="col-4 col-sm-6 col-md-6 col-lg-4">
 					<select asp-for="Appearance.EyeColor" class="form-select h5" id="Appearance.EyeColor" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
@@ -143,7 +146,7 @@
 				</div>
 				<span asp-validation-for="Appearance.EyeColor" class="text-danger"></span>
 			</div>
-			<div class="form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
+			<div class="row form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
 				<label asp-for="Appearance.HairColor" class="control-label h5 col-3">@ClientBaseControlWebApp.Resources.Resource.HairColor:</label>
 				<div class="col-4 col-sm-6 col-md-6 col-lg-4">
 					<select asp-for="Appearance.HairColor" class="h5 form-select" id="Appearance.HairColor" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
@@ -158,7 +161,7 @@
 				</div>
 				<span asp-validation-for="Appearance.HairColor" class="text-danger"></span>
 			</div>
-			<div class="form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
+			<div class="row form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
 				<label asp-for="Appearance.MembraneColor" class="control-label h5 col-3">@ClientBaseControlWebApp.Resources.Resource.MembraneColor:</label>
 				<div class="col-4 col-sm-6 col-md-6 col-lg-4">
 					<select asp-for="Appearance.MembraneColor" class="form-select h5" id="Appearance.MembraneColor" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
@@ -169,7 +172,7 @@
 				</div>
 				<span asp-validation-for="Appearance.MembraneColor" class="text-danger"></span>
 			</div>
-			<div class="form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
+			<div class="row form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
 				<label asp-for="Appearance.HasCapillaries" class="control-label h5 col-3">@ClientBaseControlWebApp.Resources.Resource.HasCapillaries:</label>
 				<div class="col-4 col-sm-6 col-md-6 col-lg-4">
 					<select asp-for="Appearance.HasCapillaries" class="form-select h5" id="Appearance.HasCapillaries" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
@@ -180,7 +183,7 @@
 				</div>
 				<span asp-validation-for="Appearance.HasCapillaries" class="text-danger"></span>
 			</div>
-			<div class="form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
+			<div class="row form-group p-1 ps-4 d-flex align-items-center bg-lightBlue mb-1">
 				<label asp-for="Appearance.HasTan" class="control-label h5 col-3">@ClientBaseControlWebApp.Resources.Resource.HasTan:</label>
 				<div class="col-4 col-sm-6 col-md-6 col-lg-4">
 					<select asp-for="Appearance.HasTan" class="form-select h5" id="Appearance.HasTan" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
@@ -191,10 +194,16 @@
 				</div>
 				<span asp-validation-for="Appearance.HasTan" class="text-danger"></span>
 			</div>
-			<div class="form-group p-1 ps-4 bg-lightBlue mb-1 pb-3 pe-3">
+			<div class="row form-group p-1 ps-4 bg-lightBlue mb-1 pb-3 pe-3">
 				<label asp-for="Appearance.Comment" class="control-label h5">@ClientBaseControlWebApp.Resources.Resource.CommentLabel:</label>
 				<textarea asp-for="Appearance.Comment" class="form-control" id="AllergiesComment" rows="3"></textarea>
 				<span asp-validation-for="Appearance.Comment" class="text-danger"></span>
+			</div>
+
+			<div class="form-group mt-2">
+				<button class="btn btn-outline-secondary" asp-controller="Clients" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ReturnBack</button>
+				<button type="reset" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
+				<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
 			</div>
 		</form>
 	</div>
@@ -202,18 +211,16 @@
 
 @section Scripts {
 	<script>
-		$(document).ready(function () {
-		$('#Client.HasAllergy_checkbox').change(function () {
-			if($(this).is(':checked')){
-				console.log("checked");
-				$('#Client.Allergies_textarea').removeAttr('disabled');
+		$('#Client_HasAllergy_checkbox').change(function () {
+			if ($(this).is(':checked')) {
+				console.log('checked');
+				$('#Client_Allergies_textarea').prop('disabled', false);
 				$('#ClientAllergyInput').val('1');
 			}else{
-				console.log("unchecked");
-				$('#Client.Allergies_textarea').attr('disabled', 'disabled');
+				console.log('unchecked');
+				$('#Client_Allergies_textarea').prop('disabled', true);
 				$('#ClientAllergyInput').val('0');
 			}
-		});
 		});
 	</script>
 }
