@@ -9,20 +9,25 @@
 <div class="row">
 		<div class="col-8 m-auto mt-3">
 			<p>
-				<h1>@ClientBaseControlWebApp.Resources.Resource.ClientDeleteConfirmation</h1>
+				<h1>@ClientBaseControlWebApp.Resources.Resource.ClientDeleteConfirmation</h1> 
 			</p>
-			<hr />
-			<div class="row">
-				<div class="h3">@Model.Name @Model.Surname @Model.IndicationColor</div>
-				@if(Model.Birthday!=null){
-					<div class="h4">@Model.Birthday.Value.ToShortDateString()</div>
-				}
+			<div class="align-items-center d-flex mb-0 bg-primary bg-opacity-50">
+				<div class="h2 p-2 ps-3 mb-0 col-5"><b>@Model.Name @Model.Surname</b> @Model.IndicationColor</div>
 			</div>
-			<div class="row">
-				@if(Model.Email == null)
+			<div class="bg-lightBlue ps-4 p-1 mt-0 mb-3">
+				@if (Model.Birthday == null)
+				{
+					<div class="h5"><i class="bi bi-calendar-event-fill"></i> -</div>
+				}
+				else
+				{
+					<div class="h5"><i class="bi bi-calendar-event-fill"></i> @Model.Birthday.Value.ToShortDateString()</div>
+				}
+				@if (Model.Email == null)
 				{
 					<div class="h5"><i class="bi bi-envelope-fill"></i> -</div>
-				}else
+				}
+				else
 				{
 					<div class="h5"><i class="bi bi-envelope-fill"></i> @Model.Email</div>
 				}
@@ -35,17 +40,13 @@
 				{
 					<div class="h5"><i class="bi bi-telephone-fill"></i> @Model.PhoneNumber</div>
 				}
+				<div class="h5"><b>@ClientBaseControlWebApp.Resources.Resource.ClientNumberOfProceduresLabel:</b> @Model.NumberOfProcedures</div>
 			</div>
-			<div class="row mt-3">
-				<h4>@ClientBaseControlWebApp.Resources.Resource.ClientNumberOfProceduresLabel: @Model.NumberOfProcedures</h4>
-			</div>
-			<hr />
-			<div class="mt-4">
-				<form asp-action="Delete">
-					<a class="btn btn-outline-secondary" asp-controller="Clients" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</a>
-					<input type="hidden" asp-for="Id"/>
-					<button class="btn btn-outline-danger float-end" type="submit" ><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</button>
-				</form>
+			<form asp-action="Delete" >
+				<input type="hidden" asp-for="Id"/>
+				<button class="btn btn-outline-danger" type="submit" ><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</button>
+				<a class="btn btn-outline-secondary float-end" asp-controller="Clients" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ReturnBack</a>
+			</form>
 		</div>
 	</div>
 </div>

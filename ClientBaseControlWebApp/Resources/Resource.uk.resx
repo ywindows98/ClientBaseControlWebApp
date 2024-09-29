@@ -184,7 +184,7 @@
     <value>День народження</value>
   </data>
   <data name="ClientDeleteConfirmation" xml:space="preserve">
-    <value>Ви хочете видалити цього клієнта?</value>
+    <value>Ви точно хочете видалити цього клієнта?</value>
   </data>
   <data name="ClientEmailLabel" xml:space="preserve">
     <value>Email</value>

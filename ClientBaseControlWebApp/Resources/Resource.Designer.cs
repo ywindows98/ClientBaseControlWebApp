@@ -259,7 +259,7 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to delete this client?.
+        ///   Looks up a localized string similar to Do you really want to delete this client?.
         /// </summary>
         public static string ClientDeleteConfirmation {
             get {

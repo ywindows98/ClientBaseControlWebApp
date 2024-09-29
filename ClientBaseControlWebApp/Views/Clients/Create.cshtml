@@ -13,8 +13,8 @@
 			<h1>@ClientBaseControlWebApp.Resources.Resource.AddNewClient</h1>
 		</p>
 		<form asp-controller="Clients" asp-action="Create" method="post" class="form-inline mt-4">
-			<div class="row align-items-center d-flex mb-0 bg-primary bg-opacity-50">
-				<div class="h2 p-2 ps-3 mb-0 col-7 d-flex">
+			<div class="row align-items-center d-flex mb-0 bg-primary bg-opacity-50 justify-content-between">
+				<div class="h2 p-2 ps-3 mb-0 col-9 d-flex">
 					<div class="d-flex col-12">
 						<div class="col-5">
 							<input asp-for="Client.Name" type="text" class="form-control" id="Client.Name" placeholder="@Resource.ClientNameLabel"/>
@@ -26,7 +26,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="h2 p-2 ps-3 mb-0 col-5 d-flex">
+				
+				<div class="h2 p-2 ps-3 mb-0 col-3 d-flex">
 					<div class="d-flex col-12">
 						<select asp-for="Client.IndicationColor" class="form-select h5" id="Client.IndicationColor">
 							<option selected value="@null">@Resource.NotChosen</option>
