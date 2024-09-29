@@ -62,17 +62,22 @@ namespace ClientBaseControlWebApp.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            var material = await _service.GetByIdAsync(id);
+			ViewBag.Materials = await _service.GetAllAsync();
+			var material = await _service.GetByIdAsync(id);
             if (material == null) return View("NotFound");
-            return View(material);
+			
+			return View(material);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Amount,UnitsOfMeasurement,MaterialType")] Material material)
         {
-            if (!ModelState.IsValid)
+			
+			if (!ModelState.IsValid)
             {
-                return View(material);
+				ViewBag.Materials = await _service.GetAllAsync();
+				return View(material);
             }
+            
             await _service.UpdateAsync(id, material);
             return RedirectToAction(nameof(Index));
         }
@@ -80,7 +85,8 @@ namespace ClientBaseControlWebApp.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            var material = await _service.GetByIdAsync(id);
+			ViewBag.Materials = await _service.GetAllAsync();
+			var material = await _service.GetByIdAsync(id);
             if (material == null) return View("NotFound");
             return View(material);
         }
@@ -88,7 +94,8 @@ namespace ClientBaseControlWebApp.Controllers
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var material = await _service.GetByIdAsync(id);
+			ViewBag.Materials = await _service.GetAllAsync();
+			var material = await _service.GetByIdAsync(id);
             if (material == null) return View("NotFound");
 
             await _service.DeleteAsync(id);
