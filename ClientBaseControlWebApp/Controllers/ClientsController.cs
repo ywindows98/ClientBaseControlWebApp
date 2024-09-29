@@ -102,17 +102,31 @@ namespace ClientBaseControlWebApp.Controllers
 		public async Task<IActionResult> Edit(int id)
 		{
             var client = await _clientsService.GetByIdAsync(id);
-            if (client == null) return View("NotFound");
-			return View(client);
+			if (client == null) return View("NotFound");
+
+			ClientViewModel viewModel = new ClientViewModel
+			{
+				Client = client,
+				Appearance = client.Appearance
+			};
+			
+			return View(viewModel);
 		}
 		[HttpPost]
-		public async Task<IActionResult> Edit(int id, [Bind("Id,AppearanceId,Name,Surname,Birthday,InitialComment,NumberOfProcedures,HasAllergy,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client)
+		public async Task<IActionResult> Edit(int id, [Bind("Id,AppearanceId,Name,Surname,Birthday,InitialComment,NumberOfProcedures,HasAllergy,AllergiesComment,MainComment,Email,PhoneNumber,IndicationColor")] Client client, [Bind("Id,SkinType,EyeColor,HairColor,HasCapillaries,CirclesUnderEyesColor,HasTan,MembraneColor,NeedleType,Comment")] Appearance appearance)
 		{
 			if (!ModelState.IsValid)
 			{
-				return View(client);
+				ClientViewModel viewModel = new ClientViewModel
+				{
+					Client = client,
+					Appearance = appearance
+				};
+				return View(viewModel);
 			}
+			client.Id = id;
 			await _clientsService.UpdateAsync(id, client);
+			await _appearancesService.UpdateAsync(appearance.Id, appearance);
 
 
 			return RedirectToAction("Details", new { id });
