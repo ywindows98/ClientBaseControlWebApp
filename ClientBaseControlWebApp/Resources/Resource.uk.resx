@@ -159,6 +159,9 @@
   <data name="BrownHairColor" xml:space="preserve">
     <value>Каштанове</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Відмінити</value>
+  </data>
   <data name="CancelButton" xml:space="preserve">
     <value>Скасувати</value>
   </data>

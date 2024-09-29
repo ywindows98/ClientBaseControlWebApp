@@ -159,6 +159,9 @@
   <data name="BrownHairColor" xml:space="preserve">
     <value>Brown</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="CancelButton" xml:space="preserve">
     <value>Cancel</value>
   </data>

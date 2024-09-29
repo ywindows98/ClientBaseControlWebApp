@@ -29,17 +29,21 @@ namespace ClientBaseControlWebApp.Controllers
             return View(data);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View();
+			ViewBag.Materials = await _service.GetAllAsync();
+			return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Create([Bind("Name,Description,Amount,UnitsOfMeasurement,MaterialType")] Material material)
         {
-            if (!ModelState.IsValid)
+			ViewBag.Materials = await _service.GetAllAsync();
+			if (!ModelState.IsValid)
             {
                 return View(material);
             }
+
             await _service.AddAsync(material);
             return RedirectToAction(nameof(Index));
         }

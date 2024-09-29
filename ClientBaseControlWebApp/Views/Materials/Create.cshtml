@@ -4,6 +4,7 @@
 @{
 	ViewData["Title"] = "Add new material";
 	ViewData["ImagesDirectoryDepth"] = "../images";
+	string materialIcon;
 }
 
 
@@ -12,57 +13,121 @@
 		<p>
 			<h1>@ClientBaseControlWebApp.Resources.Resource.AddNewMaterial</h1>
 		</p>
+		<div class="bg-primary bg-opacity-75 d-flex p-1">
+			<div class="col-7">
+				<form class="form-inline d-flex" asp-action="Index">
+					<input class="form-control" type="search" placeholder="@ClientBaseControlWebApp.Resources.Resource.SearchBar" aria-label="@ClientBaseControlWebApp.Resources.Resource.SearchBar" name="searchValue">
+					<button class="btn btn-primary d-flex" type="submit"><i class="bi bi-search m-1 mt-0 mb-0"></i> @ClientBaseControlWebApp.Resources.Resource.SearchBar</button>
+				</form>
+			</div>
+			<div class="col-5 d-flex">
+				<div class="m-auto">
+					<a class="btn btn-primary" asp-area="" asp-controller="Materials" asp-action="Create"><i class="bi bi-plus-circle"></i> @ClientBaseControlWebApp.Resources.Resource.AddNewMaterial</a>
+				</div>
+			</div>
+		</div>
 		<div class="row">
-			<div class="col-md-10 offset-1">
+			<div class="col-md-12">
 				<form asp-action="Create">
 					<div asp-validation-summary="ModelOnly" class="text-danger">
 					</div>
-					<div class="row mb-2">
-						<div class="form-group col-6">
-							<label asp-for="Name" class="control-label">@ClientBaseControlWebApp.Resources.Resource.NameLabel</label>
-							<input asp-for="Name" class="form-control" id="Name" />
-							<span asp-validation-for="Name" class="text-danger"></span>
+					<div class="w-100 text-dark d-flex p-1 bg-lightBlue pt-4">
+						<div class="col-lg-8 col-md-8 col-sm-7">
+							<div class="d-flex justify-content-between">
+								<div class="col-3">
+									<select asp-for="MaterialType" class="form-select" id="MaterialType">
+										<option value="@Convert.ToInt32(MaterialTypeEnum.Pigment)" selected><i class="bi bi-droplet-half"></i> @ClientBaseControlWebApp.Resources.Resource.MaterialPigment</option>
+										<option value="@Convert.ToInt32(MaterialTypeEnum.Needle)">@ClientBaseControlWebApp.Resources.Resource.MaterialNeedle</option>
+										<option value="@Convert.ToInt32(MaterialTypeEnum.Other)">@ClientBaseControlWebApp.Resources.Resource.MaterialOther</option>
+									</select>
+									<span asp-validation-for="MaterialType" class="text-danger"></span>
+								</div>
+								<div class="col-4">
+									<input asp-for="Name" class="form-control" id="Name" placeholder="@ClientBaseControlWebApp.Resources.Resource.NameLabel" />
+									<span asp-validation-for="Name" class="text-danger"></span>
+								</div>
+								<div class="col-2">
+									<input asp-for="Amount" type="number" class="form-control" id="Amount" value="0" />
+									<span asp-validation-for="Amount" class=" text-danger"></span>
+								</div>
+								<div class="col-2">
+									<select asp-for="UnitsOfMeasurement" class="form-select" id="UnitsOfMeasurement">
+										<option value="0" selected>@ClientBaseControlWebApp.Resources.Resource.PiecesUnit</option>
+										<option value="1">@ClientBaseControlWebApp.Resources.Resource.MgUnit</option>
+										<option value="2">@ClientBaseControlWebApp.Resources.Resource.MlUnit</option>
+									</select>
+									<span asp-validation-for="UnitsOfMeasurement" class="text-danger"></span>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-5 d-flex">
+							<div class="m-auto">
+								<button class="btn btn-outline-secondary" asp-controller="Materials" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.Cancel</button>
+								<button type="submit" class="btn btn-outline-success"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
+							</div>
 						</div>
 					</div>
-					<div class="row mb-2">
-						<div class="form-group col-4">
-							<label asp-for="MaterialType" class="control-label">@ClientBaseControlWebApp.Resources.Resource.MaterialTypeLabel</label>
-							<select asp-for="MaterialType" class="form-control" id="MaterialType">
-								<option value="@Convert.ToInt32(MaterialTypeEnum.Pigment)">@ClientBaseControlWebApp.Resources.Resource.MaterialPigment</option>
-								<option value="@Convert.ToInt32(MaterialTypeEnum.Needle)">@ClientBaseControlWebApp.Resources.Resource.MaterialNeedle</option>
-								<option selected value="@Convert.ToInt32(MaterialTypeEnum.Other)">@ClientBaseControlWebApp.Resources.Resource.MaterialOther</option>
-							</select>
-							<span asp-validation-for="MaterialType" class="text-danger"></span>
-						</div>
-						<div class="form-group col-4">
-							<label asp-for="Amount" class="control-label">@ClientBaseControlWebApp.Resources.Resource.AmountLabel</label>
-							<input asp-for="Amount" class="form-control" id="Amount" value="0" />
-							<span asp-validation-for="Amount" class="text-danger"></span>
-						</div>
-						<div class="form-group col-4">
-							<label asp-for="UnitsOfMeasurement" class="control-label">@ClientBaseControlWebApp.Resources.Resource.UnitsOfMeasurementLabel</label>
-							<select asp-for="UnitsOfMeasurement" class="form-control" id="UnitsOfMeasurement">
-								<option selected value="0">@ClientBaseControlWebApp.Resources.Resource.PiecesUnit</option>
-								<option value="1">@ClientBaseControlWebApp.Resources.Resource.MgUnit</option>
-								<option value="2">@ClientBaseControlWebApp.Resources.Resource.MlUnit</option>
-							</select>
-							<span asp-validation-for="UnitsOfMeasurement" class="text-danger"></span>
-						</div>
-					</div>
-					<div class="row mb-2">
-						<div class="form-group">
-							<label asp-for="Description" class="control-label">@ClientBaseControlWebApp.Resources.Resource.DescriptionLabel</label>
-							<textarea asp-for="Description" class="form-control" id="Description" rows="2" ></textarea>
+					<div class="w-100 text-dark d-flex p-1 bg-lightBlue pb-4">
+						<div class="form-group col-lg-8 col-md-8 col-sm-7">
+							<textarea asp-for="Description" class="form-control" id="Description" rows="2" placeholder="@ClientBaseControlWebApp.Resources.Resource.DescriptionLabel"></textarea>
 							<span asp-validation-for="Description" class="text-danger"></span>
 						</div>
-					</div>
-					<div class="form-group mt-2">
-						<button class="btn btn-outline-secondary" asp-controller="Materials" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</button>
-						<button type="reset" class="btn btn-outline-warning"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
-						<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
 					</div>
 				</form>
 			</div>
 		</div>
+
+		@foreach (Material material in ViewBag.Materials)
+		{
+
+			<div class="w-100 text-dark d-flex p-2 border-top">
+
+				<div class="col-lg-5 col-md-5 col-sm-4">
+					<div class="d-flex">
+						<div class="h4">
+							@if (material.MaterialType == 0)
+							{
+								materialIcon = "bi bi-droplet-half";
+							}
+							else if (material.MaterialType == 1)
+							{
+								materialIcon = "bi bi-pen-fill";
+							}
+							else
+							{
+								materialIcon = "bi bi-shuffle";
+							}
+							<i class="@materialIcon"></i>
+							<b>@material.Name</b>
+						</div>
+					</div>
+				</div>
+				<div class="col-1 border-start border-end text-center h5 lh-base">
+					@material.Amount
+				</div>
+				<div class="col-1 h5 lh-base text-center border-end">
+					@if (material.UnitsOfMeasurement == 0)
+					{
+						@ClientBaseControlWebApp.Resources.Resource.PiecesUnit
+					}
+					else if (material.UnitsOfMeasurement == 1)
+					{
+						@ClientBaseControlWebApp.Resources.Resource.MgUnit
+					}
+					else
+					{
+						@ClientBaseControlWebApp.Resources.Resource.MlUnit
+					}
+				</div>
+				<div class="col-lg-5 col-md-5 col-sm-6 d-flex">
+					<div class="m-auto">
+						<a class="btn btn-outline-primary" asp-area="" asp-controller="Materials" asp-action="Details" asp-route-id="@material.Id"><i class="bi bi-card-text"></i> @ClientBaseControlWebApp.Resources.Resource.DetailsButton</a>
+						<a class="btn btn-outline-primary" asp-area="" asp-controller="Materials" asp-action="Edit" asp-route-id="@material.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
+						<a class="btn btn-outline-danger" asp-area="" asp-controller="Materials" asp-action="Delete" asp-route-id="@material.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
+					</div>
+				</div>
+
+			</div>
+		}
 	</div>
 </div>
