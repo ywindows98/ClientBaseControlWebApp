@@ -32,11 +32,11 @@
                     <div class="h4"><i class="bi bi-person text-primary"></i> <b>@client.Name @client.Surname</b></div>
                     @if (client.Birthday == null)
                     {
-                        <div class="m-2 mt-1">@client.IndicationColor</div>
+                        <div class="m-2 mt-1">@*@client.IndicationColor*@</div>
                     }
                     else
                     {
-                        <div class="m-2 mt-1">@client.Birthday.Value.ToShortDateString() @client.IndicationColor</div>
+                        <div class="m-2 mt-1">@client.Birthday.Value.ToShortDateString() @*@client.IndicationColor*@</div>
                     }
 
                 </div>
