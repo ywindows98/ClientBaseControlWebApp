@@ -27,7 +27,7 @@
         </div>
     </div>
     
-    <form asp-action="Delete" class="w-100 text-dark p-2 border-top mb-4">
+    <form asp-action="Delete" class="w-100 text-dark p-2 border-top pt-4 pb-4 bg-lightBlue">
             <div asp-validation-summary="ModelOnly" class="text-danger">
             </div>
             <div class="row">
@@ -40,8 +40,8 @@
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-6 d-flex">
                     <div class="m-auto">
-                    <button class="btn btn-outline-primary" asp-controller="ProcedureTypes" asp-action="Index"><i class="bi bi-arrow-left-circle"></i> @Resource.CancelButton</button>
                         <button type="submit" class="btn btn-outline-danger"><i class="bi bi-x-circle"></i> @Resource.DeleteButton</button>
+                        <button class="btn btn-outline-primary" asp-controller="ProcedureTypes" asp-action="Index"><i class="bi bi-arrow-left-circle"></i> @Resource.CancelButton</button>
                     </div>
                 </div>
             </div>
