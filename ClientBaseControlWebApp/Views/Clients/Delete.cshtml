@@ -1,4 +1,5 @@
-﻿@model Client
+﻿@using ClientBaseControlWebApp.Resources
+@model Client
 
 @{
 	ViewData["Title"] = "Delete a client";
@@ -9,7 +10,7 @@
 <div class="row">
 		<div class="col-8 m-auto mt-3">
 			<p>
-				<h1>@ClientBaseControlWebApp.Resources.Resource.ClientDeleteConfirmation</h1> 
+				<h1>@Resource.ClientDeleteConfirmation</h1> 
 			</p>
 			<div class="align-items-center d-flex mb-0 bg-primary bg-opacity-50">
 				<div class="h2 p-2 ps-3 mb-0 col-5"><b>@Model.Name @Model.Surname</b> @Model.IndicationColor</div>
@@ -40,12 +41,12 @@
 				{
 					<div class="h5"><i class="bi bi-telephone-fill"></i> @Model.PhoneNumber</div>
 				}
-				<div class="h5"><b>@ClientBaseControlWebApp.Resources.Resource.ClientNumberOfProceduresLabel:</b> @Model.NumberOfProcedures</div>
+				<div class="h5"><b>@Resource.ClientNumberOfProceduresLabel:</b> @Model.NumberOfProcedures</div>
 			</div>
 			<form asp-action="Delete" >
 				<input type="hidden" asp-for="Id"/>
-				<button class="btn btn-outline-danger" type="submit" ><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</button>
-				<a class="btn btn-outline-secondary float-end" asp-controller="Clients" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ReturnBack</a>
+				<button class="btn btn-outline-danger" type="submit" ><i class="bi bi-x-circle"></i> @Resource.DeleteButton</button>
+				<a class="btn btn-outline-secondary float-end" asp-controller="Clients" asp-action="Index"><i class="bi bi-card-list"></i> @Resource.ReturnBack</a>
 			</form>
 		</div>
 	</div>

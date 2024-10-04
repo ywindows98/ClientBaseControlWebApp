@@ -1,4 +1,5 @@
-﻿@model List<Client>
+﻿@using ClientBaseControlWebApp.Resources
+@model List<Client>
 
 @{
     ViewData["Title"] = "Clients";
@@ -8,18 +9,18 @@
 
 <div class="col-md-8 m-auto">
     <p>
-        <h1>@ClientBaseControlWebApp.Resources.Resource.ClientsNav</h1>
+        <h1>@Resource.ClientsNav</h1>
     </p>
     <div class="bg-primary bg-opacity-75 d-flex p-1">
         <div class="col-7">
           <form class="form-inline d-flex" asp-action="Index">
-                <input class="form-control" type="search" placeholder="@ClientBaseControlWebApp.Resources.Resource.SearchBar" aria-label="@ClientBaseControlWebApp.Resources.Resource.SearchBar" name="searchValue">
-                <button class="btn btn-primary d-flex" type="submit"><i class="bi bi-search m-1 mt-0 mb-0"></i> @ClientBaseControlWebApp.Resources.Resource.SearchBar</button>
+                <input class="form-control" type="search" placeholder="@Resource.SearchBar" aria-label="@Resource.SearchBar" name="searchValue">
+                <button class="btn btn-primary d-flex" type="submit"><i class="bi bi-search m-1 mt-0 mb-0"></i> @Resource.SearchBar</button>
           </form>
         </div>
         <div class="col-5 d-flex">
             <div class="m-auto">
-                <a class="btn btn-primary" asp-area="" asp-controller="Clients" asp-action="Create"><i class="bi bi-plus-circle"></i> @ClientBaseControlWebApp.Resources.Resource.AddNewClient</a>
+                <a class="btn btn-primary" asp-area="" asp-controller="Clients" asp-action="Create"><i class="bi bi-plus-circle"></i> @Resource.AddNewClient</a>
             </div>
         </div>
     </div>
@@ -44,16 +45,16 @@
                     @client.PhoneNumber
                     @if(client.HasAllergy == 1)
                     {
-                        <div class="m-2 mt-0 mb-0 text-warning">@ClientBaseControlWebApp.Resources.Resource.Allergy</div>
+                        <div class="m-2 mt-0 mb-0 text-warning">@Resource.Allergy</div>
                     }
                     
                 </div>
             </div>
             <div class="col-lg-5 col-md-5 col-sm-6 d-flex">
                 <div class="m-auto">
-                    <a class="btn btn-outline-primary" asp-area="" asp-controller="Clients" asp-action="Details" asp-route-id="@client.Id"><i class="bi bi-card-text"></i> @ClientBaseControlWebApp.Resources.Resource.DetailsButton</a>
-                    <a class="btn btn-outline-primary" asp-area="" asp-controller="Clients" asp-action="Edit" asp-route-id="@client.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
-                    <a class="btn btn-outline-danger" asp-area="" asp-controller="Clients" asp-action="Delete" asp-route-id="@client.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
+                    <a class="btn btn-outline-primary" asp-area="" asp-controller="Clients" asp-action="Details" asp-route-id="@client.Id"><i class="bi bi-card-text"></i> @Resource.DetailsButton</a>
+                    <a class="btn btn-outline-primary" asp-area="" asp-controller="Clients" asp-action="Edit" asp-route-id="@client.Id"><i class="bi bi-pen"></i> @Resource.EditButton</a>
+                    <a class="btn btn-outline-danger" asp-area="" asp-controller="Clients" asp-action="Delete" asp-route-id="@client.Id"><i class="bi bi-x-circle"></i> @Resource.DeleteButton</a>
                 </div>
             </div>
         

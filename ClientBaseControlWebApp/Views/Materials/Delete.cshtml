@@ -1,4 +1,5 @@
-﻿@using ClientBaseControlWebApp.Data.Enums;
+﻿@using ClientBaseControlWebApp.Resources
+@using ClientBaseControlWebApp.Data.Enums;
 @model Material
 
 @{
@@ -11,24 +12,24 @@
 <div class="row">
 	<div class="col-md-8 offset-2">
 		<p>
-			<h1>@ClientBaseControlWebApp.Resources.Resource.MaterialsNav</h1>
+			<h1>@Resource.MaterialsNav</h1>
 		</p>
 		<div class="bg-primary bg-opacity-75 d-flex p-1">
 			<div class="col-7">
 				<form class="form-inline d-flex" asp-action="Index">
-					<input class="form-control" type="search" placeholder="@ClientBaseControlWebApp.Resources.Resource.SearchBar" aria-label="@ClientBaseControlWebApp.Resources.Resource.SearchBar" name="searchValue">
-					<button class="btn btn-primary d-flex" type="submit"><i class="bi bi-search m-1 mt-0 mb-0"></i> @ClientBaseControlWebApp.Resources.Resource.SearchBar</button>
+					<input class="form-control" type="search" placeholder="@Resource.SearchBar" aria-label="@Resource.SearchBar" name="searchValue">
+					<button class="btn btn-primary d-flex" type="submit"><i class="bi bi-search m-1 mt-0 mb-0"></i> @Resource.SearchBar</button>
 				</form>
 			</div>
 			<div class="col-5 d-flex">
 				<div class="m-auto">
-					<a class="btn btn-primary" asp-area="" asp-controller="Materials" asp-action="Create"><i class="bi bi-plus-circle"></i> @ClientBaseControlWebApp.Resources.Resource.AddNewMaterial</a>
+					<a class="btn btn-primary" asp-area="" asp-controller="Materials" asp-action="Create"><i class="bi bi-plus-circle"></i> @Resource.AddNewMaterial</a>
 				</div>
 			</div>
 		</div>
 
 		<div class="w-100 p-2 pt-4 bg-lightBlue text-dark h3 mb-0">
-			@ClientBaseControlWebApp.Resources.Resource.MaterialDeleteConfirmation
+			@Resource.MaterialDeleteConfirmation
 		</div>
 		<div class="w-100 text-dark d-flex p-2 pb-5 bg-lightBlue mt-0">
 			<div class="col-lg-5 col-md-5 col-sm-4">
@@ -57,22 +58,22 @@
 			<div class="col-1 h5 lh-base text-center border-end">
 				@if (Model.UnitsOfMeasurement == 0)
 				{
-					@ClientBaseControlWebApp.Resources.Resource.PiecesUnit
+					@Resource.PiecesUnit
 				}
 				else if (Model.UnitsOfMeasurement == 1)
 				{
-					@ClientBaseControlWebApp.Resources.Resource.MgUnit
+					@Resource.MgUnit
 				}
 				else
 				{
-					@ClientBaseControlWebApp.Resources.Resource.MlUnit
+					@Resource.MlUnit
 				}
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-5 d-flex">
 				<div class="m-auto">
 					<form asp-action="Delete">
-						<button type="submit" class="btn btn-outline-danger"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</button>
-						<button class="btn btn-outline-secondary" asp-controller="Materials" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.Cancel</button>
+						<button type="submit" class="btn btn-outline-danger"><i class="bi bi-check-circle"></i> @Resource.DeleteButton</button>
+						<button class="btn btn-outline-secondary" asp-controller="Materials" asp-action="Index"><i class="bi bi-card-list"></i> @Resource.Cancel</button>
 					</form>
 				</div>
 			</div>
@@ -110,22 +111,22 @@
 					<div class="col-1 h5 lh-base text-center border-end">
 						@if (material.UnitsOfMeasurement == 0)
 						{
-							@ClientBaseControlWebApp.Resources.Resource.PiecesUnit
+							@Resource.PiecesUnit
 						}
 						else if (material.UnitsOfMeasurement == 1)
 						{
-							@ClientBaseControlWebApp.Resources.Resource.MgUnit
+							@Resource.MgUnit
 						}
 						else
 						{
-							@ClientBaseControlWebApp.Resources.Resource.MlUnit
+							@Resource.MlUnit
 						}
 					</div>
 					<div class="col-lg-5 col-md-5 col-sm-6 d-flex">
 						<div class="m-auto">
-							<a class="btn btn-outline-primary" asp-area="" asp-controller="Materials" asp-action="Details" asp-route-id="@material.Id"><i class="bi bi-card-text"></i> @ClientBaseControlWebApp.Resources.Resource.DetailsButton</a>
-							<a class="btn btn-outline-primary" asp-area="" asp-controller="Materials" asp-action="Edit" asp-route-id="@material.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
-							<a class="btn btn-outline-danger" asp-area="" asp-controller="Materials" asp-action="Delete" asp-route-id="@material.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
+							<a class="btn btn-outline-primary" asp-area="" asp-controller="Materials" asp-action="Details" asp-route-id="@material.Id"><i class="bi bi-card-text"></i> @Resource.DetailsButton</a>
+							<a class="btn btn-outline-primary" asp-area="" asp-controller="Materials" asp-action="Edit" asp-route-id="@material.Id"><i class="bi bi-pen"></i> @Resource.EditButton</a>
+							<a class="btn btn-outline-danger" asp-area="" asp-controller="Materials" asp-action="Delete" asp-route-id="@material.Id"><i class="bi bi-x-circle"></i> @Resource.DeleteButton</a>
 						</div>
 					</div>
 

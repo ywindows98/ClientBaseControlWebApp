@@ -1,4 +1,5 @@
-﻿@using ClientBaseControlWebApp.Data.Services;
+﻿@using ClientBaseControlWebApp.Resources
+@using ClientBaseControlWebApp.Data.Services;
 @model List<ProcedureRecord>
 
 
@@ -10,18 +11,18 @@
 
 <div class="col-md-8 m-auto">
     <p>
-        <h1>@ClientBaseControlWebApp.Resources.Resource.ProcedureRecordsNav</h1>
+        <h1>@Resource.ProcedureRecordsNav</h1>
     </p>
     <div class="bg-primary bg-opacity-75 d-flex p-1">
         <div class="col-7">
             <form class="form-inline d-flex" asp-action="Index">
-                <input class="form-control" type="search" placeholder="@ClientBaseControlWebApp.Resources.Resource.SearchBar" aria-label="@ClientBaseControlWebApp.Resources.Resource.SearchBar" name="searchValue">
-                <button class="btn btn-primary d-flex" type="submit"><i class="bi bi-search m-1 mt-0 mb-0"></i> @ClientBaseControlWebApp.Resources.Resource.SearchBar</button>
+                <input class="form-control" type="search" placeholder="@Resource.SearchBar" aria-label="@Resource.SearchBar" name="searchValue">
+                <button class="btn btn-primary d-flex" type="submit"><i class="bi bi-search m-1 mt-0 mb-0"></i> @Resource.SearchBar</button>
             </form>
         </div>
         <div class="col-5 d-flex">
             <div class="m-auto">
-                <a class="btn btn-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Create"><i class="bi bi-plus-circle"></i> @ClientBaseControlWebApp.Resources.Resource.AddProcedureRecord</a>
+                <a class="btn btn-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Create"><i class="bi bi-plus-circle"></i> @Resource.AddProcedureRecord</a>
             </div>
         </div>
     </div>
@@ -33,7 +34,7 @@
             <div class="col-lg-7 col-md-7 col-sm-6">
                 <div class="d-flex">
                     <div class="h4">
-                        <b>@procedureRecord.ProcedureType.Name</b> @ClientBaseControlWebApp.Resources.Resource.For <b>@procedureRecord.Client.Name @procedureRecord.Client.Surname</b>
+                        <b>@procedureRecord.ProcedureType.Name</b> @Resource.For <b>@procedureRecord.Client.Name @procedureRecord.Client.Surname</b>
                     </div>
                 </div>
                 <div class="h5">
@@ -42,9 +43,9 @@
             </div>
             <div class="col-lg-5 col-md-5 col-sm-6 d-flex">
                 <div class="m-auto">
-                    <a class="btn btn-outline-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Details" asp-route-id="@procedureRecord.Id"><i class="bi bi-card-text"></i> @ClientBaseControlWebApp.Resources.Resource.DetailsButton</a>
-                    <a class="btn btn-outline-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Edit" asp-route-id="@procedureRecord.Id"><i class="bi bi-pen"></i> @ClientBaseControlWebApp.Resources.Resource.EditButton</a>
-                    <a class="btn btn-outline-danger" asp-area="" asp-controller="ProcedureRecords" asp-action="Delete" asp-route-id="@procedureRecord.Id"><i class="bi bi-x-circle"></i> @ClientBaseControlWebApp.Resources.Resource.DeleteButton</a>
+                    <a class="btn btn-outline-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Details" asp-route-id="@procedureRecord.Id"><i class="bi bi-card-text"></i> @Resource.DetailsButton</a>
+                    <a class="btn btn-outline-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Edit" asp-route-id="@procedureRecord.Id"><i class="bi bi-pen"></i> @Resource.EditButton</a>
+                    <a class="btn btn-outline-danger" asp-area="" asp-controller="ProcedureRecords" asp-action="Delete" asp-route-id="@procedureRecord.Id"><i class="bi bi-x-circle"></i> @Resource.DeleteButton</a>
                 </div>
             </div>
 

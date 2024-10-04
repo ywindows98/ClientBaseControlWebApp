@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using ClientBaseControlWebApp.Resources
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,30 +25,30 @@
                 <div class="navbar-collapse collapse col-9" >
                     <ul class="navbar-nav col-8 h5">
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Clients" asp-action="Index">@ClientBaseControlWebApp.Resources.Resource.ClientsNav</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Clients" asp-action="Index">@Resource.ClientsNav</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="ProcedureRecords" asp-action="Index">@ClientBaseControlWebApp.Resources.Resource.ProceduresNav</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="ProcedureRecords" asp-action="Index">@Resource.ProceduresNav</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">@ClientBaseControlWebApp.Resources.Resource.EmployeesNav</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">@Resource.EmployeesNav</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">@ClientBaseControlWebApp.Resources.Resource.DocumentsNav</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">@Resource.DocumentsNav</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span>@ClientBaseControlWebApp.Resources.Resource.ConfigurationNav</span>
+                                <span>@Resource.ConfigurationNav</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item p-2" asp-controller="Materials" asp-action="Index">@ClientBaseControlWebApp.Resources.Resource.MaterialsNav</a>
+                                    <a class="dropdown-item p-2" asp-controller="Materials" asp-action="Index">@Resource.MaterialsNav</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item p-2" asp-controller="ProcedureTypes" asp-action="Index">@ClientBaseControlWebApp.Resources.Resource.ProcedureTypesNav</a>
+                                    <a class="dropdown-item p-2" asp-controller="ProcedureTypes" asp-action="Index">@Resource.ProcedureTypesNav</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item p-2" asp-controller="Home" asp-action="Privacy">@ClientBaseControlWebApp.Resources.Resource.AccountingNav</a>
+                                    <a class="dropdown-item p-2" asp-controller="Home" asp-action="Privacy">@Resource.AccountingNav</a>
                                 </li>
                             </ul>
                         </li>

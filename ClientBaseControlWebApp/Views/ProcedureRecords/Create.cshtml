@@ -1,4 +1,5 @@
-﻿@using ClientBaseControlWebApp.Data.Enums;
+﻿@using ClientBaseControlWebApp.Resources
+@using ClientBaseControlWebApp.Data.Enums;
 @using ClientBaseControlWebApp.Data.Services;
 @model ProcedureRecordViewModel
 
@@ -12,7 +13,7 @@
 <div class="row">
 	<div class="col-md-8 offset-2">
 		<p>
-			<h1>@ClientBaseControlWebApp.Resources.Resource.AddProcedureRecord</h1>
+			<h1>@Resource.AddProcedureRecord</h1>
 		</p>
 		<div class="row">
 			<div class="col-md-10 offset-1">
@@ -21,8 +22,8 @@
 					</div>
 					<div class="row mb-2">
 						<div class="form-group col-5">
-							<label asp-for="ProcedureTypeId" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ProcedureTypeLabel</label>
-							<select asp-for="ProcedureTypeId" class="form-control" id="ProcedureTypeId" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
+							<label asp-for="ProcedureTypeId" class="control-label">@Resource.ProcedureTypeLabel</label>
+							<select asp-for="ProcedureTypeId" class="form-control" id="ProcedureTypeId" value="@Resource.ChooseSelection">
 								
 								@foreach (ProcedureType procedureType in Model.AvailableProcedureTypes)
 								{
@@ -32,8 +33,8 @@
 							<span asp-validation-for="ProcedureTypeId" class="text-danger"></span>
 						</div>
 						<div class="form-group col-7">
-							<label asp-for="ClientId" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ChooseClientLabel</label>
-							<select asp-for="ClientId" class="form-control" id="ClientId" value="@ClientBaseControlWebApp.Resources.Resource.ChooseSelection">
+							<label asp-for="ClientId" class="control-label">@Resource.ChooseClientLabel</label>
+							<select asp-for="ClientId" class="form-control" id="ClientId" value="@Resource.ChooseSelection">
 
 								@foreach (Client client in Model.AvailableClients)
 								{
@@ -51,14 +52,14 @@
 					</div>
 					<div class="row mb-2">
 						<div class="form-group col-3">
-							<label asp-for="Date" class="control-label">@ClientBaseControlWebApp.Resources.Resource.DateLabel</label>
+							<label asp-for="Date" class="control-label">@Resource.DateLabel</label>
 							<input type="date" asp-for="Date" class="form-control" id="Date" />
 							<span asp-validation-for="Date" class="text-danger"></span>
 						</div>
 					</div>
 					<div class="row mb-2">
 						<div class="form-group col-12">
-							<label for="materialSelect" class="control-label">@ClientBaseControlWebApp.Resources.Resource.ChooseMaterial</label>
+							<label for="materialSelect" class="control-label">@Resource.ChooseMaterial</label>
 							<div class="col-12 d-flex">
 								<div class="col-6">
 									<select class="form-control" id="materialSelect">
@@ -71,15 +72,15 @@
 									</select>
 								</div>
 								<div class="col-6">
-									<button type="button" id="addMaterialButton" class="btn btn-outline-primary"><i class="bi bi-journal-plus"></i> @ClientBaseControlWebApp.Resources.Resource.AddMaterialToProcedure</button>
+									<button type="button" id="addMaterialButton" class="btn btn-outline-primary"><i class="bi bi-journal-plus"></i> @Resource.AddMaterialToProcedure</button>
 								</div>
 							</div>
-							<span id="alreadyAddedWarning" class="text-danger" style="display:none;">@ClientBaseControlWebApp.Resources.Resource.MaterialAlreadyAdded</span>
+							<span id="alreadyAddedWarning" class="text-danger" style="display:none;">@Resource.MaterialAlreadyAdded</span>
 						</div>
 					</div>
 					<div class="row mb-2">
 						<div class="form-group col-12">
-							<label class="">@ClientBaseControlWebApp.Resources.Resource.SelectedMaterials</label>
+							<label class="">@Resource.SelectedMaterials</label>
 							<ul id="selectedMaterials" class="d-flex justify-content-start col-12 flex-wrap" style="list-style-type:none; padding:0;"></ul>
 						</div>
 					</div>
@@ -88,15 +89,15 @@
 
 					<div class="row mb-2">
 						<div class="form-group">
-							<label asp-for="Comment" class="control-label">@ClientBaseControlWebApp.Resources.Resource.NoteLabel</label>
+							<label asp-for="Comment" class="control-label">@Resource.NoteLabel</label>
 							<textarea asp-for="Comment" class="form-control" id="Comment" rows="2"></textarea>
 							<span asp-validation-for="Comment" class="text-danger"></span>
 						</div>
 					</div>
 					<div class="form-group mt-2">
-						<button class="btn btn-outline-secondary" asp-controller="ProcedureRecords" asp-action="Index"><i class="bi bi-card-list"></i> @ClientBaseControlWebApp.Resources.Resource.ShowAllButton</button>
-						<button type="reset" class="btn btn-outline-warning roun"><i class="bi bi-arrow-clockwise"></i> @ClientBaseControlWebApp.Resources.Resource.ResetButton</button>
-						<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @ClientBaseControlWebApp.Resources.Resource.SaveButton</button>
+						<button class="btn btn-outline-secondary" asp-controller="ProcedureRecords" asp-action="Index"><i class="bi bi-card-list"></i> @Resource.ShowAllButton</button>
+						<button type="reset" class="btn btn-outline-warning roun"><i class="bi bi-arrow-clockwise"></i> @Resource.ResetButton</button>
+						<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @Resource.SaveButton</button>
 					</div>
 				</form>
 			</div>
