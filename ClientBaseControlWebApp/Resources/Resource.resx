@@ -360,6 +360,9 @@
   <data name="NoAllergy" xml:space="preserve">
     <value>Allergies were not mentioned</value>
   </data>
+  <data name="NoDescription" xml:space="preserve">
+    <value>Item has no description</value>
+  </data>
   <data name="NormalSkin" xml:space="preserve">
     <value>Normal skin</value>
   </data>

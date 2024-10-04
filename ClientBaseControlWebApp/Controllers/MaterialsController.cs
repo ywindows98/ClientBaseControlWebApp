@@ -51,8 +51,9 @@ namespace ClientBaseControlWebApp.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var material = await _service.GetByIdAsync(id);
+			ViewBag.Materials = await _service.GetAllAsync();
 
-            if (material == null)
+			if (material == null)
             {
                 return View();
             }

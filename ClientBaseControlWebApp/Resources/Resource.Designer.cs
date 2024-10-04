@@ -790,6 +790,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Item has no description.
+        /// </summary>
+        public static string NoDescription {
+            get {
+                return ResourceManager.GetString("NoDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Normal skin.
         /// </summary>
         public static string NormalSkin {
