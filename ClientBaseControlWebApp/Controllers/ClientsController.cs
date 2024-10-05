@@ -62,6 +62,7 @@ namespace ClientBaseControlWebApp.Controllers
         public async Task<IActionResult> Details(int id)
         {
             var client = await _clientsService.GetByIdAsync(id);
+			ViewBag.ProcedureRecords = client.ProcedureRecords;
 
             if(client == null)
             {
@@ -83,9 +84,11 @@ namespace ClientBaseControlWebApp.Controllers
 		//[Bind("Id,SkinType,EyeColor,HairColor,MembraneColor,NeedleType,Comment,CirclesUnderEyesColor,HasCapillaries,HasTan")]
 		public async Task<IActionResult> EditAppearance(int id, Appearance appearance)
 		{
+			
 			if (!ModelState.IsValid)
 			{
 				Client client = await _clientsService.GetByIdAsync(id);
+				ViewBag.ProcedureRecords = client.ProcedureRecords;
 
 				ClientViewModel viewModel = new ClientViewModel
 				{

@@ -610,6 +610,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to History of procedures.
+        /// </summary>
+        public static string HistoryOfProcedures {
+            get {
+                return ResourceManager.GetString("HistoryOfProcedures", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Light blue.
         /// </summary>
         public static string LightBlueColor {

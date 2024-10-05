@@ -26,13 +26,13 @@ namespace ClientBaseControlWebApp.Data.Services
 
 		public async Task<IEnumerable<Client>> GetAllAsync()
 		{
-			var result = await _context.Clients.Include(c => c.Appearance).ToListAsync();
+			var result = await _context.Clients.Include(c => c.Appearance).Include(c=> c.ProcedureRecords).ThenInclude(pr => pr.ProcedureType).ToListAsync();
 			return result;
 		}
 
 		public async Task<Client> GetByIdAsync(int id)
 		{
-			var result = await _context.Clients.Include(c => c.Appearance).FirstOrDefaultAsync(x => x.Id == id);
+			var result = await _context.Clients.Include(c => c.Appearance).Include(c => c.ProcedureRecords).ThenInclude(pr => pr.ProcedureType).FirstOrDefaultAsync(x => x.Id == id);
 
 			return result;
 		}
@@ -40,7 +40,7 @@ namespace ClientBaseControlWebApp.Data.Services
 		// Name and surname
 		public async Task<IEnumerable<Client>> GetBySearchValue(string searchValue)
 		{
-			var result = await _context.Clients.Where(c => string.Concat(c.Name," ", c.Surname).ToLower().Contains(searchValue.ToLower())).ToListAsync();
+			var result = await _context.Clients.Where(c => string.Concat(c.Name," ", c.Surname).ToLower().Contains(searchValue.ToLower())).Include(c => c.Appearance).Include(c => c.ProcedureRecords).ThenInclude(pr => pr.ProcedureType).ToListAsync();
 			return result;
 		}
 

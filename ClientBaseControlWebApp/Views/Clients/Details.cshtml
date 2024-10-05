@@ -63,6 +63,47 @@
 			<div class="h4 bg-primary bg-opacity-25 p-2 ps-3 mb-0"><b>@Resource.ClientMainNoteLabel:</b></div>
 			<div class="h5 h5 bg-lightBlue ps-4 p-3 mt-0">@Model.Client.MainComment</div>
 		</div>
+		<div class="accordion row" id="accordionExample">
+			<div class="accordion-item mt-4">
+				<div class="accordion-header row" id="headingOne">
+					<button class="accordion-button collapsed bg-primary bg-opacity-50 p-2 ps-3 mb-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+						<div class="h3 p-0 m-0"><b>@Resource.HistoryOfProcedures </b></div>
+					</button>
+				</div>
+				<div id="collapseOne" class="accordion-collapse collapse bg-lightBlue row" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+					<div class="accordion-body m-0 p-0">
+						<div class="w-100 text-dark d-flex p-2 pb-3 d-flex justify-content-center">
+							<a class="btn btn-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Create"><i class="bi bi-plus-circle"></i> @Resource.AddProcedureRecord</a>
+						</div>
+						@foreach (ProcedureRecord procedureRecord in ViewBag.ProcedureRecords)
+						{
+
+							<div class="w-100 text-dark d-flex p-2 pb-3 ps-4 border-top">
+
+								<div class="col-lg-7 col-md-7 col-sm-6">
+									<div class="d-flex">
+										<div class="h4">
+											<b>@procedureRecord.ProcedureType.Name</b>
+										</div>
+									</div>
+									<div class="h5">
+										@procedureRecord.Date.ToShortDateString()
+									</div>
+								</div>
+								<div class="col-lg-5 col-md-5 col-sm-6 d-flex">
+									<div class="m-auto">
+										<a class="btn btn-outline-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Details" asp-route-id="@procedureRecord.Id"><i class="bi bi-card-text"></i> @Resource.DetailsButton</a>
+										<a class="btn btn-outline-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Edit" asp-route-id="@procedureRecord.Id"><i class="bi bi-pen"></i> @Resource.EditButton</a>
+										<a class="btn btn-outline-danger" asp-area="" asp-controller="ProcedureRecords" asp-action="Delete" asp-route-id="@procedureRecord.Id"><i class="bi bi-x-circle"></i> @Resource.DeleteButton</a>
+									</div>
+								</div>
+
+							</div>
+						}
+					</div>
+				</div>
+			</div>
+		</div>
 		<form asp-controller="Clients" asp-action="EditAppearance" method="post" class="form-inline row mt-4">
 				<div class="align-items-center d-flex mb-0 bg-primary bg-opacity-25 mb-1">
 					<div class="h3 p-2 ps-1 mb-0 col-5"><b>@Resource.Appearance</b></div>

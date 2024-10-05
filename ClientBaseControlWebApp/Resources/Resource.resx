@@ -300,6 +300,9 @@
   <data name="HasTan" xml:space="preserve">
     <value>Tan</value>
   </data>
+  <data name="HistoryOfProcedures" xml:space="preserve">
+    <value>History of procedures</value>
+  </data>
   <data name="LightBlueColor" xml:space="preserve">
     <value>Light blue</value>
   </data>
