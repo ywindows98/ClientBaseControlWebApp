@@ -12,18 +12,19 @@
 
 <div class="row">
 	<div class="col-md-8 offset-2">
-		<p>
-			<h1>@Resource.AddProcedureRecord</h1>
-		</p>
 		<div class="row">
 			<div class="col-md-10 offset-1">
 				<form asp-action="Create">
 					<div asp-validation-summary="ModelOnly" class="text-danger">
 					</div>
-					<div class="row mb-2">
+					<div class="row bg-primary bg-opacity-50 p-2 ">
+						<h1>@Resource.AddProcedureRecord @Resource.For @Model.Client.Name @Model.Client.Surname</h1>
+					</div>
+					<input hidden asp-for="ClientId">
+					<div class="row bg-lightBlue p-2 ps-3">
 						<div class="form-group col-5">
 							<label asp-for="ProcedureTypeId" class="control-label">@Resource.ProcedureTypeLabel</label>
-							<select asp-for="ProcedureTypeId" class="form-control" id="ProcedureTypeId" value="@Resource.ChooseSelection">
+							<select asp-for="ProcedureTypeId" class="form-select" id="ProcedureTypeId" value="@Resource.ChooseSelection">
 								
 								@foreach (ProcedureType procedureType in Model.AvailableProcedureTypes)
 								{
@@ -32,32 +33,13 @@
 							</select>
 							<span asp-validation-for="ProcedureTypeId" class="text-danger"></span>
 						</div>
-						<div class="form-group col-7">
-							<label asp-for="ClientId" class="control-label">@Resource.ChooseClientLabel</label>
-							<select asp-for="ClientId" class="form-control" id="ClientId" value="@Resource.ChooseSelection">
-
-								@foreach (Client client in Model.AvailableClients)
-								{
-									<option value="@client.Id">
-										<b>@client.Name @client.Surname</b> 
-										@if (client.Birthday != null)
-										{
-											@client.Birthday.Value.ToShortDateString()
-										}
-										</option>
-								}
-							</select>
-							<span asp-validation-for="ClientId" class="text-danger"></span>
+						<div class="form-group col-4">
+								<label asp-for="Date" class="control-label">@Resource.DateLabel</label>
+								<input type="date" asp-for="Date" class="form-control" id="Date" />
+								<span asp-validation-for="Date" class="text-danger"></span>
 						</div>
 					</div>
-					<div class="row mb-2">
-						<div class="form-group col-3">
-							<label asp-for="Date" class="control-label">@Resource.DateLabel</label>
-							<input type="date" asp-for="Date" class="form-control" id="Date" />
-							<span asp-validation-for="Date" class="text-danger"></span>
-						</div>
-					</div>
-					<div class="row mb-2">
+					<div class="row bg-lightBlue p-2 ps-3">
 						<div class="form-group col-12">
 							<label for="materialSelect" class="control-label">@Resource.ChooseMaterial</label>
 							<div class="col-12 d-flex">
@@ -78,7 +60,7 @@
 							<span id="alreadyAddedWarning" class="text-danger" style="display:none;">@Resource.MaterialAlreadyAdded</span>
 						</div>
 					</div>
-					<div class="row mb-2">
+					<div class="row bg-lightBlue p-2 ps-3 pb-4">
 						<div class="form-group col-12">
 							<label class="">@Resource.SelectedMaterials</label>
 							<ul id="selectedMaterials" class="d-flex justify-content-start col-12 flex-wrap" style="list-style-type:none; padding:0;"></ul>
@@ -87,7 +69,7 @@
 
 					@Html.HiddenFor(m => m.SelectedMaterialIds)
 
-					<div class="row mb-2">
+					<div class="row bg-lightBlue p-2 ps-3 pb-4">
 						<div class="form-group">
 							<label asp-for="Comment" class="control-label">@Resource.NoteLabel</label>
 							<textarea asp-for="Comment" class="form-control" id="Comment" rows="2"></textarea>
@@ -95,8 +77,8 @@
 						</div>
 					</div>
 					<div class="form-group mt-2">
-						<button class="btn btn-outline-secondary" asp-controller="ProcedureRecords" asp-action="Index"><i class="bi bi-card-list"></i> @Resource.ShowAllButton</button>
-						<button type="reset" class="btn btn-outline-warning roun"><i class="bi bi-arrow-clockwise"></i> @Resource.ResetButton</button>
+						<a class="btn btn-outline-secondary" asp-controller="Clients" asp-action="Details" asp-route-id="@Model.ClientId"><i class="bi bi-arrow-left-circle"></i> @Resource.CancelButton</a>
+						<button type="reset" class="btn btn-outline-warning roun" onclick="removeAllMaterials()"><i class="bi bi-arrow-clockwise"></i> @Resource.ResetButton</button>
 						<button type="submit" class="btn btn-outline-success float-end"><i class="bi bi-check-circle"></i> @Resource.SaveButton</button>
 					</div>
 				</form>
@@ -129,10 +111,16 @@
             });
 
 			function removeMaterial(value){
-			$('#alreadyAddedWarning').css('display', 'block');
+			
 				selectedMaterials = selectedMaterials.filter(m => m != value);
 				$('input[name="SelectedMaterialIds"]').val(selectedMaterials.join(','));
 				$('#material'+value).remove();
+			}
+
+			function removeAllMaterials(){
+				selectedMaterials.forEach(materialId => {
+					removeMaterial(materialId);
+				});
 			}
 
     </script>

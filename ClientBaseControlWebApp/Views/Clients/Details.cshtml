@@ -73,7 +73,7 @@
 				<div id="collapseOne" class="accordion-collapse collapse bg-lightBlue row" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
 					<div class="accordion-body m-0 p-0">
 						<div class="w-100 text-dark d-flex p-2 pb-3 d-flex justify-content-center">
-							<a class="btn btn-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Create"><i class="bi bi-plus-circle"></i> @Resource.AddProcedureRecord</a>
+							<a class="btn btn-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Create" asp-route-clientId="@Model.Client.Id"><i class="bi bi-plus-circle"></i> @Resource.AddProcedureRecord</a>
 						</div>
 						@foreach (ProcedureRecord procedureRecord in ViewBag.ProcedureRecords)
 						{

@@ -36,14 +36,15 @@ namespace ClientBaseControlWebApp.Controllers
 			return View(data);
 		}
 
-		public async Task<IActionResult> Create()
+		public async Task<IActionResult> Create(int clientId)
 		{
 			var viewModel = new ProcedureRecordViewModel
 			{
 				Date = DateTime.Now,
 				AvailableMaterials = await _materialsService.GetAllAsync(),
 				AvailableProcedureTypes = await _procedureTypesService.GetAllAsync(),
-				AvailableClients = await _clientsService.GetAllAsync()
+				ClientId = clientId,
+				Client = await _clientsService.GetByIdAsync(clientId)
 
 			};
 			return View(viewModel);
@@ -84,15 +85,15 @@ namespace ClientBaseControlWebApp.Controllers
 				{
 					AvailableMaterials = await _materialsService.GetAllAsync(),
 					AvailableProcedureTypes = await _procedureTypesService.GetAllAsync(),
-					AvailableClients = await _clientsService.GetAllAsync()
-					
+					Client = await _clientsService.GetByIdAsync(model.ClientId)
+
 
 				};
 				return View(viewModel);
 			}
 
 			await _procedureRecordsService.AddAsync(procedureRecord);
-			return RedirectToAction(nameof(Index));
+			return RedirectToAction("Details", "Clients", new {id = model.ClientId});
 		}
 
 
