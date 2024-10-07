@@ -20,6 +20,8 @@ namespace ClientBaseControlWebApp.Models
 		public int ProcedureTypeId { get; set; }
 
 		public string? SelectedMaterialIds { get; set; }
+
+		public IEnumerable<Material>? SelectedMaterials { get; set; }
 		public IEnumerable<Material>? AvailableMaterials { get; set; }
 		public IEnumerable<ProcedureType>? AvailableProcedureTypes { get; set; }
 		

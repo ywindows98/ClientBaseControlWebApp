@@ -26,13 +26,13 @@ namespace ClientBaseControlWebApp.Data.Services
 
         public async Task<IEnumerable<ProcedureRecord>> GetAllAsync()
         {
-            var result = await _context.ProcedureRecords.Include(pr => pr.ProcedureType).Include(pr => pr.Client).Include(pr => pr.Records_Materials).ToListAsync();
+            var result = await _context.ProcedureRecords.Include(pr => pr.ProcedureType).Include(pr => pr.Client).Include(pr => pr.Records_Materials).ThenInclude(rm => rm.Material).ToListAsync();
             return result;
         }
 
         public async Task<ProcedureRecord> GetByIdAsync(int id)
         {
-            var result = await _context.ProcedureRecords.Include(pr => pr.ProcedureType).Include(pr => pr.Client).Include(pr => pr.Records_Materials).FirstOrDefaultAsync(x => x.Id == id);
+            var result = await _context.ProcedureRecords.Include(pr => pr.ProcedureType).Include(pr => pr.Client).Include(pr => pr.Records_Materials).ThenInclude(rm => rm.Material).FirstOrDefaultAsync(x => x.Id == id);
 
             return result;
         }

@@ -114,7 +114,30 @@ namespace ClientBaseControlWebApp.Controllers
 		{
 			var procedureRecord = await _procedureRecordsService.GetByIdAsync(id);
 			if (procedureRecord == null) return View("NotFound");
-			return View(procedureRecord);
+
+			List<int> materialIds = new List<int>();
+			List<Material> selectedMaterials = new List<Material>();
+			foreach(Record_Material rm in procedureRecord.Records_Materials)
+			{
+				materialIds.Add(rm.Material.Id);
+				selectedMaterials.Add(rm.Material);
+			}
+
+			var viewModel = new ProcedureRecordViewModel
+			{
+				Id = procedureRecord.Id,
+				Date = procedureRecord.Date,
+				Comment = procedureRecord.Comment,
+				ClientId = procedureRecord.ClientId,
+				ProcedureTypeId = procedureRecord.ProcedureTypeId,
+				SelectedMaterialIds = String.Join(",", materialIds),
+				SelectedMaterials = selectedMaterials,
+				AvailableMaterials = await _materialsService.GetAllAsync(),
+				AvailableProcedureTypes = await _procedureTypesService.GetAllAsync(),
+				Client = await _clientsService.GetByIdAsync(procedureRecord.ClientId)
+			};
+
+			return View(viewModel);
 		}
 		[HttpPost]
 		public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Comment,ClientId,ProcedureTypeId")] ProcedureRecord procedureRecord)
