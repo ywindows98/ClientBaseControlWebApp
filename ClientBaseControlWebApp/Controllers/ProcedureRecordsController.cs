@@ -107,6 +107,15 @@ namespace ClientBaseControlWebApp.Controllers
 				return View();
 			}
 
+			List<Material> selectedMaterials = new List<Material>();
+			
+			foreach(Record_Material rm in procedureRecord.Records_Materials)
+			{
+				selectedMaterials.Add(await _materialsService.GetByIdAsync(rm.MaterialId));
+			}
+
+			ViewBag.SelectedMaterials = selectedMaterials;
+
 			return View(procedureRecord);
 		}
 

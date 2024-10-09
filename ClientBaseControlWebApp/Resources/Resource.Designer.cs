@@ -214,6 +214,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change procedure.
+        /// </summary>
+        public static string ChangeProcedure {
+            get {
+                return ResourceManager.GetString("ChangeProcedure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Client.
         /// </summary>
         public static string ChooseClientLabel {

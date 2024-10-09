@@ -1,0 +1,58 @@
+﻿@using ClientBaseControlWebApp.Resources
+@using ClientBaseControlWebApp.Data.Enums;
+@using ClientBaseControlWebApp.Data.Services;
+@using System.Text.Json;
+@using System.Text.Json.Serialization;
+@model ProcedureRecord
+
+
+@{
+	ViewData["Title"] = "Procedure details";
+	ViewData["ImagesDirectoryDepth"] = "../images";
+}
+
+
+<div class="row">
+	<div class="col-md-8 offset-2">
+		<div class="row">
+			<div class="col-md-10 offset-1">
+					<div class="bg-primary bg-opacity-50 p-2 ps-3">
+						<h1>@Model.ProcedureType.Name @Resource.For @Model.Client.Name @Model.Client.Surname</h1>
+					</div>
+					<div class="bg-lightBlue p-2 ps-4 pb-2 pt-3">
+						<div class="h4">
+							<i class="bi bi-calendar-event"></i> @Model.Date.ToShortDateString()
+						</div>	
+					</div>
+					<div class="bg-lightBlue p-2 ps-4 pb-2">
+						<div class="h5">@Resource.MaterialsNav:</div>
+						<ul id="selectedMaterials" class="d-flex justify-content-start col-12 flex-wrap ps-2" style="list-style-type:none; padding:0;">
+							@foreach (Material selecetedMaterial in ViewBag.SelectedMaterials)
+							{
+								<div id="@string.Concat("material", selecetedMaterial.Id.ToString())" class="p-1 d-flex">
+									<li class="bg-primary rounded-2 bg-opacity-75 p-2 h6 text-light lh-base">
+										@selecetedMaterial.Name
+									</li>
+								</div>	
+							}
+						</ul>
+					</div>
+					<div class="bg-lightBlue p-2 ps-4 pb-4">
+						<div>
+
+						</div>
+						<div class="h5">
+							@Model.Comment
+						</div>
+					</div>
+					<div class="form-group mt-2">
+						<a class="btn btn-outline-secondary" asp-controller="Clients" asp-action="Details" asp-route-id="@Model.ClientId"><i class="bi bi-arrow-left-circle"></i> @Resource.CancelButton</a>
+						<a class="btn btn-outline-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Edit" asp-route-id="@Model.Id"><i class="bi bi-pen"></i> @Resource.EditButton</a>
+						<a class="btn btn-outline-danger float-end" asp-area="" asp-controller="ProcedureRecords" asp-action="Delete" asp-route-id="@Model.Id"><i class="bi bi-x-circle"></i> @Resource.DeleteButton</a>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+</script>

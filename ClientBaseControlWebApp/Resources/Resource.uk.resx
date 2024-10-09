@@ -168,6 +168,9 @@
   <data name="Capillaries" xml:space="preserve">
     <value>Капіляри</value>
   </data>
+  <data name="ChangeProcedure" xml:space="preserve">
+    <value>Змінити процедуру</value>
+  </data>
   <data name="ChooseClientLabel" xml:space="preserve">
     <value>Клієнт</value>
   </data>
