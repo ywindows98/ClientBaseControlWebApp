@@ -140,14 +140,38 @@ namespace ClientBaseControlWebApp.Controllers
 			return View(viewModel);
 		}
 		[HttpPost]
-		public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Comment,ClientId,ProcedureTypeId")] ProcedureRecord procedureRecord)
+		public async Task<IActionResult> Edit(int id, ProcedureRecordViewModel viewModel)
 		{
-			if (!ModelState.IsValid)
+
+			var procedureRecord = new ProcedureRecord
 			{
-				return View(procedureRecord);
+				Id = viewModel.Id,
+				Date = viewModel.Date,
+				Comment = viewModel.Comment,
+				ClientId = viewModel.ClientId,
+				ProcedureTypeId = viewModel.ProcedureTypeId,
+
+			};
+
+			if (viewModel.SelectedMaterialIds != null)
+			{
+				List<int> materialIds = viewModel.SelectedMaterialIds.Split(',')
+							 .Select(int.Parse)
+							 .ToList();
+
+				foreach (int materialId in materialIds)
+				{
+					procedureRecord.Records_Materials.Add(new Record_Material(procedureRecord.Id, materialId));
+				}
 			}
+
+			if (!ModelState.IsValid && !TryValidateModel(procedureRecord))
+			{
+				return View(viewModel);
+			}
+
 			await _procedureRecordsService.UpdateAsync(id, procedureRecord);
-			return RedirectToAction(nameof(Index));
+			return RedirectToAction("Details", "Clients", new { id = viewModel.ClientId });
 		}
 
 

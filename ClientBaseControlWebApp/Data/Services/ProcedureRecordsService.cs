@@ -46,9 +46,18 @@ namespace ClientBaseControlWebApp.Data.Services
 
         public async Task<ProcedureRecord> UpdateAsync(int id, ProcedureRecord newProcedureRecord)
         {
-            _context.ProcedureRecords.Update(newProcedureRecord);
-            await _context.SaveChangesAsync();
-            return newProcedureRecord;
+            ProcedureRecord currentProcedureRecord = await GetByIdAsync(newProcedureRecord.Id);
+            
+            currentProcedureRecord.Id = newProcedureRecord.Id;
+            currentProcedureRecord.Date = newProcedureRecord.Date;
+            currentProcedureRecord.Comment = newProcedureRecord.Comment;
+			currentProcedureRecord.ClientId = newProcedureRecord.ClientId;
+			currentProcedureRecord.Records_Materials = newProcedureRecord.Records_Materials;
+			currentProcedureRecord.ProcedureTypeId = newProcedureRecord.ProcedureTypeId;
+
+			await _context.SaveChangesAsync();
+
+            return currentProcedureRecord;
         }
     }
 }
