@@ -16,6 +16,9 @@
 	<div class="col-md-8 offset-2">
 		<div class="row">
 			<div class="col-md-10 offset-1">
+					<div class="p-2 ps-3">
+						<h1 class="text-danger">@Resource.ProcedureRecordDeleteConfirmation</h1>
+					</div>
 					<div class="bg-primary bg-opacity-50 p-2 ps-3">
 						<h1>@Model.ProcedureType.Name @Resource.For @Model.Client.Name @Model.Client.Surname</h1>
 					</div>
@@ -45,11 +48,10 @@
 							@Model.Comment
 						</div>
 					</div>
-					<div class="mt-2">
+					<form class="mt-2" asp-action="Delete" method="post">
 						<a class="btn btn-outline-secondary" asp-controller="Clients" asp-action="Details" asp-route-id="@Model.ClientId"><i class="bi bi-arrow-left-circle"></i> @Resource.CancelButton</a>
-						<a class="btn btn-outline-primary" asp-area="" asp-controller="ProcedureRecords" asp-action="Edit" asp-route-id="@Model.Id"><i class="bi bi-pen"></i> @Resource.EditButton</a>
-						<a class="btn btn-outline-danger float-end" asp-area="" asp-controller="ProcedureRecords" asp-action="Delete" asp-route-id="@Model.Id"><i class="bi bi-x-circle"></i> @Resource.DeleteButton</a>
-					</div>
+						<button class="btn btn-outline-danger float-end" type="submit" asp-route-id="@Model.Id"><i class="bi bi-x-circle"></i> @Resource.DeleteButton</button>
+					</form>
 			</div>
 		</div>
 	</div>

@@ -381,6 +381,9 @@
   <data name="PiecesUnit" xml:space="preserve">
     <value>шт</value>
   </data>
+  <data name="ProcedureRecordDeleteConfirmation" xml:space="preserve">
+    <value>Ви дійсно хочете видалити цей запис?</value>
+  </data>
   <data name="ProcedureRecordsNav" xml:space="preserve">
     <value>Процедури</value>
   </data>
@@ -388,7 +391,7 @@
     <value>Процедури</value>
   </data>
   <data name="ProcedureTypeDeleteConfirmation" xml:space="preserve">
-    <value>Ви хочете видалити цей тип процедури?</value>
+    <value>Ви дійсно хочете видалити цей тип процедури?</value>
   </data>
   <data name="ProcedureTypeLabel" xml:space="preserve">
     <value>Тип процедури</value>

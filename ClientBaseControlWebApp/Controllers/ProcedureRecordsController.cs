@@ -52,7 +52,6 @@ namespace ClientBaseControlWebApp.Controllers
 
 
 		[HttpPost]
-		
 		public async Task<IActionResult> Create(ProcedureRecordViewModel model)
 		{
 		
@@ -79,7 +78,7 @@ namespace ClientBaseControlWebApp.Controllers
 			}
 			
 
-			if (!ModelState.IsValid)
+			if (!ModelState.IsValid && !TryValidateModel(procedureRecord))
 			{
 				var viewModel = new ProcedureRecordViewModel
 				{
@@ -188,6 +187,16 @@ namespace ClientBaseControlWebApp.Controllers
 		{
 			var procedureRecord = await _procedureRecordsService.GetByIdAsync(id);
 			if (procedureRecord == null) return View("NotFound");
+
+			List<Material> selectedMaterials = new List<Material>();
+
+			foreach (Record_Material rm in procedureRecord.Records_Materials)
+			{
+				selectedMaterials.Add(await _materialsService.GetByIdAsync(rm.MaterialId));
+			}
+
+			ViewBag.SelectedMaterials = selectedMaterials;
+
 			return View(procedureRecord);
 		}
 
@@ -198,7 +207,7 @@ namespace ClientBaseControlWebApp.Controllers
 			if (procedureRecord == null) return View("NotFound");
 
 			await _procedureRecordsService.DeleteAsync(id);
-			return RedirectToAction(nameof(Index));
+			return RedirectToAction("Details", "Clients", new { id = procedureRecord.ClientId });
 		}
 	}
 }

@@ -381,6 +381,9 @@
   <data name="PiecesUnit" xml:space="preserve">
     <value>pcs</value>
   </data>
+  <data name="ProcedureRecordDeleteConfirmation" xml:space="preserve">
+    <value>Do you really want to delete this record?</value>
+  </data>
   <data name="ProcedureRecordsNav" xml:space="preserve">
     <value>Procedure records</value>
   </data>
@@ -388,7 +391,7 @@
     <value>Procedures</value>
   </data>
   <data name="ProcedureTypeDeleteConfirmation" xml:space="preserve">
-    <value>Do you want to delete this procedure type?</value>
+    <value>Do you really want to delete this procedure type?</value>
   </data>
   <data name="ProcedureTypeLabel" xml:space="preserve">
     <value>ProcedureType</value>

@@ -853,6 +853,15 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you really want to delete this record?.
+        /// </summary>
+        public static string ProcedureRecordDeleteConfirmation {
+            get {
+                return ResourceManager.GetString("ProcedureRecordDeleteConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Procedure records.
         /// </summary>
         public static string ProcedureRecordsNav {
@@ -871,7 +880,7 @@ namespace ClientBaseControlWebApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Do you want to delete this procedure type?.
+        ///   Looks up a localized string similar to Do you really want to delete this procedure type?.
         /// </summary>
         public static string ProcedureTypeDeleteConfirmation {
             get {
