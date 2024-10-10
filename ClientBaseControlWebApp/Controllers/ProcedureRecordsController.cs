@@ -20,21 +20,6 @@ namespace ClientBaseControlWebApp.Controllers
 			_procedureTypesService = ptService;
 			_clientsService = cService;
 		}
-		public async Task<IActionResult> Index(string searchValue)
-		{
-			IEnumerable<ProcedureRecord> data;
-
-			if (string.IsNullOrEmpty(searchValue))
-			{
-				data = await _procedureRecordsService.GetAllAsync();
-			}
-			else
-			{
-				data = await _procedureRecordsService.GetBySearchValue(searchValue);
-			}
-
-			return View(data);
-		}
 
 		public async Task<IActionResult> Create(int clientId)
 		{
