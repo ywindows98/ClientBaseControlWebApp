@@ -62,10 +62,10 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="en"><img src="images/country_flags/uk_flag.png" class="small-flag"> English</a>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="en"><img src="@ViewData["ImagesDirectoryDepth"]/country_flags/uk_flag.png" class="small-flag"> English</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="uk"><img src="images/country_flags/ua_flag.png" class="small-flag"> Українська</a>
+                                    <a class="dropdown-item" asp-controller="Home" asp-action="ChangeLanguage" asp-route-lang="uk"><img src="@ViewData["ImagesDirectoryDepth"]/country_flags/ua_flag.png" class="small-flag"> Українська</a>
                                 </li>
                             </ul>
                         </li>
