@@ -19,9 +19,13 @@
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
                 <div class="form-floating">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+                    <input asp-for="Input.Password" id="password" class="form-control" autocomplete="current-password" aria-required="true" />
                     <label asp-for="Input.Password" class="form-label"></label>
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-3 mb-3 checkbox">
+                    <input class="form-check-input" type="checkbox" id="showPassword" onclick="togglePasswordVisibility()" />
+                    <label for="showPassword">Show Password</label>
                 </div>
                 <div>
                     <div class="checkbox">
@@ -82,4 +86,16 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        function togglePasswordVisibility() {
+            const password = document.getElementById("password");
+
+            if (password.type === "password") {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+        }
+    </script>
 }
