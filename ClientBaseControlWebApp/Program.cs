@@ -71,8 +71,8 @@ app.Use(async (context, next) =>
     }
     else
     {
-        System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("ua");
-        System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("ua");
+        System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en");
+        System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
     }
     await next.Invoke();
 });
